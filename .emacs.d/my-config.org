@@ -1,0 +1,448 @@
+* Super duper config
+  
+
+** General settings
+
+*** Start-up behavior
+
+    #+begin_src emacs-lisp
+      (setq inhibit-startup-screen t)
+      (global-visual-line-mode t)
+    #+end_src
+
+** UI Settings
+   
+    Customize line numbers
+    #+begin_src emacs-lisp
+      (global-display-line-numbers-mode)
+      (setq display-line-numbers-type 'relative)
+    #+end_src
+
+    Disabling the toolbar. M-x tool-bar-mode - will toggle the toolbar on and off.
+    #+begin_src emacs-lisp
+      (tool-bar-mode -1)
+    #+end_src
+    
+    This enables wrapping but kill-line still kills the whole line.
+    #+begin_src emacs-lisp
+      (setq-default word-wrap t)
+    #+end_src
+    
+    This highlights the current line in the buffer
+    #+begin_src emacs-lisp
+      (global-hl-line-mode t)
+    #+end_src
+    
+    How to have Emacs auto-refresh all buffers when files have changed on disk?
+    #+begin_src emacs-lisp
+      (global-auto-revert-mode t)
+    #+end_src
+
+** Packages
+
+    #+begin_src emacs-lisp
+      (use-package cl-lib
+        :ensure t)
+    #+end_src
+   
+    This applies a beacon effect to the highlighted line
+    #+begin_src emacs-lisp
+      (use-package beacon 
+         :ensure t
+         :config
+         (beacon-mode 1))
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package try
+        :ensure t)
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package avy
+        :config 
+          (global-set-key (kbd "C-c jc1") 'avy-goto-char)
+          (global-set-key (kbd "C-c jc2") 'avy-goto-char-2)
+          (global-set-key (kbd "C-c jl") 'avy-goto-line)
+          (global-set-key (kbd "C-c jw") 'avy-goto-word-1)
+          (global-set-key (kbd "C-c ja") 'avy-goto-word-0)
+          ;;(global-set-key (kbd "C-c at") 'avy-goto-char-timer)
+          :ensure t)
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package helm
+        :init
+          (require 'helm-config)
+          (setq helm-split-window-in-side-p t
+                helm-move-to-line-cycle-in-source t)
+        :config 
+          (helm-mode 1) ;; Most of Emacs prompts become helm-enabled
+          (helm-autoresize-mode 1) ;; Helm resizes according to the number of candidates
+          (global-set-key (kbd "C-x b") 'helm-buffers-list) ;; List buffers ( Emacs way )
+          (global-set-key (kbd "C-x C-f") 'helm-find-files) ;; Finding files with Helm
+          (global-set-key (kbd "C-s") 'helm-occur)  ;; Replaces the default isearch keybinding
+          (global-set-key (kbd "C-h a") 'helm-apropos)  ;; Helmized apropos interface
+          (global-set-key (kbd "M-x") 'helm-M-x)  ;; Improved M-x menu
+          (global-set-key (kbd "M-y") 'helm-show-kill-ring)  ;; Show kill ring, pick something to paste
+        :ensure t)
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package which-key
+        :config 
+          (setq which-key-idle-delay 0.3)
+          (setq which-key-popup-type 'frame)
+          (which-key-mode)
+          (which-key-setup-minibuffer)
+          (set-face-attribute 'which-key-local-map-description-face nil 
+             :weight 'bold)
+          :ensure t)
+    #+end_src
+     
+    Magit
+    #+begin_src emacs-lisp
+      (use-package magit
+        :ensure t)
+    #+end_src
+    
+***** Org mode
+
+    #+begin_src emacs-lisp
+      (use-package org
+        :ensure t
+        :config
+          (setq org-log-done 'time) ;;keep track of when a certain TODO item was marked as done.
+      )
+    #+end_src
+
+    Agenda Views - First, you need to add your Org file to your Org agenda by using the command C-c [. Then, type Meta-x org-agenda to be presented with options for different views.
+      
+    How can I show the Org-mode agenda on Emacs start-up
+    #+begin_src emacs-lisp
+      (add-hook 'after-init-hook 'org-agenda-list)
+    #+end_src
+
+    Multiple cursors
+    #+begin_src emacs-lisp
+      (use-package multiple-cursors
+        :config
+        (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+        (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+        (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+        (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+        :ensure t)
+    #+end_src
+    
+    Haskell mode
+    #+begin_src emacs-lisp
+      (use-package haskell-mode
+        :ensure t)
+    #+end_src
+
+    Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
+    #+begin_src emacs-lisp
+      (use-package dracula-theme
+         :config
+         (load-theme 'dracula t)
+         :ensure t)
+    #+end_src
+    
+    Not using auto-complete for now because I am using Company instead.
+    #+begin_src emacs-lisp
+      ;;(use-package auto-complete
+      ;;  :ensure t
+      ;;  :config 
+      ;;  (ac-config-default)
+      ;;  )
+    #+end_src
+
+    Projectile
+    https://github.com/bbatsov/projectile
+    https://docs.projectile.mx/projectile/index.html
+    #+begin_src emacs-lisp
+      (use-package projectile
+        :config
+        (projectile-mode +1)
+        (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+        (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+        :ensure t)
+    #+end_src
+
+    flycheck
+    https://github.com/flycheck/flycheck
+    #+begin_src emacs-lisp
+      (use-package flycheck
+        :ensure t)
+    #+end_src
+
+    lsp-mode
+    #+begin_src emacs-lisp
+      ;;(use-package lsp-mode
+      ;;  :hook ((lsp-mode . lsp-enable-which-key-integration))
+      ;;  :config (setq lsp-completion-enable-additional-text-edit nil)
+      ;;  :ensure t
+      ;;)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      (use-package hydra
+        :ensure t)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      ;;(use-package lsp-ui
+      ;;  :ensure t)
+    #+end_src
+    
+    Its a good idea to make sure that Java 11 is installed before trying to use lsp-java. Getting it to work with Java 8 wasn't successful.
+    #+begin_src emacs-lisp
+      ;;(use-package lsp-java
+      ;;  :config (add-hook 'java-mode-hook 'lsp)
+      ;;  :ensure t
+      ;;)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      ;;(use-package dap-mode
+      ;;  :after lsp-mode
+      ;;  :config (dap-auto-configure-mode)
+      ;;  :ensure t
+      ;;)
+    #+end_src
+
+    #+begin_src emacs-lisp
+      ;;(use-package dap-java
+      ;;  :ensure t
+      ;;)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      ;;(use-package helm-lsp
+      ;;  :ensure t
+      ;;)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      ;;(use-package lsp-treemacs
+      ;;  :ensure t
+      ;;)
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package treemacs
+        :ensure t
+        :defer t
+        :init
+        (with-eval-after-load 'winum
+          (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
+        :config
+        (progn
+          (setq treemacs-collapse-dirs                 (if treemacs-python-executable 3 0)
+                treemacs-deferred-git-apply-delay      0.5
+                treemacs-directory-name-transformer    #'identity
+                treemacs-display-in-side-window        t
+                treemacs-eldoc-display                 t
+                treemacs-file-event-delay              5000
+                treemacs-file-extension-regex          treemacs-last-period-regex-value
+                treemacs-file-follow-delay             0.2
+                treemacs-file-name-transformer         #'identity
+                treemacs-follow-after-init             t
+                treemacs-git-command-pipe              ""
+                treemacs-goto-tag-strategy             'refetch-index
+                treemacs-indentation                   2
+                treemacs-indentation-string            " "
+                treemacs-is-never-other-window         nil
+                treemacs-max-git-entries               5000
+                treemacs-missing-project-action        'ask
+                treemacs-move-forward-on-expand        nil
+                treemacs-no-png-images                 nil
+                treemacs-no-delete-other-windows       t
+                treemacs-project-follow-cleanup        nil
+                treemacs-persist-file                  (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+                treemacs-position                      'left
+                treemacs-read-string-input             'from-child-frame
+                treemacs-recenter-distance             0.1
+                treemacs-recenter-after-file-follow    nil
+                treemacs-recenter-after-tag-follow     nil
+                treemacs-recenter-after-project-jump   'always
+                treemacs-recenter-after-project-expand 'on-distance
+                treemacs-show-cursor                   nil
+                treemacs-show-hidden-files             t
+                treemacs-silent-filewatch              nil
+                treemacs-silent-refresh                nil
+                treemacs-sorting                       'alphabetic-asc
+                treemacs-space-between-root-nodes      t
+                treemacs-tag-follow-cleanup            t
+                treemacs-tag-follow-delay              1.5
+                treemacs-user-mode-line-format         nil
+                treemacs-user-header-line-format       nil
+                treemacs-width                         40
+                treemacs-workspace-switch-cleanup      nil)
+      
+          ;; The default width and height of the icons is 22 pixels. If you are
+          ;; using a Hi-DPI display, uncomment this to double the icon size.
+          ;;(treemacs-resize-icons 44)
+      
+          (treemacs-follow-mode t)
+          (treemacs-filewatch-mode t)
+          (treemacs-fringe-indicator-mode 'always)
+          (pcase (cons (not (null (executable-find "git")))
+                       (not (null treemacs-python-executable)))
+            (`(t . t)
+             (treemacs-git-mode 'deferred))
+            (`(t . _)
+             (treemacs-git-mode 'simple))))
+        :bind
+        (:map global-map
+              ("M-0"       . treemacs-select-window)
+              ("C-x t 1"   . treemacs-delete-other-windows)
+              ("C-x t t"   . treemacs)
+              ("C-x t B"   . treemacs-bookmark)
+              ("C-x t C-t" . treemacs-find-file)
+              ("C-x t M-t" . treemacs-find-tag)))    
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package treemacs-projectile
+        :after (treemacs projectile)
+        :ensure t)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      (use-package treemacs-icons-dired
+        :after (treemacs dired)
+        :ensure t
+        :config (treemacs-icons-dired-mode))
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      (use-package treemacs-magit
+        :after (treemacs magit)
+        :ensure t)
+    #+end_src
+     
+    #+begin_src emacs-lisp
+      (use-package evil
+        :config 
+          (evil-mode 1)
+        :ensure t)
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      (use-package s
+        :ensure t)
+    #+end_src
+
+    http://company-mode.github.io/
+    #+begin_src emacs-lisp
+      (use-package company
+        :ensure t
+        :init
+        (add-hook 'after-init-hook 'global-company-mode)
+        (setq company-dabbrev-downcase nil)
+        (setq company-dabbrev-ignore-case nil)
+      )
+    #+end_src
+    
+    If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
+    #+begin_src emacs-lisp
+      (add-to-list 'load-path
+                    "~/.emacs.d/plugins/yasnippet")
+      (use-package yasnippet
+        :ensure t
+        :config
+          (use-package yasnippet-snippets
+            :ensure t)
+        (yas-reload-all) 
+        (yas-global-mode 1)
+      )
+    #+end_src
+    
+    javascript packages
+
+    https://github.com/felipeochoa/rjsx-mode
+    #+begin_src emacs-lisp
+      (use-package rjsx-mode
+        :ensure t
+        :mode "\\.js\\'"
+      )
+    #+end_src
+    
+    prerequisite for tide: npm install -g typescript
+    #+begin_src emacs-lisp
+      (defun setup-tide-mode()
+        "Setup function for tide."
+        (interactive)
+        (tide-setup)
+        (flycheck-mode +1)
+        (setq flycheck-check-syntax-automaticaly '(save mode-enabled))
+        (tide-ho-identifier-mode +1)
+        (company-mode +1)
+      )
+    #+end_src
+    
+    https://github.com/ananthakumaran/tide
+    #+begin_src emacs-lisp
+      (use-package tide
+        :ensure t
+        ;; :after (rjsx-mode company flycheck)
+        :after (rjsx-mode company)
+        :hook (rjsx-mode . setup-tide-mode)
+        :config 
+        (global-set-key (kbd "C-c jd") 'tide-jump-to-definition)
+        (global-set-key (kbd "C-c jb") 'tide-jump-back)
+      )
+    #+end_src
+    
+    #+begin_src emacs-lisp
+      (use-package js-import
+        :ensure t
+      )
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package flex-autopair
+        :ensure t
+        :config
+          (flex-autopair-mode 1)
+      )
+    #+end_src
+
+    #+begin_src emacs-lisp
+      (use-package git-gutter
+        :ensure t
+        :config
+          (global-git-gutter-mode +1)
+      )
+
+  (global-set-key (kbd "M-g M-g") 'hydra-git-gutter/body)
+
+  (defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
+                              :hint nil)
+    "
+    Git gutter:
+      _j_: next hunk        _s_tage hunk     _q_uit
+      _k_: previous hunk    _r_evert hunk    _Q_uit and deactivate git-gutter
+      ^ ^                   _p_opup hunk
+      _h_: first hunk
+      _l_: last hunk        set start _R_evision
+    "
+      ("j" git-gutter:next-hunk)
+      ("k" git-gutter:previous-hunk)
+      ("h" (progn (goto-char (point-min))
+                  (git-gutter:next-hunk 1)))
+      ("l" (progn (goto-char (point-min))
+                  (git-gutter:previous-hunk 1)))
+      ("s" git-gutter:stage-hunk)
+      ("r" git-gutter:revert-hunk)
+      ("p" git-gutter:popup-hunk)
+      ("R" git-gutter:set-start-revision)
+      ("q" nil :color blue)
+      ("Q" (progn (git-gutter-mode -1)
+                  ;; git-gutter-fringe doesn't seem to
+                  ;; clear the markup right away
+                  (sit-for 0.1)
+                  (git-gutter:clear))
+           :color blue))
+      #+end_src
