@@ -1,0 +1,13 @@
+[push]
+	default = simple
+[user]
+	name = Harsha Vardhan Edupuganti
+	email = explorer436@tutanota.com
+[merge]
+	conflictstyle = diff3
+[color]
+	ui = auto
+[core]
+	autocrlf = true
+[pull]
+	rebase = false

@@ -1,5 +1,13 @@
 *~
+
 .xmonad/xmonad-x86_64-linux
 .xmonad/xmonad.errors
 .xmonad/xmonad.hi
 .xmonad/xmonad.o
+
+.emacs.d/auto-save-list
+.emacs.d/projectile-bookmarks.eld
+.emacs.d/transient
+.emacs.d/elpa
+.emacs.d/snippets
+.emacs.d/my-config.el
