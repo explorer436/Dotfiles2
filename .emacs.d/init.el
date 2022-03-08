@@ -20,7 +20,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("81c3de64d684e23455236abde277cda4b66509ef2c28f66e059aa925b8b12534" default))
- '(org-agenda-files '("~/Downloads"))
+ '(org-agenda-files '("~/Downloads/GitRepositories/my-personal-things/birthdays"))
  '(package-selected-packages
    '(js-import flex-autopair tide rjsx-mode ag ripgrep org-make-toc toc-org dap-java lsp-mode helm-lsp lsp-java lsp-ui yasnippet-snippets yasnippet company evil treemacs-magit treemacs-icons-dired treemacs-projectile treemacs projectile auto-complete beacon emacs-color-themes emacs-color-theme which-key use-package try multiple-cursors magit helm haskell-mode dracula-theme avy)))
 (custom-set-faces
