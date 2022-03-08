@@ -13,10 +13,12 @@
 .emacs.d/elpa
 .emacs.d/snippets
 .emacs.d/my-config.el
+.emacs.d/.mc-lists.el
 
 .ssh/*
 
 Downloads/*
+Desktop/*
 
 .xsession
 .xsessionrc
@@ -88,3 +90,11 @@ Downloads/*
 .config/mimeapps.list
 .config/Trolltech.conf
 .config/yad.conf
+
+.eclipse/
+eclipse/
+eclipse-workspace/
+
+.m2
+
+.java/
