@@ -100,3 +100,6 @@ eclipse-workspace/
 .java/
 
 .p2/
+
+.swt/
+.lemminx/
