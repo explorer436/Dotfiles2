@@ -98,3 +98,5 @@ eclipse-workspace/
 .m2
 
 .java/
+
+.p2/
