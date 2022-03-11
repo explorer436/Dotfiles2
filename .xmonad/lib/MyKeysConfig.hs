@@ -225,9 +225,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
       , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)
       , (\i -> W.greedyView i . W.shift i, shiftMask)]]
 
-  ++
+  --  ++
   -- ctrl-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
   -- ctrl-shift-{w,e,r}, Move client to screen 1, 2, or 3
-  [((m .|. controlMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_w, xK_e] [0..]
-      , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+  
+  -- disabling these because these are interfering with emacs functionality
+
+  --  [((m .|. controlMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+  --      | (key, sc) <- zip [xK_w, xK_e] [0..]
+  --      , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
