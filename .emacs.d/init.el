@@ -16,10 +16,8 @@
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
 	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
-      '("~/Downloads/GitRepositories/my-personal-things/birthdays"
-        "~/Dokumente/Technik-u-Dokus/Emacs/Client1.org"
-	"~/Dokumente/Technik-u-Dokus/Emacs/Client2.org"
-	"~/Dokumente/RA-win/2012-222-name/file.org")
+      '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
+        "~/Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
       )
     )
 
