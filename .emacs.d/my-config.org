@@ -103,11 +103,29 @@
              :weight 'bold)
           :ensure t)
     #+end_src
-     
+
     Magit
+
+    Full screen magit-status.
+    This code makes magit-status run alone in the frame, and then restores the old window configuration when you quit out of magit.
+    No more juggling windows after commiting. It's magit bliss.
+    After you are done with magit, do M-x quit-window
+
     #+begin_src emacs-lisp
       (use-package magit
-        :ensure t)
+		:ensure t
+		:config
+			(defadvice magit-status (around magit-fullscreen activate)
+		  (window-configuration-to-register :magit-fullscreen)
+		  ad-do-it
+		  (delete-other-windows))
+
+		(defadvice magit-mode-quit-window (after magit-restore-screen activate)
+		  "Restores the previous window configuration and kills the magit buffer"
+		  (jump-to-register :magit-fullscreen))
+
+		(define-key magit-status-mode-map (kbd "q") 'magit-mode-quit-window)	
+      )
     #+end_src
     
 ***** Org mode
