@@ -115,7 +115,7 @@
       (use-package magit
 		:ensure t
 		:config
-			(defadvice magit-status (around magit-fullscreen activate)
+		(defadvice magit-status (around magit-fullscreen activate)
 		  (window-configuration-to-register :magit-fullscreen)
 		  ad-do-it
 		  (delete-other-windows))
@@ -352,8 +352,8 @@
     #+end_src
     
     #+begin_src emacs-lisp
-      (use-package s
-        :ensure t)
+      ;;(use-package s
+      ;;  :ensure t)
     #+end_src
 
     http://company-mode.github.io/
