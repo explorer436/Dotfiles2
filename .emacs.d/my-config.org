@@ -69,6 +69,53 @@
       (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
     #+end_src
 
+***** Rename current buffer    
+
+    You don't have to type the name out from scratch - but get the current name to modify.
+
+    #+begin_src emacs-lisp
+      (defun rename-current-buffer-file ()
+        "Renames current buffer and file it is visiting."
+        (interactive)
+        (let ((name (buffer-name))
+              (filename (buffer-file-name)))
+          (if (not (and filename (file-exists-p filename)))
+              (error "Buffer '%s' is not visiting a file!" name)
+            (let ((new-name (read-file-name "New name: " filename)))
+              (if (get-buffer new-name)
+                  (error "A buffer named '%s' already exists!" new-name)
+                (rename-file filename new-name 1)
+                (rename-buffer new-name)
+                (set-visited-file-name new-name)
+                (set-buffer-modified-p nil)
+                (message "File '%s' successfully renamed to '%s'"
+                         name (file-name-nondirectory new-name)))))))
+
+      (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+    #+end_src
+
+***** Open new lines above or below the current line
+
+    With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
+
+    #+begin_src emacs-lisp
+      (defun open-line-below ()
+        (interactive)
+        (end-of-line)
+        (newline)
+        (indent-for-tab-command))
+
+      (defun open-line-above ()
+        (interactive)
+        (beginning-of-line)
+        (newline)
+        (forward-line -1)
+        (indent-for-tab-command))
+      
+      (global-set-key (kbd "<C-return>") 'open-line-below)
+      (global-set-key (kbd "<C-S-return>") 'open-line-above)
+    #+end_src    
+
 ** UI Settings
    
     Customize line numbers
