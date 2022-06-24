@@ -2,6 +2,7 @@
 
 ** General settings
 
+
 *** Start-up behavior
 
 ***** Start-up screen
@@ -16,135 +17,8 @@
       (global-visual-line-mode t)
     #+end_src    
 
-***** Navigation in dired
 
-    In dired, M-> and M- never take me where I want to go.
-    With this code, instead of taking me to the very beginning or very end, they now take me to the first or last file.
-    #+begin_src emacs-lisp
-      (defun dired-back-to-top ()
-        (interactive)
-        (beginning-of-buffer)
-        (dired-next-line 4))
-      (define-key dired-mode-map
-        (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
-      (defun dired-jump-to-bottom ()
-        (interactive)
-        (end-of-buffer)
-        (dired-next-line -1))
-      (define-key dired-mode-map
-        (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)  
-    #+end_src
-
-***** Join lines
-
-     With point anywhere on the first line, I simply press M-j multiple times to pull the lines up.
-
-     #+begin_src emacs-lisp
-       (global-set-key (kbd "M-j")
-            (lambda ()
-                  (interactive)
-                  (join-line -1)))
-     #+end_src
-
-***** Delete current buffer
-
-    C-x C-k: file begone!
-
-    I like the feel between C-x k to kill the buffer and C-x C-k to kill the file. Release ctrl to kill it a little, hold to kill it a lot.
-
-    #+begin_src emacs-lisp
-      (defun delete-current-buffer-file ()
-      "Removes file connected to current buffer and kills buffer."
-      (interactive)
-      (let ((filename (buffer-file-name))
-            (buffer (current-buffer))
-            (name (buffer-name)))
-        (if (not (and filename (file-exists-p filename)))
-            (ido-kill-buffer)
-          (when (yes-or-no-p "Are you sure you want to remove this file? ")
-            (delete-file filename)
-            (kill-buffer buffer)
-            (message "File '%s' successfully removed" filename)))))
-
-      (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
-    #+end_src
-
-***** Rename current buffer    
-
-    You don't have to type the name out from scratch - but get the current name to modify.
-
-    #+begin_src emacs-lisp
-      (defun rename-current-buffer-file ()
-        "Renames current buffer and file it is visiting."
-        (interactive)
-        (let ((name (buffer-name))
-              (filename (buffer-file-name)))
-          (if (not (and filename (file-exists-p filename)))
-              (error "Buffer '%s' is not visiting a file!" name)
-            (let ((new-name (read-file-name "New name: " filename)))
-              (if (get-buffer new-name)
-                  (error "A buffer named '%s' already exists!" new-name)
-                (rename-file filename new-name 1)
-                (rename-buffer new-name)
-                (set-visited-file-name new-name)
-                (set-buffer-modified-p nil)
-                (message "File '%s' successfully renamed to '%s'"
-                         name (file-name-nondirectory new-name)))))))
-
-      (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
-    #+end_src
-
-***** Open new lines above or below the current line
-
-    With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
-
-    #+begin_src emacs-lisp
-      (defun open-line-below ()
-        (interactive)
-        (end-of-line)
-        (newline)
-        (indent-for-tab-command))
-
-      (defun open-line-above ()
-        (interactive)
-        (beginning-of-line)
-        (newline)
-        (forward-line -1)
-        (indent-for-tab-command))
-      
-      (global-set-key (kbd "<C-return>") 'open-line-below)
-      (global-set-key (kbd "<C-S-return>") 'open-line-above)
-    #+end_src
-
-***** Move around in a buffer quickly
-
-     Are Ctrl-n and Ctrl-p too slow for you?
-     Move in a buffer more quickly.
-
-     #+begin_src emacs-lisp
-       (global-set-key (kbd "C-S-n")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (next-line 5))))
-
-       (global-set-key (kbd "C-S-p")
-                       (lambda ()
-                         (interactive)
-                         (ignore-errors (previous-line 5))))
-       
-       (global-set-key (kbd "C-S-f")
-                       (lambda ()
-                         (interactive)
-                         (ignore-errors (forward-char 5))))
-       
-       (global-set-key (kbd "C-S-b")
-                       (lambda ()
-                         (interactive)
-                         (ignore-errors (backward-char 5))))
-     #+end_src
-
-
-** UI Settings
+*** UI Settings
    
 ***** Customize line numbers
 
@@ -179,6 +53,17 @@
       (global-hl-line-mode t)
     #+end_src
 
+***** Change how dired looks
+
+      Make dired less verbose.
+      You can toggle this on and off using "("
+
+      #+begin_src emacs-lisp
+        (dired-hide-details-mode 1)
+      #+end_src
+
+
+*** Custom snippets
 ***** auto-refresh
 
     How to have Emacs auto-refresh all buffers when files have changed on disk?
@@ -194,15 +79,128 @@
       (setq global-auto-revert-non-file-buffers t)
       (setq auto-revert-verbose nil)
     #+end_src
+***** Navigation in dired
 
-***** Change how dired looks
+    In dired, M-> and M- never take me where I want to go.
+    With this code, instead of taking me to the very beginning or very end, they now take me to the first or last file.
+    #+begin_src emacs-lisp
+      (defun dired-back-to-top ()
+        (interactive)
+        (beginning-of-buffer)
+        (dired-next-line 4))
+      (define-key dired-mode-map
+        (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+      (defun dired-jump-to-bottom ()
+        (interactive)
+        (end-of-buffer)
+        (dired-next-line -1))
+      (define-key dired-mode-map
+        (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)  
+    #+end_src
+***** Join lines
 
-      Make dired less verbose.
-      You can toggle this on and off using "("
+     With point anywhere on the first line, I simply press M-j multiple times to pull the lines up.
 
-      #+begin_src emacs-lisp
-        (dired-hide-details-mode 1)
-      #+end_src
+     #+begin_src emacs-lisp
+       (global-set-key (kbd "M-j")
+            (lambda ()
+                  (interactive)
+                  (join-line -1)))
+     #+end_src
+***** Delete current buffer
+
+    C-x C-k: file begone!
+
+    I like the feel between C-x k to kill the buffer and C-x C-k to kill the file. Release ctrl to kill it a little, hold to kill it a lot.
+
+    #+begin_src emacs-lisp
+      (defun delete-current-buffer-file ()
+      "Removes file connected to current buffer and kills buffer."
+      (interactive)
+      (let ((filename (buffer-file-name))
+            (buffer (current-buffer))
+            (name (buffer-name)))
+        (if (not (and filename (file-exists-p filename)))
+            (ido-kill-buffer)
+          (when (yes-or-no-p "Are you sure you want to remove this file? ")
+            (delete-file filename)
+            (kill-buffer buffer)
+            (message "File '%s' successfully removed" filename)))))
+
+      (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
+    #+end_src
+***** Rename current buffer    
+
+    You don't have to type the name out from scratch - but get the current name to modify.
+
+    #+begin_src emacs-lisp
+      (defun rename-current-buffer-file ()
+        "Renames current buffer and file it is visiting."
+        (interactive)
+        (let ((name (buffer-name))
+              (filename (buffer-file-name)))
+          (if (not (and filename (file-exists-p filename)))
+              (error "Buffer '%s' is not visiting a file!" name)
+            (let ((new-name (read-file-name "New name: " filename)))
+              (if (get-buffer new-name)
+                  (error "A buffer named '%s' already exists!" new-name)
+                (rename-file filename new-name 1)
+                (rename-buffer new-name)
+                (set-visited-file-name new-name)
+                (set-buffer-modified-p nil)
+                (message "File '%s' successfully renamed to '%s'"
+                         name (file-name-nondirectory new-name)))))))
+
+      (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+    #+end_src
+***** Open new lines above or below the current line
+
+    With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
+
+    #+begin_src emacs-lisp
+      (defun open-line-below ()
+        (interactive)
+        (end-of-line)
+        (newline)
+        (indent-for-tab-command))
+
+      (defun open-line-above ()
+        (interactive)
+        (beginning-of-line)
+        (newline)
+        (forward-line -1)
+        (indent-for-tab-command))
+      
+      (global-set-key (kbd "<C-return>") 'open-line-below)
+      (global-set-key (kbd "<C-S-return>") 'open-line-above)
+    #+end_src
+***** Move around in a buffer quickly
+
+     Are Ctrl-n and Ctrl-p too slow for you?
+     Move in a buffer more quickly.
+
+     #+begin_src emacs-lisp
+       (global-set-key (kbd "C-S-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+       (global-set-key (kbd "C-S-p")
+                       (lambda ()
+                         (interactive)
+                         (ignore-errors (previous-line 5))))
+       
+       (global-set-key (kbd "C-S-f")
+                       (lambda ()
+                         (interactive)
+                         (ignore-errors (forward-char 5))))
+       
+       (global-set-key (kbd "C-S-b")
+                       (lambda ()
+                         (interactive)
+                         (ignore-errors (backward-char 5))))
+     #+end_src
+
 
 ** Packages
 
@@ -685,4 +683,3 @@
       )
     #+end_src
 
-    
