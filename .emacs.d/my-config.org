@@ -4,13 +4,22 @@
 
 *** Start-up behavior
 
+***** Start-up screen
     #+begin_src emacs-lisp
       (setq inhibit-startup-screen t)
-      (global-visual-line-mode t)
     #+end_src
 
+***** visual line mode
+    #+begin_src emacs-lisp
+      (global-visual-line-mode t)
+    #+end_src    
+
+***** Navigation in dired    
+
     In dired, M-> and M- never take me where I want to go.
+    
     With this code, instead of taking me to the very beginning or very end, they now take me to the first or last file.
+
     #+begin_src emacs-lisp
       (defun dired-back-to-top ()
         (interactive)
@@ -24,6 +33,40 @@
         (dired-next-line -1))
       (define-key dired-mode-map
         (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)  
+    #+end_src
+
+***** Join lines
+
+     With point anywhere on the first line, I simply press M-j multiple times to pull the lines up.
+
+     #+begin_src emacs-lisp
+       (global-set-key (kbd "M-j")
+            (lambda ()
+                  (interactive)
+                  (join-line -1)))
+     #+end_src
+
+***** Delete current buffer
+
+    C-x C-k: file begone!
+
+    I like the feel between C-x k to kill the buffer and C-x C-k to kill the file. Release ctrl to kill it a little, hold to kill it a lot.
+
+    #+begin_src emacs-lisp
+      (defun delete-current-buffer-file ()
+      "Removes file connected to current buffer and kills buffer."
+      (interactive)
+      (let ((filename (buffer-file-name))
+            (buffer (current-buffer))
+            (name (buffer-name)))
+        (if (not (and filename (file-exists-p filename)))
+            (ido-kill-buffer)
+          (when (yes-or-no-p "Are you sure you want to remove this file? ")
+            (delete-file filename)
+            (kill-buffer buffer)
+            (message "File '%s' successfully removed" filename)))))
+
+      (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
     #+end_src
 
 ** UI Settings
