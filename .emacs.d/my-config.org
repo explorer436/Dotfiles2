@@ -59,9 +59,8 @@
       You can toggle this on and off using "("
 
       #+begin_src emacs-lisp
-        (dired-hide-details-mode 1)
+	;; (dired-hide-details-mode 1)
       #+end_src
-
 
 *** Custom snippets
 ***** auto-refresh
