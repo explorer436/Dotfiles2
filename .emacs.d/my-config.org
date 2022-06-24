@@ -219,7 +219,7 @@
       )
     #+end_src
 
-***** Dracula theme
+***** dracula theme
 
     Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
     
@@ -259,7 +259,7 @@
       )
     #+end_src
       
-***** Haskell mode
+***** haskell-mode
 
     #+begin_src emacs-lisp
       (use-package haskell-mode
@@ -323,23 +323,6 @@
         :ensure t)
     #+end_src
 
-***** lsp-mode
-
-    #+begin_src emacs-lisp
-      ;;(use-package lsp-mode
-      ;;  :hook ((lsp-mode . lsp-enable-which-key-integration))
-      ;;  :config (setq lsp-completion-enable-additional-text-edit nil)
-      ;;  :ensure t
-      ;;)
-    #+end_src
-
-***** lsp-ui
-
-    #+begin_src emacs-lisp
-      ;;(use-package lsp-ui
-      ;;  :ensure t)
-    #+end_src
-
 ***** lsp-java
 
     Its a good idea to make sure that Java 11 is installed before trying to use lsp-java. Getting it to work with Java 8 wasn't successful.
@@ -377,7 +360,24 @@
       ;;)
     #+end_src
 
-***** Magit
+***** lsp-mode
+
+    #+begin_src emacs-lisp
+      ;;(use-package lsp-mode
+      ;;  :hook ((lsp-mode . lsp-enable-which-key-integration))
+      ;;  :config (setq lsp-completion-enable-additional-text-edit nil)
+      ;;  :ensure t
+      ;;)
+    #+end_src
+
+***** lsp-ui
+
+    #+begin_src emacs-lisp
+      ;;(use-package lsp-ui
+      ;;  :ensure t)
+    #+end_src
+
+***** magit
 
     #+begin_src emacs-lisp
       (use-package magit
@@ -402,7 +402,19 @@
     This code makes magit-status run alone in the frame, and then restores the old window configuration when you quit out of magit.
     No more juggling windows after commiting. It's magit#+begin_src emacs-lisp
     
-***** Org mode
+***** multiple cursors
+
+    #+begin_src emacs-lisp
+      (use-package multiple-cursors
+        :config
+        (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+        (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+        (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+        (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+        :ensure t)
+    #+end_src
+    
+***** org
 
     #+begin_src emacs-lisp
       (use-package org
@@ -419,7 +431,7 @@
       (add-hook 'after-init-hook 'org-agenda-list)
     #+end_src
 
-***** Projectile
+***** projectile
 
     https://github.com/bbatsov/projectile
     https://docs.projectile.mx/projectile/index.html
@@ -433,18 +445,6 @@
         :ensure t)
     #+end_src
 
-***** Multiple cursors
-
-    #+begin_src emacs-lisp
-      (use-package multiple-cursors
-        :config
-        (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-        (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-        (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-        (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-        :ensure t)
-    #+end_src
-    
 ***** treemacs
 
     #+begin_src emacs-lisp
@@ -521,14 +521,6 @@
               ("C-x t M-t" . treemacs-find-tag)))    
     #+end_src
 
-***** treemacs-projectile    
-
-    #+begin_src emacs-lisp
-      (use-package treemacs-projectile
-        :after (treemacs projectile)
-        :ensure t)
-    #+end_src
-
 ***** treemacs-icons-dired
 
     #+begin_src emacs-lisp
@@ -553,6 +545,14 @@
 ;        :ensure t)
     #+end_src
     
+***** treemacs-projectile    
+
+    #+begin_src emacs-lisp
+      (use-package treemacs-projectile
+        :after (treemacs projectile)
+        :ensure t)
+    #+end_src
+
 ***** try
 
     #+begin_src emacs-lisp
@@ -560,6 +560,19 @@
         :ensure t)
     #+end_src
 
+***** which-key
+
+    #+begin_src emacs-lisp
+      (use-package which-key
+        :config 
+          (setq which-key-idle-delay 0.3)
+          (setq which-key-popup-type 'frame)
+          (which-key-mode)
+          (which-key-setup-minibuffer)
+          (set-face-attribute 'which-key-local-map-description-face nil 
+             :weight 'bold)
+          :ensure t)
+    #+end_src
 ***** yasnippet
 
     If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
@@ -577,21 +590,15 @@
       )
     #+end_src
     
-***** which-key
-
-    #+begin_src emacs-lisp
-      (use-package which-key
-        :config 
-          (setq which-key-idle-delay 0.3)
-          (setq which-key-popup-type 'frame)
-          (which-key-mode)
-          (which-key-setup-minibuffer)
-          (set-face-attribute 'which-key-local-map-description-face nil 
-             :weight 'bold)
-          :ensure t)
-    #+end_src
 
 **** javascript packages
+***** js-import
+
+    #+begin_src emacs-lisp
+      (use-package js-import
+        :ensure t
+      )
+    #+end_src
 
 ***** rjsx-mode
 
@@ -633,12 +640,4 @@
       )
     #+end_src
 
-***** js-import
-
-    #+begin_src emacs-lisp
-      (use-package js-import
-        :ensure t
-      )
-    #+end_src
-      
-
+    
