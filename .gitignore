@@ -92,3 +92,5 @@ Desktop/*
 Downloads/*
 eclipse-workspace/
 eclipse/
+snap/
+.emacs.d/eln-cache/
