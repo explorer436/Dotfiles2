@@ -1,5 +1,9 @@
 * How to git clone into home directory in Linux
 
+** Prerequisites
+
+Install Git and set-up ssh keys in GitHub
+
 #+NAME: Set up instructions
 #+BEGIN_SRC
 cd ~
