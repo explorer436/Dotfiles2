@@ -1,7 +1,11 @@
 * How to git clone into home directory in Linux
 
+#+NAME: Set up instructions
+#+BEGIN_SRC
 cd ~
 git init
 git remote add origin ssh://host/repo.git
 git pull origin master
 git reset --hard master
+#+END_SRC
+
