@@ -18,7 +18,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- SUPER + FUNCTION KEYS
 
-  [ ((modMask, xK_e), spawn $ "atom" )
+  [ ((modMask, xK_e), spawn $ "emacs" )
   , ((modMask, xK_c), spawn $ "conky-toggle" )
   , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
   , ((modMask, xK_h), spawn $ "urxvt 'htop task manager' -e htop" )
@@ -32,7 +32,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_Escape), spawn $ "xkill" )
   , ((modMask, xK_Return), spawn $ "xfce4-terminal" )
 --  , ((modMask, xK_F1), spawn $ "vivaldi-stable" )
-  , ((modMask, xK_F2), spawn $ "atom" )
+--  , ((modMask, xK_F2), spawn $ "atom" )
   , ((modMask, xK_F3), spawn $ "inkscape" )
   , ((modMask, xK_F4), spawn $ "gimp" )
   , ((modMask, xK_F5), spawn $ "meld" )
@@ -40,7 +40,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_F7), spawn $ "virtualbox" )
   , ((modMask, xK_F8), spawn $ "thunar" )
   , ((modMask, xK_F9), spawn $ "evolution" )
-  , ((modMask, xK_F10), spawn $ "spotify" )
+--  , ((modMask, xK_F10), spawn $ "spotify" )
   , ((modMask, xK_F11), spawn $ "rofi -theme-str 'window {width: 100%;height: 100%;}' -show drun" )
   , ((modMask, xK_F12), spawn $ "rofi -show drun" )
 
@@ -63,7 +63,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((controlMask .|. mod1Mask , xK_b ), spawn $ "thunar")
   , ((controlMask .|. mod1Mask , xK_c ), spawn $ "catfish")
   , ((controlMask .|. mod1Mask , xK_e ), spawn $ "arcolinux-tweak-tool")
-  , ((controlMask .|. mod1Mask , xK_f ), spawn $ "firefox")
+--  , ((controlMask .|. mod1Mask , xK_f ), spawn $ "firefox")
   , ((controlMask .|. mod1Mask , xK_g ), spawn $ "chromium -no-default-browser-check")
   , ((controlMask .|. mod1Mask , xK_i ), spawn $ "nitrogen")
   , ((controlMask .|. mod1Mask , xK_k ), spawn $ "arcolinux-logout")
