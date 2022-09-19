@@ -9,7 +9,7 @@ Install Git and set-up ssh keys in GitHub
 cd ~
 git init
 git remote add origin ssh://host/repo.git
-git pull origin master
-git reset --hard master
+git pull origin master --allow-unrelated-histories
+git branch master -u remotes/origin/master
 #+END_SRC
 
