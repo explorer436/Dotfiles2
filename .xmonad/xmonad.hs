@@ -27,7 +27,7 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.IndependentScreens
-
+import XMonad.Layout.Fullscreen (fullscreenEventHook)
 
 import XMonad.Layout.CenteredMaster(centerMaster)
 

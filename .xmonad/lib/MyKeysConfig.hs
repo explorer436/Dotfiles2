@@ -18,31 +18,32 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- SUPER + FUNCTION KEYS
 
-  [ ((modMask, xK_e), spawn $ "emacs" )
-  , ((modMask, xK_c), spawn $ "conky-toggle" )
-  , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
-  , ((modMask, xK_h), spawn $ "urxvt 'htop task manager' -e htop" )
-  , ((modMask, xK_m), spawn $ "pragha" )
-  , ((modMask, xK_q), kill )
-  , ((modMask, xK_r), spawn $ "rofi-theme-selector" )
-  , ((modMask, xK_t), spawn $ "urxvt" )
-  , ((modMask, xK_v), spawn $ "pavucontrol" )
-  , ((modMask, xK_y), spawn $ "polybar-msg cmd toggle" )
-  , ((modMask, xK_x), spawn $ "arcolinux-logout" )
-  , ((modMask, xK_Escape), spawn $ "xkill" )
-  , ((modMask, xK_Return), spawn $ "xfce4-terminal" )
---  , ((modMask, xK_F1), spawn $ "vivaldi-stable" )
---  , ((modMask, xK_F2), spawn $ "atom" )
-  , ((modMask, xK_F3), spawn $ "inkscape" )
-  , ((modMask, xK_F4), spawn $ "gimp" )
-  , ((modMask, xK_F5), spawn $ "meld" )
-  , ((modMask, xK_F6), spawn $ "vlc --video-on-top" )
-  , ((modMask, xK_F7), spawn $ "virtualbox" )
-  , ((modMask, xK_F8), spawn $ "thunar" )
-  , ((modMask, xK_F9), spawn $ "evolution" )
---  , ((modMask, xK_F10), spawn $ "spotify" )
-  , ((modMask, xK_F11), spawn $ "rofi -theme-str 'window {width: 100%;height: 100%;}' -show drun" )
-  , ((modMask, xK_F12), spawn $ "rofi -show drun" )
+  [
+    ((modMask, xK_Escape), spawn $ "xkill" ),
+    ((modMask, xK_F6), spawn $ "vlc --video-on-top" ),
+    ((modMask, xK_f), spawn $ "thunar" ),
+    ((modMask, xK_Return), spawn $ "xfce4-terminal" ),
+    ((modMask, xK_e), spawn $ "emacs" ),
+--    ((modMask, xK_f), sendMessage $ Toggle NBFULL),
+    ((modMask, xK_q), kill ),
+    ((modMask, xK_x), spawn $ "arcolinux-logout" )
+--    ((modMask, xK_F1), spawn $ "vivaldi-stable" ),
+--    ((modMask, xK_F10), spawn $ "spotify" ),
+--    ((modMask, xK_F11), spawn $ "rofi -theme-str 'window {width: 100%;height: 100%;}' -show drun" ),
+--    ((modMask, xK_F12), spawn $ "rofi -show drun" ),
+--    ((modMask, xK_F2), spawn $ "atom" ),
+--    ((modMask, xK_F3), spawn $ "inkscape" ),
+--    ((modMask, xK_F4), spawn $ "gimp" ),
+--    ((modMask, xK_F5), spawn $ "meld" ),
+--    ((modMask, xK_F7), spawn $ "virtualbox" ),
+--    ((modMask, xK_F9), spawn $ "evolution" ),
+--    ((modMask, xK_c), spawn $ "conky-toggle" ),
+--    ((modMask, xK_h), spawn $ "urxvt 'htop task manager' -e htop" ),
+--    ((modMask, xK_m), spawn $ "pragha" ),
+--    ((modMask, xK_r), spawn $ "rofi-theme-selector" ),
+--    ((modMask, xK_t), spawn $ "urxvt" ),
+--    ((modMask, xK_v), spawn $ "pavucontrol" ),
+--    ((modMask, xK_y), spawn $ "polybar-msg cmd toggle" )
 
   -- FUNCTION KEYS
   , ((0, xK_F12), spawn $ "xfce4-terminal --drop-down" )
