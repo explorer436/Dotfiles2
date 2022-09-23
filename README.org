@@ -4,6 +4,8 @@
 
 Install Git and set-up ssh keys in GitHub
 
+Before doing this, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
+
 #+NAME: Set up instructions
 #+BEGIN_SRC
 cd ~
