@@ -11,7 +11,7 @@ Before doing this, see if there are any files in your computer in the same direc
 cd ~
 git init
 git remote add origin git@github.com:explorer436/Dotfiles2.git
-git pull origin master --allow-unrelated-histories
+git pull origin master( --allow-unrelated-histories)
 git branch master -u remotes/origin/master
 #+END_SRC
 
