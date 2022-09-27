@@ -464,10 +464,10 @@
 	  (setq org-log-done 'time) ;;keep track of when a certain TODO item was marked as done.
       )
       (org-babel-do-load-languages
- 'org-babel-load-languages '(
-			     (shell . t)
-			     )
- )
+        'org-babel-load-languages '(
+	   (shell . t)
+	)
+      )
     #+end_src
 
     Agenda Views - First, you need to add your Org file to your Org agenda by using the command C-c [. Then, type Meta-x org-agenda to be presented with options for different views.
