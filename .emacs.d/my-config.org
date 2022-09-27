@@ -17,14 +17,13 @@
       (global-visual-line-mode t)
     #+end_src    
 
-
 *** UI Settings
    
 ***** Customize line numbers
 
     #+begin_src emacs-lisp
-      ;;(global-display-line-numbers-mode)
-      ;;(setq display-line-numbers-type 'relative)
+      (global-display-line-numbers-mode)
+      (setq display-line-numbers-type 'relative)
     #+end_src
 
 ***** Hide UI bars
@@ -584,14 +583,16 @@
         :after (treemacs magit)
         :ensure t)
     #+end_src
-     
+
+***** evil-mode
+
     #+begin_src emacs-lisp
-;      (use-package evil
-;        :config 
-;          (evil-mode 1)
-;        :ensure t)
+      (use-package evil
+        :config 
+          (evil-mode 1)
+        :ensure t)
     #+end_src
-    
+
 ***** treemacs-projectile    
 
     #+begin_src emacs-lisp
@@ -620,6 +621,7 @@
              :weight 'bold)
           :ensure t)
     #+end_src
+
 ***** yasnippet
 
     If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
@@ -636,9 +638,9 @@
         (yas-global-mode 1)
       )
     #+end_src
-    
 
 **** javascript packages
+
 ***** js-import
 
     #+begin_src emacs-lisp
