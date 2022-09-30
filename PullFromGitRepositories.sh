@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# If you see errors like this:line 12: $'\r': command not found 
+# run this to fix it: `dos2unix ./PullFromGitRepositories.sh`
+
 # Prerequisites: tmux
 # How to run:
 # From terminal, run this script:sh ~/Downloads/GitRepositories/programming-playground/kafka/real-world-example/SetUp.sh
