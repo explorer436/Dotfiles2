@@ -106,6 +106,9 @@
 .xsessionrc
 .zshenv
 .zshrc
+/.emacs.d/session.*
+/.sudo_as_admin_successful
+/ps-pulse-ubuntu-debian.deb
 Desktop/*
 Downloads/*
 Pictures/
