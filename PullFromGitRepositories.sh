@@ -10,7 +10,7 @@
 # tmux attach -t pullFromGitRepos (to attach to the session ListOfAppsToBeStarted)
 # Ctrl-b w to select the window to jump to.
 
-session="pullFromGitRepos"
+session="pull"
 tmux new-session -d -s $session
 
 window=0
