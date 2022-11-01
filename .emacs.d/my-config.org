@@ -639,6 +639,25 @@
       )
     #+end_src
 
+***** Table of contents
+
+    #+begin_src emacs-lisp
+	(if (require 'toc-org nil t)
+	(progn
+	  (add-hook 'org-mode-hook 'toc-org-mode)
+
+	  ;; enable in markdown, too
+	  ;;(add-hook 'markdown-mode-hook 'toc-org-mode)
+	  ;;(define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point)
+      )
+      (warn "toc-org not found"))
+    #+end_src
+
+    1. How to insert table of contents in an org file?
+    1. Put a heading in the document. After the line with the heading, add a TOC tag.
+    1. To add a TOC tag, you can use the command ~org-set-tags-command~ (C-c C-q)
+    1. Enter TOC
+
 **** javascript packages
 
 ***** js-import
@@ -688,4 +707,3 @@
         (global-set-key (kbd "C-c jb") 'tide-jump-back)
       )
     #+end_src
-
