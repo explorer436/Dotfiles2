@@ -63,7 +63,9 @@
 .emacs.d/elpa
 .emacs.d/eshell/
 .emacs.d/my-config.el
+.emacs.d/org-roam.db
 .emacs.d/projectile-bookmarks.eld
+.emacs.d/projectile.cache
 .emacs.d/snippets
 .emacs.d/transient
 .emacs.d/url/cache/

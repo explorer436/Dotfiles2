@@ -662,6 +662,33 @@
     1. To add a TOC tag, you can use the command ~org-set-tags-command~ (C-c C-q)
     1. Enter TOC
 
+***** org-roam
+
+Prerequisites: Install Graphviz for the Linux distribution
+
+#+begin_src emacs-lisp
+   (use-package org-roam
+    :ensure t
+    :custom
+    (org-roam-directory (file-truename "~/Downloads/GitRepositories/my-personal-wiki"))
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+	   ("C-c n f" . org-roam-node-find)
+	   ("C-c n g" . org-roam-graph)
+	   ("C-c n i" . org-roam-node-insert)
+	   ("C-c n c" . org-roam-capture)
+	   ;; Dailies
+	   ("C-c n j" . org-roam-dailies-capture-today))
+    :config
+    ;; If you're using a vertical completion framework, you might want a more informative completion interface
+    (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+    (org-roam-db-autosync-mode)
+  )
+#+end_src
+
+~org-roam-node-find~ to create/insert a new node
+~org-roam-node-insert~ to insert a node in another node
+~org-roam-buffer-toggle~ to open backlinks buffer for a node
+
 **** javascript packages
 
 ***** js-import
