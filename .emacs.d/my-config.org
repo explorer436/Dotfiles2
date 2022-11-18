@@ -457,6 +457,8 @@
     
 ***** org
 
+    https://orgmode.org/
+
     #+begin_src emacs-lisp
       (use-package org
 	:ensure t
@@ -664,6 +666,10 @@
 
 ***** org-roam
 
+https://github.com/org-roam/org-roam
+
+https://www.orgroam.com/manual.html#Keystroke-Index
+
 Prerequisites: Install Graphviz for the Linux distribution
 
 #+begin_src emacs-lisp
@@ -688,6 +694,36 @@ Prerequisites: Install Graphviz for the Linux distribution
 ~org-roam-node-find~ to create/insert a new node
 ~org-roam-node-insert~ to insert a node in another node
 ~org-roam-buffer-toggle~ to open backlinks buffer for a node
+~org-id-get-create~ to convert headings in an org file into nodes (instead of creating separate files for small sections)
+~org-roam-graph~ to launch a graph view of the org-roam notes
+
+How to rename a note with everything updated at the same time? The references don't seem to get updated. Find a good solution for this.
+
+Rename it within emacs e.g. using dired. Org-roam notices when renaming happens within emacs and will update your links accordingly. If you do it through a file editor, it has no idea!
+
+Rename the #+TITLE in your file and you should see the change in org-roam-find-file. You shouldn’t need to run org-roam-db-build-cache.
+
+If you want the description of links in all of your org-roam files to reflect the TITLE change as well as the filename change – [[file:AAA.org][AAA]] to [[file:ABC.org][ABC]] – looking in the code I think if you rename TITLE first, and then rename the file through dired, your link descriptions should be updated also.
+
+***** org-roam-ui
+
+https://github.com/org-roam/org-roam-ui
+
+http://localhost:35901/
+
+Prerequisites: org-roam
+
+#+begin_src emacs-lisp
+(use-package org-roam-ui
+    :ensure t
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+#+end_src
+
+~org-roam-ui-mode~ to create/insert a new node
 
 **** javascript packages
 
