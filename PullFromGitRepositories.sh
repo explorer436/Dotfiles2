@@ -19,22 +19,29 @@ tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
 window=1
-tmux new-window -t $session:$window -n 'pullProgrammingRepo'
+tmux new-window -t $session:$window -n 'programming-playground'
 tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/programming-playground' C-m
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
 window=2
-tmux new-window -t $session:$window -n 'pullPersonalRepo'
+tmux new-window -t $session:$window -n 'my-personal-things'
 tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-personal-things' C-m
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
 window=3
-tmux new-window -t $session:$window -n 'pullThoughtsRepo'
+tmux new-window -t $session:$window -n 'thoughts-notes'
 tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/thoughts-notes' C-m
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
+
+window=4
+tmux new-window -t $session:$window -n 'my-personal-wiki'
+tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-personal-wiki' C-m
+tmux send-keys -t $session:$window 'git remote update' C-m
+tmux send-keys -t $session:$window 'git pull' C-m
+
 
 # And use this url in a browser: http://localhost:8080/topics to view the kafka topics
 
