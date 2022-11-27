@@ -672,6 +672,15 @@ https://www.orgroam.com/manual.html#Keystroke-Index
 
 Prerequisites: Install Graphviz for the Linux distribution
 
+Troubleshooting for the error ~Symbol’s function definition is void~
+Install org-roam using this first. And then, use the next script for customizing it. It seems to be having trouble if we try to do all of it at once.
+#+begin_src emacs-lisp
+   (use-package org-roam
+    :ensure t)
+#+end_src
+
+After making sure that org-roam is installed successfully (how?), then run the following script for customization.
+
 #+begin_src emacs-lisp
    (use-package org-roam
     :ensure t
@@ -691,8 +700,9 @@ Prerequisites: Install Graphviz for the Linux distribution
   )
 #+end_src
 
-~org-roam-node-find~ to create/insert a new node
-~org-roam-node-insert~ to insert a node in another node
+~org-roam-node-insert~ to insert a node in another node. creates a node if it doesn not already exist.
+~org-roam-node-find~ to create/insert a new node if it does not already exist; and visits the node.
+~org-roam-capture~ creates a node if it does not already exist; restores the current window configuration upon completion.
 ~org-roam-buffer-toggle~ to open backlinks buffer for a node
 ~org-id-get-create~ to convert headings in an org file into nodes (instead of creating separate files for small sections)
 ~org-roam-graph~ to launch a graph view of the org-roam notes
