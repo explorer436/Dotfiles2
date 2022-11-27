@@ -719,8 +719,6 @@ If you want the description of links in all of your org-roam files to reflect th
 
 https://github.com/org-roam/org-roam-ui
 
-http://localhost:35901/
-
 Prerequisites: org-roam
 
 #+begin_src emacs-lisp
@@ -733,7 +731,7 @@ Prerequisites: org-roam
           org-roam-ui-open-on-start t))
 #+end_src
 
-~org-roam-ui-mode~ to create/insert a new node
+Just use ~Meta-X org-roam-ui-open~ and it will launch a tab in the browser with this url: http://localhost:35901/
 
 **** javascript packages
 
