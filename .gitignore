@@ -123,3 +123,4 @@ config/gsimplecal
 eclipse-workspace/
 eclipse/
 snap/
+*.bak
