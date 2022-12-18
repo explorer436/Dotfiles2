@@ -151,9 +151,29 @@
 
       (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
     #+end_src
+
+***** File path to clipboard in Emacs
+
+    You don't have to type the name out from scratch - but get the current name to modify.
+
+    #+begin_src emacs-lisp
+    (defun my-put-file-name-on-clipboard ()
+      "Put the current file name on the clipboard"
+      (interactive)
+      (let ((filename (if (equal major-mode 'dired-mode)
+                          default-directory
+                        (buffer-file-name))))
+        (when filename
+          (with-temp-buffer
+            (insert filename)
+            (clipboard-kill-region (point-min) (point-max)))
+          (message filename))))
+    #+end_src
 ***** Open new lines above or below the current line
 
     With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
+
+    These are not very helpful if you are using evil-mode.
 
     #+begin_src emacs-lisp
       (defun open-line-below ()
@@ -176,6 +196,8 @@
 
      Are Ctrl-n and Ctrl-p too slow for you?
      Move in a buffer more quickly.
+
+     These are not very helpful if you are using evil-mode.
 
      #+begin_src emacs-lisp
        (global-set-key (kbd "C-S-n")
