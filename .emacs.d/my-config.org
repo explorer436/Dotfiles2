@@ -17,6 +17,7 @@
       (global-visual-line-mode t)
     #+end_src    
 
+
 *** UI Settings
    
 ***** Customize line numbers
@@ -61,7 +62,8 @@
 	;; (dired-hide-details-mode 1)
       #+end_src
 
-*** Custom snippets
+
+** Custom snippets
 ***** auto-refresh
 
     How to have Emacs auto-refresh all buffers when files have changed on disk?
@@ -152,7 +154,7 @@
       (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
     #+end_src
 
-***** File path to clipboard in Emacs
+***** Copy file path to clipboard in Emacs
 
     You don't have to type the name out from scratch - but get the current name to modify.
 
