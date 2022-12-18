@@ -226,6 +226,27 @@
 
 ** Packages
 
+***** rg
+
+    Use rg in emacs
+    
+    #+begin_src emacs-lisp
+      (use-package rg
+        :ensure t
+        :config 
+        (rg-enable-default-bindings)
+      )
+    #+end_src
+
+    To edit the results buffer, you need to wgrep-change-to-wgrep-mode
+
+    Make the search results editable by enabling ~wgrep~ mode.  When
+    done press ~C-c C-c~ to commit your changes to the underlying files
+    or ~C-c C-k~ to drop the changes.
+
+    You can save the results of a particular search by using the letter ~s~
+    You can navigate to it exactly the same way you navigate to all the buffers - using ~Ctrl X b~
+
 ***** auto-complete    
 
     Not using auto-complete for now because I am using Company instead.
