@@ -20,8 +20,8 @@
 ;;  	lol = log --color --graph --pretty=format:'%C(yellow)%h %C(green)%cd %C(cyan)[%an] %Creset%s' --date=format:'%F %T'
         lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(yellow)%cd %C(bold blue)<%an>%Creset' --abbrev-commit --                                      ;; customize the log command
 	;; working with stashes
-	gstu = stash --include-untracked                ;; To stash everything, whether or not it is staged for commit
-	gstp = stash pop                                ;; To restore everything you've stashed
+	;;gstu = stash --include-untracked                ;; To stash everything, whether or not it is staged for commit
+	;;gstp = stash pop                                ;; To restore everything you've stashed
         ;; working with branches        
         b = branch -l             ;; list local branches
         ba = branch -a            ;; list all branches
