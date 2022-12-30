@@ -11,6 +11,7 @@
 	autocrlf = true
    [alias]
         ;; reference: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
+        ;; reference: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 	la = "!git config -l | grep alias | cut -c 7-"  ;; list all the local aliases
         co = checkout                                   ;; git checkout
 	s = status
