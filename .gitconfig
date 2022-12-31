@@ -5,6 +5,8 @@
 	email = explorer436@tutanota.com
    [merge]
 	conflictstyle = diff3
+   [diff]
+	colorMoved = zebra
    [color]
 	ui = auto
    [core]
