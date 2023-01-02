@@ -25,11 +25,11 @@
 	;;gstu = stash --include-untracked                ;; To stash everything, whether or not it is staged for commit
 	;;gstp = stash pop                                ;; To restore everything you've stashed
         ;; working with branches        
-        b = branch -l             ;; list local branches
+        bl = branch -l            ;; list local branches
         ba = branch -a            ;; list all branches
         bd = branch -d            ;; Delete a local branch. The branch must be fully merged in its upstream branch.
         bdd = branch -D           ;; Force the deletion of a local branch even if it’s not merged with upstream.
-        br = branch -r
+        br = branch -r            ;; What does this do?
 	;; git add
 	a = add
         ai = add -i
