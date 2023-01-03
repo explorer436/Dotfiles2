@@ -1,3 +1,5 @@
+;; Location of config files in Windows: C:\Users\vardh\AppData\Roaming\.emacs.d
+
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
