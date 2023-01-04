@@ -500,30 +500,6 @@
         :ensure t)
     #+end_src
     
-***** org
-
-    https://orgmode.org/
-
-    #+begin_src emacs-lisp
-      (use-package org
-	:ensure t
-	:config
-	  (setq org-log-done 'time) ;;keep track of when a certain TODO item was marked as done.
-      )
-      (org-babel-do-load-languages
-        'org-babel-load-languages '(
-	   (shell . t)
-	)
-      )
-    #+end_src
-
-    Agenda Views - First, you need to add your Org file to your Org agenda by using the command C-c [. Then, type Meta-x org-agenda to be presented with options for different views.
-      
-    How can I show the Org-mode agenda on Emacs start-up
-    #+begin_src emacs-lisp
-      (add-hook 'after-init-hook 'org-agenda-list)
-    #+end_src
-
 ***** projectile
 
     https://github.com/bbatsov/projectile
@@ -686,7 +662,33 @@
       )
     #+end_src
 
-***** Table of contents
+**** org-mode and related packages
+
+***** org-mode
+
+    https://orgmode.org/
+
+    #+begin_src emacs-lisp
+      (use-package org
+	:ensure t
+	:config
+	  (setq org-log-done 'time) ;;keep track of when a certain TODO item was marked as done.
+      )
+      (org-babel-do-load-languages
+        'org-babel-load-languages '(
+	   (shell . t)
+	)
+      )
+    #+end_src
+
+    Agenda Views - First, you need to add your Org file to your Org agenda by using the command C-c [. Then, type Meta-x org-agenda to be presented with options for different views.
+      
+    How can I show the Org-mode agenda on Emacs start-up
+    #+begin_src emacs-lisp
+      (add-hook 'after-init-hook 'org-agenda-list)
+    #+end_src
+
+***** Table of contents in org mode
 
     #+begin_src emacs-lisp
         (use-package toc-org
