@@ -261,6 +261,8 @@
 
 ***** avy
 
+    https://github.com/abo-abo/avy
+
     #+begin_src emacs-lisp
       (use-package avy
         :config 
@@ -465,6 +467,18 @@
 
 ***** magit
 
+    (When this gets reasonably big, pull this section into a separate file of its own.)
+    To launch magit when you are editing a file that is in a git repository, ~Ctrl c g~
+
+    To see the diff version of a file in the magit status page, with the mouse on that file, hit ~tab~. To close the diff view, hit tab again.
+
+    After staging all the files we want to commit, to commit them, hit ~Ctrl c Ctrl c~
+    Enter a commit message and hit ~Ctrl c Ctrl c~
+
+    After you have a commit, to push it to the remote repository, hit ~P~. It gives you options about where to push it and some other details.
+
+    https://magit.vc/manual/magit/Resolving-Conflicts.html
+
     #+begin_src emacs-lisp
       (use-package magit
 		:ensure t
@@ -489,6 +503,17 @@
     No more juggling windows after commiting. It's magit#+begin_src emacs-lisp
     
 ***** multiple cursors
+
+    Install multiple-cursors and (the dependent package cl-lib) first.
+    If you want to start multiple cursors at a word (or a tag or anything) that exists on multiple lines (the lines do not have to be continuous),
+    mark the word (using Ctrl space) and then do Ctrl Shift . (dot).
+    This will start multiple cursors on the multiple lines.
+    After that, you can do normal operations like delete, insert, cut, copy, etc.
+    There are a lot of features that can be done using this.
+    This needs a lot more research.
+    But this should be a good starting point to insert/delete text on multiple lines based on certain common words in multiple lines.0
+
+    https://github.com/magnars/multiple-cursors.el
 
     #+begin_src emacs-lisp
       (use-package multiple-cursors
@@ -665,6 +690,38 @@
 #   #+end_src
 
 **** org-mode and related packages
+
+    How to send notifications from Org Mode planner/schedueler?
+    If this works, can this be a replacement for Google Calendar?
+
+***** How to auto save an org document in markdown format?
+
+    To do it automatically,
+    install the package ~auto-org-md~ and use ~Meta x auto-org-md-mode~ to toggle the auto save to markdown functionality on and off.
+    
+    If you turn it on,
+    after editing a file in org-mode, when you save it, a markdown version of the file is saved automatically in the same folder that the org file is in.
+
+    Is there a way to do this without using the 'auto-org-md' package?
+    This may not be necessary at all. The org files are showing up very nicely in github. So there is no need to export them as markdown files at all.
+
+***** Exporting
+
+You might want to print your notes, publish them on the web, or share them with people not using Org.
+Org can convert and export documents to a variety of other formats while retaining as much structure (see Document Structure) and markup (see Markup for Rich Contents) as possible.  
+
+Use ~Ctrl c Ctrl e~ to launch the export command and then use the options displayed to make selections.
+e.g. to export as a UTF-8 plain text file, select 't' and 'u'
+
+***** Lists
+
+       How to change the style of bullets?
+       e.g. Change a star bullet list into number bullet list. Or vice versa.
+
+       https://orgmode.org/manual/Plain-Lists.html
+
+***** Sorting todo items and items based on priority
+      M-x org-sort-entries and then pick the type of entry by which you want to sort.
 
 ***** org-mode
 
