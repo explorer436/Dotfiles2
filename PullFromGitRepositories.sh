@@ -51,3 +51,5 @@ tmux send-keys -t $session:$window 'git pull' C-m
 # You can use "tmux kill-server" to cleanly and gracefully kill all tmux open sessions (and server).
 # "docker stop $(docker ps -a -q)" to stop all the containers.
 # "docker system prune -a" to clean up docker containers and images.
+
+tmux attach -t pull
