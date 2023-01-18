@@ -1,3 +1,4 @@
+*.bak
 *~
 .Xauthority
 .Xresources
@@ -12,9 +13,12 @@
 .cinnamon/spices.cache/
 .config/BraveSoftware
 .config/GIMP/
+.config/JetBrains/
 .config/Kvantum
+.config/Postman/
 .config/Thunar
 .config/Trolltech.conf
+.config/alacritty/
 .config/archlinux-logout/archlinux-logout.conf
 .config/arcolinux-welcome-app
 .config/arcologout
@@ -50,6 +54,7 @@
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .config/variety
+.config/vifm/
 .config/vlc/
 .config/volumeicon
 .config/xfce4
@@ -73,6 +78,10 @@
 .face
 .fehbg
 .fzf/
+.gradle/caches/
+.gradle/daemon/
+.gradle/native/
+.gradle/wrapper/
 .gtkrc-2.0
 .java/
 .lemminx/
@@ -80,6 +89,7 @@
 .local/
 .m2
 .mozilla/
+.npm/
 .p2/
 .pki/
 .profile
@@ -117,10 +127,10 @@
 /.sudo_as_admin_successful
 /ps-pulse-ubuntu-debian.deb
 Desktop/*
+Documents/
 Downloads/*
 Pictures/
 config/gsimplecal
 eclipse-workspace/
 eclipse/
 snap/
-*.bak

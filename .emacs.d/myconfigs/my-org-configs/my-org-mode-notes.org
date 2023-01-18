@@ -1,0 +1,33 @@
+**** org-mode and related packages
+
+    How to send notifications from Org Mode planner/schedueler?
+    If this works, can this be a replacement for Google Calendar?
+
+***** How to auto save an org document in markdown format?
+
+    To do it automatically,
+    install the package ~auto-org-md~ and use ~Meta x auto-org-md-mode~ to toggle the auto save to markdown functionality on and off.
+    
+    If you turn it on,
+    after editing a file in org-mode, when you save it, a markdown version of the file is saved automatically in the same folder that the org file is in.
+
+    Is there a way to do this without using the 'auto-org-md' package?
+    This may not be necessary at all. The org files are showing up very nicely in github. So there is no need to export them as markdown files at all.
+
+***** Exporting
+
+You might want to print your notes, publish them on the web, or share them with people not using Org.
+Org can convert and export documents to a variety of other formats while retaining as much structure (see Document Structure) and markup (see Markup for Rich Contents) as possible.  
+
+Use ~Ctrl c Ctrl e~ to launch the export command and then use the options displayed to make selections.
+e.g. to export as a UTF-8 plain text file, select 't' and 'u'
+
+***** Lists
+
+       How to change the style of bullets?
+       e.g. Change a star bullet list into number bullet list. Or vice versa.
+
+       https://orgmode.org/manual/Plain-Lists.html
+
+***** Sorting todo items and items based on priority
+      M-x org-sort-entries and then pick the type of entry by which you want to sort.
