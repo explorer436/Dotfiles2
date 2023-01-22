@@ -7,6 +7,8 @@
     (
       ("t" "todo" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org")
          "\n* %^{Please write task heading here} \n\nCREATED ON:%t\n\n %?")
+      ("q" "quote" entry (file "~/Downloads/GitRepositories/my-personal-things/Quotes/02Quotes.org")
+         "\n* %? \n")
       ;;("r" "respond" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/refile.org")
       ;;   "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
       ;;("n" "note" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/refile.org")
