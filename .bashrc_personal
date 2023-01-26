@@ -9,6 +9,7 @@ neofetch
 
 # Remember to do this everytime you set up the Dotfiles repository
 # Idea: There exist backup copies of .bashrc, .profile etc. in /etc/skel/. 
+# http://www.linfo.org/etc_skel.html
 # So one could replace a corrupt .bashrc simply by overwitting from there.
 # Copy the existing raw .bashrc from /etc/skel to your home directory by
 # cp /etc/skel/.bashrc ~/
