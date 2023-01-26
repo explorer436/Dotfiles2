@@ -1,3 +1,6 @@
+# If you see errors when you try to import this file into .bashrc, run this command:
+#dos2unix .bash_aliases
+
 ### ALIASES ###
 
 # list commands
@@ -5,7 +8,6 @@ alias ls='ls -ltaX'
 alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
-alias l.="ls -A | egrep '^\.'"
 
 # fix obvious typo's
 alias cd..='cd ..'
@@ -19,3 +21,6 @@ alias gits='git status'
 alias mvnt='mvn clean test'
 alias mvnv='mvn clean verify'
 alias mvni='mvn clean install'
+
+# Make sure you put this line in .bashrc after copying it from skel
+# [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
