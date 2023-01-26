@@ -14,7 +14,7 @@ session="pull"
 tmux new-session -d -s $session
 
 window=0
-tmux rename-window -t $session:$window 'pullConfigRepo'
+tmux rename-window -t $session:$window 'dot-files-repository'
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
