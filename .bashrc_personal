@@ -1,5 +1,7 @@
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-neofetch
+
+# Enable neofetch if it doesn't come prepackaged with the distribution
+# neofetch
 
 
 # Why create a file called .bashrc-personal?
