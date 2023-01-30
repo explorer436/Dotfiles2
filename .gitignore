@@ -2,6 +2,8 @@
 *~
 .Xauthority
 .Xresources
+.aws/config
+.aws/credentials
 .bash_history
 .bash_logout
 .bash_profile
