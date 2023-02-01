@@ -1,17 +1,7 @@
 ;; Location of config files in Windows: C:\Users\vardh\AppData\Roaming\.emacs.d
 
 (require 'package)
-
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-
 (package-initialize)
-(package-refresh-contents)
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package)
-)
-
-(org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
 
 ;; Recursively load config definitions from a folder/folders recursively
 ;;https://www.emacswiki.org/emacs/DotEmacsModular
@@ -19,6 +9,8 @@
 (load-directory "~/.emacs.d/myconfigs")
 ;;(load-directory "~/.emacs.d/myconfigs2")
 ;;(load-directory "~/.emacs.d/myconfigs3")
+
+(org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
