@@ -26,3 +26,6 @@
     )
   )
 )
+
+;; https://orgmode.org/manual/Template-expansion.html
+;; https://orgmode.org/manual/Capture-templates.html
