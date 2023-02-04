@@ -6,7 +6,7 @@
   (quote
     (
       ("t" "todo" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org")
-         "\n* %^{Please write task heading here} \n\nCREATED ON:%t\n\n %?")
+         "\n* %^{Please write task heading here} \n\nCREATED ON:%U\n\n %?")
       ("q" "quote" entry (file "~/Downloads/GitRepositories/my-personal-things/Quotes/02Quotes.org")
          "\n* %? \n")
       ;;("r" "respond" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/refile.org")
