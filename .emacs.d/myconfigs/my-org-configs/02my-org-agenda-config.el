@@ -2,7 +2,14 @@
 ;; If you don't know where it is, you can navigate to it using "describe-function"
 ;; e.g. describe-function org-agenda-list
 
+
 ;; https://orgmode.org/manual/Agenda-Commands.html
+
+
+;; Agenda Views -
+;; First, you need to add your Org file to your Org agenda by using the command C-c [.
+;; Then, type Meta-x org-agenda to be presented with options for different views.
+
 
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)

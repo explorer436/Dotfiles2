@@ -6,10 +6,6 @@
   (setq org-log-done 'time) ;;keep track of when a certain TODO item was marked as done.
 )
 
-;; Agenda Views -
-;; First, you need to add your Org file to your Org agenda by using the command C-c [.
-;; Then, type Meta-x org-agenda to be presented with options for different views.
-      
 ;; How can I show the Org-mode agenda on Emacs start-up?
 (add-hook 'after-init-hook 'org-agenda-list)
 
