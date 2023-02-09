@@ -13,6 +13,18 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
       )
 )
+;; C-' to cycle through the agenda files (org-cycle-agenda-files)
+
+
+(setq org-agenda-timegrid-use-ampm t)
+;; Reference:
+;; (defcustom org-agenda-timegrid-use-ampm nil
+;;   "When set, show AM/PM style timestamps on the timegrid."
+;;   :group 'org-agenda
+;;   :version "24.1"
+;;   :type 'boolean)
+
+
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
