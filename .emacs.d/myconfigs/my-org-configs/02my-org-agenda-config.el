@@ -1,3 +1,5 @@
+;; https://orgmode.org/manual/Agenda-Commands.html
+
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
@@ -5,11 +7,12 @@
 	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/BookNotes.org"
 	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/BookNotes.org"
-        "~/Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Scheduled.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Take notes from books.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
       )
-    )
+)
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
