@@ -1,3 +1,7 @@
+;; For additional help, look at the file org-agenda.el
+;; If you don't know where it is, you can navigate to it using "describe-function"
+;; e.g. describe-function org-agenda-list
+
 ;; https://orgmode.org/manual/Agenda-Commands.html
 
 (setq org-agenda-files
