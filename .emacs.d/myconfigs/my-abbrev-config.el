@@ -13,3 +13,13 @@
 ;;                        abbrev-edit-save-buffer (Redefine and save to abbrev file.)
 ;;                        abbrev-edit-save-to-file (Redefine and save to abbrev file, but ask for new location.)
 ;; Meta-x write-abbrev-file to save new abbreviations.
+
+
+;; Resources
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Abbrevs.html
+;; http://xahlee.info/emacs/emacs/emacs_abbrev_mode_tutorial.html
+;; https://www.emacswiki.org/emacs/AbbrevMode
+;; https://www.oreilly.com/library/view/learning-gnu-emacs/1565921526/ch04s04.html#:~:text=Enter%20word%20abbreviation%20mode%20by,add%2Dinverse%2Dlocal.)
+;; https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings
+;; https://en.wikipedia.org/wiki/Commonly_misspelled_English_words
+
