@@ -1,0 +1,7 @@
+;;-*-coding: utf-8;-*-
+(define-abbrev-table 'global-abbrev-table
+  '(
+    ("byu" "buy" nil :count 6)
+    ("teh" "the" nil :count 6)
+   ))
+
