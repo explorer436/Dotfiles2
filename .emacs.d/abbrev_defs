@@ -2,13 +2,7 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("byu" "buy" nil :count 6)
-    ("evry" "every" nil :count 6)
-    ("taht" "that " nil :count 0)
     ("teh" "the" nil :count 7)
-    ("thta" "that" nil :count 1)
-    ("whn" "when" nil :count 0)
-    ("yo" "you" nil :count 9)
-    ("yoru" "your " nil :count 1)
-    ("yuo" "you" nil :count 6)
+    ("tehm" "them" nil :count 0)
    ))
 

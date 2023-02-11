@@ -19,7 +19,7 @@
 	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Scheduled.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Take notes from books.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Currently reading books.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
       )
