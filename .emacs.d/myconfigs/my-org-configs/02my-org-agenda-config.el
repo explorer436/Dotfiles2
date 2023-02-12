@@ -76,3 +76,6 @@
 ;;      :PROPERTIES:
 ;;      :CATEGORY: foo
 ;;      :END:
+
+
+;; When you want to schedule an item with Ctrl-c Ctrl-s, if you want to assign a time in addition to the date, enter the date manually and enter the time after the date. e.g. 2023-02-25 8PM and the time will also be inserted in the schedule in the org file.
