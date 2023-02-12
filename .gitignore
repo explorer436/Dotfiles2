@@ -80,6 +80,7 @@
 .emacs.d/url/cookies
 .face
 .fehbg
+.firedragon/
 .fzf/
 .gradle/caches/
 .gradle/daemon/
@@ -87,6 +88,7 @@
 .gradle/wrapper/
 .gtkrc-2.0
 .java/
+.kde4/share/
 .lemminx/
 .lesshst
 .local/
