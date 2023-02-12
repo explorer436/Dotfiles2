@@ -11,6 +11,10 @@
 ;; Then, type Meta-x org-agenda to be presented with options for different views.
 
 
+;; Filtering/limiting agenda items
+;; https://orgmode.org/manual/Filtering_002flimiting-agenda-items.html
+
+
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
@@ -18,8 +22,11 @@
 	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/BookNotes.org"
 	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Scheduled.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Currently reading books.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Reading Material.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
       )
@@ -56,3 +63,16 @@
 
 ;; If you use Helm, which you really should, you will see a very pretty hierarchical display of possible targets. You can type a filename to narrow down to headings within that file, and so on.
 
+
+;; Categories
+;; I sort all my TODOs into PROJECTS, and that projects get a 4 letter abbreviation as category (using #+CATEGORY: PPPP
+;; The category is displayed in the first column of the agenda view.
+;; Unfortunately, with the latest update of org-mode by Jan 2018, only the last category of the file is displayed, in all lines.
+;; Do I have to adjust my org-mode settings?
+
+;; #+CATEGORY: PPPP is a buffer-wide setting, so it applies to the whole file (and indeed the last setting wins). If you want categories for headings, you have to use a CATEGORY property:
+
+;;    * project foo
+;;      :PROPERTIES:
+;;      :CATEGORY: foo
+;;      :END:
