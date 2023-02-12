@@ -1,20 +1,3 @@
-;; For additional help, look at the file org-agenda.el
-;; If you don't know where it is, you can navigate to it using "describe-function"
-;; e.g. describe-function org-agenda-list
-
-
-;; https://orgmode.org/manual/Agenda-Commands.html
-
-
-;; Agenda Views -
-;; First, you need to add your Org file to your Org agenda by using the command C-c [.
-;; Then, type Meta-x org-agenda to be presented with options for different views.
-
-
-;; Filtering/limiting agenda items
-;; https://orgmode.org/manual/Filtering_002flimiting-agenda-items.html
-
-
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
@@ -47,35 +30,3 @@
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
-
-;; Refile Targets
-
-;; https://orgmode.org/manual/Refile-and-Copy.html
-;; https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html
-
-;; First, we must set the value of org-refile-targets, which tells Org how to find the possible targets. Be sure to read the documentation for this variable, because there are a few ways to define targets, but for this scenario, I want to be able to move a node to any of my agenda files, and I also want to consider nodes up to three levels deep.
-
-;; That’s exactly what this setting will do.
-
-;; (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
-
-;; With this set, you can trigger Refile with C-c C-w in any Org file and get a completing read of all headings up to three levels deep in all files in org-agenda-files.
-
-;; If you use Helm, which you really should, you will see a very pretty hierarchical display of possible targets. You can type a filename to narrow down to headings within that file, and so on.
-
-
-;; Categories
-;; I sort all my TODOs into PROJECTS, and that projects get a 4 letter abbreviation as category (using #+CATEGORY: PPPP
-;; The category is displayed in the first column of the agenda view.
-;; Unfortunately, with the latest update of org-mode by Jan 2018, only the last category of the file is displayed, in all lines.
-;; Do I have to adjust my org-mode settings?
-
-;; #+CATEGORY: PPPP is a buffer-wide setting, so it applies to the whole file (and indeed the last setting wins). If you want categories for headings, you have to use a CATEGORY property:
-
-;;    * project foo
-;;      :PROPERTIES:
-;;      :CATEGORY: foo
-;;      :END:
-
-
-;; When you want to schedule an item with Ctrl-c Ctrl-s, if you want to assign a time in addition to the date, enter the date manually and enter the time after the date. e.g. 2023-02-25 8PM and the time will also be inserted in the schedule in the org file.
