@@ -24,6 +24,8 @@ Use ~C-'~ to cycle through the agenda files (org-cycle-agenda-files)
 
 https://orgmode.org/manual/Agenda-Commands.html 
 
+https://orgmode.org/manual/Deadlines-and-Scheduling.html
+
 ~C-c C-s~ to schedule
 
 When you want to schedule an item with Ctrl-c Ctrl-s, if you want to assign a time in addition to the date, enter the date manually and enter the time after the date. e.g. 2023-02-25 8PM and the time will also be inserted in the schedule in the org file.
@@ -90,7 +92,6 @@ Then, type Meta-x org-agenda to be presented with options for different views.
 Filtering/limiting agenda items
 https://orgmode.org/manual/Filtering_002flimiting-agenda-items.html
 
-
 ** Org refiling
 
 https://orgmode.org/manual/Refile-and-Copy.html
@@ -107,6 +108,10 @@ That’s exactly what this setting will do.
 With this set, you can trigger Refile with C-c C-w in any Org file and get a completing read of all headings up to three levels deep in all files in org-agenda-files.
 
 If you use Helm, which you really should, you will see a very pretty hierarchical display of possible targets. You can type a filename to narrow down to headings within that file, and so on.
+
+** Org checkboxes
+
+   https://orgmode.org/manual/Checkboxes.html
 
 ** How to?
 
