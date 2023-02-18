@@ -5,6 +5,7 @@
 Set this at the beginning of the file.
 #+begin_src 
 #+SEQ_TODO:  TODO STARTED WAITING | DONE CANCELED
+#+SEQ_TODO:  TODO(t) STARTED(s) WAITING(w) | DONE(d) CANCELED(c)
 
 #+SEQ_TODO:  BIRTHDAYS(b) EVENTS(e) MARRIAGEANNIVERSARIES(m) | CANCELED(c)
 #+end_src
