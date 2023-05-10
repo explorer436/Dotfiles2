@@ -1,7 +1,11 @@
 ;; org-roam
 ;; https://github.com/org-roam/org-roam
 ;; https://www.orgroam.com/manual.html#Keystroke-Index
-;; Prerequisites: Install Graphviz for the Linux distribution
+
+;; Prerequisites:
+;; 1. Before you can use org-roam in a Linux distribution, you need to have a C compiler installed in it. If not, you will see errors that say "No EmacSQL SQLite binary available". Install a C compiler for your distribution using the appropriate command. e.g. "sudo apt install clang" for Ubuntu.
+;; 2. Install Graphviz for the Linux distribution. e.g. "sudo apt install graphviz" for Ubuntu.
+;; 3. If you are using terminal only version of Linux (WSL), and if you don't have a browser installed in Linux, you need to install a browser as well.
 
 ;; Troubleshooting for the error "Symbol’s function definition is void"
 ;; Install org-roam using this first.
