@@ -4,7 +4,12 @@
     ("byu" "buy" nil :count 6)
     ("ohter" "other" nil :count 0)
     ("taht" "that" nil :count 0)
-    ("teh" "the" nil :count 9)
+    ("teh" "the" nil :count 10)
     ("tehm" "them" nil :count 0)
+    ("thier" "their" nil :count 0)
+    ("yu" "you" nil :count 0)
+    ("fllow" "follow" nil :count 0)
    ))
 
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Abbrevs.html
+;; https://www.emacswiki.org/emacs/AbbrevMode
