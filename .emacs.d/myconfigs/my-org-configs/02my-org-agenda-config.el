@@ -1,3 +1,5 @@
+(setq org-icalendar-combined-agenda-file "/home/h/Downloads/GitRepositories/my-personal-things/Things to do/myevents.ics")
+
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
