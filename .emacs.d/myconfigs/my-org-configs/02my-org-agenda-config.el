@@ -1,4 +1,7 @@
-(setq org-icalendar-combined-agenda-file "/home/h/Downloads/GitRepositories/my-personal-things/Things to do/myevents.ics")
+(setq org-icalendar-combined-agenda-file "/home/h/Downloads/GitRepositories/my-personal-things/Things to do/CalendarEvents/fromEmacs.ics")
+
+;; Do not create duplicates in Google calendar when importing calendar from Org Agenda
+(setq org-icalendar-store-UID 'non-nil)
 
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
