@@ -149,3 +149,33 @@ e.g. to export as a UTF-8 plain text file, select 't' and 'u'
 
 ** Sorting todo items and items based on priority
       M-x org-sort-entries and then pick the type of entry by which you want to sort.
+
+** Group tasks into projects
+
+Some tasks show up again and again on your task list, and you know you need to do them, but you don’t know where to getting started. “TODO Write a book” is not a good task, because it’s just too big to do in one sitting and it doesn’t tell you what to do right now. Big tasks are often projects in disguise. Break down the projects into smaller tasks by adding sub-headings and more TODOs, and schedule those instead.
+
+Like this:
+
+ ** Write a book
+ *** TODO Make an outline of what to write
+ *** TODO Read sample query letters
+ *** TODO Write a query letter
+
+You can have as many active projects as you want projects at the same time. Each project contains small actions to be performed.
+
+** Using Timestamps, scheduling & deadlines
+
++Try to avoid using timestamps in projects as much as possible. The reason is simple: unless an entry is an appointment (to the dentist for instance) or has a fixed deadline (a release scheduled with a customer), you should decide what to work on depending on the current context (among other things). This also keeps the agenda clean, free of any fake or self-imposed deadline or schedule.+
+
+** Filtering projects & actions
+
+    Use sparse trees - M-x org-sparse-trees
+
+** Organize the tasks into into projects when there are more than one tasks that are related to each other
+
+** Difference between putting a normal active timestamp on a task vs putting a SCHEDULED or DEADLINE timestamp on a task
+
+| Normal active timestamps                                                       | SCHEDULED or DEADLINE timestamps                                                                      |
+|--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------|
+| For "hard landscape" for your day                                              | These are for "tickler items" that can also be done on a different day                                |
+| These tasks show up both in Org Agenda List in emacs and the exported ics file | These show up in Org Agenda List but these do not show up in exported iCal file or in Google Calendar |
