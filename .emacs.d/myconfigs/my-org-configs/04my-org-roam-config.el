@@ -40,6 +40,8 @@
 ;; 1. "org-id-get-create" to convert headings in an org file into nodes (instead of creating separate files for small sections)
 ;; 1. "org-roam-graph" to launch a graph view of the org-roam notes
 
+;; How to reload cache on-demand after making changes to files? Run: org-roam-db-sync.
+
 ;; How to rename a note with everything updated at the same time? The references don't seem to get updated. Find a good solution for this.
 
 ;; Rename it within emacs e.g. using dired.
