@@ -6,3 +6,5 @@
 
 ;; https://ox-hugo.scripter.co/doc/org-toc/
 (setq org-hugo-export-with-toc t)
+
+(setq org-hugo-base-dir "..")
