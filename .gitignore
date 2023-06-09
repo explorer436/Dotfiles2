@@ -66,10 +66,13 @@
 .dmrc
 .eclipse/
 .emacs.d/.mc-lists.el
+.emacs.d/.org-id-locations
 .emacs.d/auto-save-list
+.emacs.d/bookmarks
 .emacs.d/eln-cache/
 .emacs.d/elpa
 .emacs.d/eshell/
+.emacs.d/history
 .emacs.d/my-config.el
 .emacs.d/org-roam.db
 .emacs.d/projectile-bookmarks.eld

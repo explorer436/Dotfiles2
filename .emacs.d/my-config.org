@@ -9,7 +9,15 @@
 
     #+begin_src emacs-lisp
       (setq inhibit-startup-screen t)
+      (setq initial-buffer-choice
+        (lambda ()
+         ;; (org-agenda-list)
+         ;; (get-buffer "*Org Agenda*")
+      ))
     #+end_src
+
+    This is also called: (setq inhibit-splash-screen t)
+    They are just aliases for each other.
 
 ***** visual line mode
 
@@ -31,6 +39,7 @@
 
     Hide the menu bar, tool bar and scroll bar. Doing so early avoids ever having to see them - not even for a brief flash when starting Emacs.
     Toggle them on and off using M-x tool-bar-mode etc.
+
     #+begin_src emacs-lisp
       (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
       (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
