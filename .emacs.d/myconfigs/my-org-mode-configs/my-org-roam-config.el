@@ -68,3 +68,13 @@
           org-roam-ui-open-on-start t))
 
 ;; Just use "Meta-X org-roam-ui-open" and it will launch a tab in the browser with this url: http://localhost:35901/
+
+
+
+
+;; Plain text alternative to org-roam:
+;; Disadvantages:
+;; 1. Hard to see connections between notes/nodes.
+;; Advantages:
+;; 1. Don't have to deal with org-roam's ids and database.
+;; 1. Export to html (or whatever format) will be much more easier and straight-forward.
