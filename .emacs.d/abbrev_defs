@@ -9,7 +9,10 @@
     ("thier" "their" nil :count 0)
     ("yu" "you" nil :count 0)
     ("fllow" "follow" nil :count 0)
+    ("togehter" "together" nil :count 0)
    ))
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Abbrevs.html
 ;; https://www.emacswiki.org/emacs/AbbrevMode
+
+;; How to reload the file after making changes to it? M-x load-file init.el
