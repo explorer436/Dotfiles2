@@ -78,3 +78,5 @@
 ;; Advantages:
 ;; 1. Don't have to deal with org-roam's ids and database.
 ;; 1. Export to html (or whatever format) will be much more easier and straight-forward.
+
+;; org export to html is not working for documents with org-roam links. It errors because the document has "ids" and emacs export does not know how to interpret those ids. We have to see how it is being done in ox-hugo export.
