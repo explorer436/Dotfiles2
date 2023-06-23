@@ -12,7 +12,20 @@
 # So one could replace a corrupt .bashrc simply by overwitting from there.
 # Copy the existing raw .bashrc from /etc/skel to your home directory by
 # cp /etc/skel/.bashrc ~/
-# Make sure you put this line in .bashrc after copying it from skel
-# [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+# Make sure you put this line in .bashrc after copying it from skel: [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
+# This is to import .bash_aliases into .bashrc_personal. You don't have to import it into .bashrc again.
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+# Prerequisite: Download and put the directory there.
+export JAVA_HOME=~/Documents/jdk-18
+export PATH=$JAVA_HOME/bin:$PATH
+
+# Prerequisite: Download and put the directory there.
+export M2_HOME=/home/explorer436/Documents/apache-maven-3.9.1
+export PATH=$M2_HOME/bin:$PATH
+
+neofetch
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
