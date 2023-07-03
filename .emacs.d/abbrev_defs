@@ -2,17 +2,14 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("byu" "buy" nil :count 6)
+    ("ffice" "office" nil :count 0)
+    ("fllow" "follow" nil :count 0)
     ("ohter" "other" nil :count 0)
     ("taht" "that" nil :count 0)
     ("teh" "the" nil :count 10)
     ("tehm" "them" nil :count 0)
     ("thier" "their" nil :count 0)
-    ("yu" "you" nil :count 0)
-    ("fllow" "follow" nil :count 0)
     ("togehter" "together" nil :count 0)
+    ("yu" "you" nil :count 0)
    ))
 
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Abbrevs.html
-;; https://www.emacswiki.org/emacs/AbbrevMode
-
-;; How to reload the file after making changes to it? M-x load-file init.el
