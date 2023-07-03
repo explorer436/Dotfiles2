@@ -42,6 +42,11 @@ tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-personal-w
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
+window=5
+tmux new-window -t $session:$window -n 'nextjs-markdown-blog'
+tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/nextjs-markdown-blog' C-m
+tmux send-keys -t $session:$window 'git remote update' C-m
+tmux send-keys -t $session:$window 'git pull' C-m
 
 # And use this url in a browser: http://localhost:8080/topics to view the kafka topics
 

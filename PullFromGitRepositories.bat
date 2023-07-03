@@ -19,3 +19,7 @@ cd C:\Users\vardh\Downloads\GitRepositories\my-personal-wiki
 cd C:\Users\vardh\Downloads\GitRepositories\thoughts-notes
    git remote update
    git pull       
+
+cd C:\Users\vardh\Downloads\GitRepositories\nextjs-markdown-blog
+   git remote update
+   git pull       
