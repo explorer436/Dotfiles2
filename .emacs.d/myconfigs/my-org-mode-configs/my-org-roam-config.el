@@ -19,7 +19,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory (file-truename "~/Downloads/GitRepositories/my-personal-wiki/org_files"))
+  (org-roam-directory (file-truename "~/Downloads/GitRepositories/nextjs-markdown-blog/posts"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
    ("C-c n f" . org-roam-node-find)
    ("C-c n g" . org-roam-graph)
@@ -80,3 +80,18 @@
 ;; 1. Export to html (or whatever format) will be much more easier and straight-forward.
 
 ;; org export to html is not working for documents with org-roam links. It errors because the document has "ids" and emacs export does not know how to interpret those ids. We have to see how it is being done in ox-hugo export.
+
+
+;; Refresh org-roam-database
+;; I encountered the following message when attempting
+;; to export data:
+;;
+;; "org-export-data: Unable to resolve link: FILE-ID"
+(defun my-force-org-rebuild-cache ()
+  "Rebuild the `org-mode' and `org-roam' cache."
+  (interactive)
+  (org-id-update-id-locations)
+  ;; Note: you may need `org-roam-db-clear-all'
+  ;; followed by `org-roam-db-sync'
+  (org-roam-db-sync)
+  (org-roam-update-org-id-locations))
