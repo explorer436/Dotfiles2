@@ -16,7 +16,7 @@ cd C:\Users\vardh\Downloads\GitRepositories\my-personal-wiki
    git remote update
    git pull    
 
-cd C:\Users\vardh\Downloads\GitRepositories\thoughts-notes
+cd C:\Users\vardh\Downloads\GitRepositories\my-toolbox
    git remote update
    git pull       
 

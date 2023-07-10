@@ -31,8 +31,8 @@ tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
 window=3
-tmux new-window -t $session:$window -n 'thoughts-notes'
-tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/thoughts-notes' C-m
+tmux new-window -t $session:$window -n 'my-toolbox'
+tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-toolbox' C-m
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
