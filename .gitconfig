@@ -40,3 +40,5 @@
 	a = add
         ai = add -i
         aa = add --all
+[init]
+	defaultBranch = main
