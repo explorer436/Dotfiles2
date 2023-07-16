@@ -20,6 +20,6 @@ cd C:\Users\vardh\Downloads\GitRepositories\my-toolbox
    git remote update
    git pull       
 
-cd C:\Users\vardh\Downloads\GitRepositories\nextjs-markdown-blog
+cd C:\Users\vardh\Downloads\GitRepositories\hugo-blog
    git remote update
    git pull       
