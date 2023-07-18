@@ -37,14 +37,8 @@ tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
 window=4
-tmux new-window -t $session:$window -n 'my-personal-wiki'
-tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-personal-wiki' C-m
-tmux send-keys -t $session:$window 'git remote update' C-m
-tmux send-keys -t $session:$window 'git pull' C-m
-
-window=5
-tmux new-window -t $session:$window -n 'nextjs-markdown-blog'
-tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/nextjs-markdown-blog' C-m
+tmux new-window -t $session:$window -n 'hugo-blog'
+tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/hugo-blog' C-m
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
