@@ -17,7 +17,8 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/RecurringEvents.org")
       )
 )
 ;; C-' to cycle through the agenda files (org-cycle-agenda-files)
