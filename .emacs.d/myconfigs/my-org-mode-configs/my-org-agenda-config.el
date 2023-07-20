@@ -1,6 +1,13 @@
+;; https://karl-voit.at/2017/01/15/org-clone-subtree-with-time-shift/
+
+;; C-' to cycle through the agenda files (org-cycle-agenda-files)
+
+;; Location of the combined exported agenda file that will be exported by org-mode
 (setq org-icalendar-combined-agenda-file "~/Downloads/GitRepositories/my-personal-things/Things to do/CalendarEvents/fromEmacs.ics")
 
-;; Do not create duplicates in Google calendar when importing calendar from Org Agenda
+;; Set a UUID on each entry in the org files.
+;; Essentially, this will help with
+;; not creating duplicates in Google calendar when importing calendar from Org Agenda
 (setq org-icalendar-store-UID 'non-nil)
 
 (setq org-agenda-files
@@ -21,8 +28,6 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/RecurringEvents.org")
       )
 )
-;; C-' to cycle through the agenda files (org-cycle-agenda-files)
-
 
 (setq org-agenda-timegrid-use-ampm t)
 ;; Reference:
