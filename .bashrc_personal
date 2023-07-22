@@ -22,10 +22,10 @@ export JAVA_HOME=~/Documents/jdk-18
 export PATH=$JAVA_HOME/bin:$PATH
 
 # Prerequisite: Download and put the directory there.
-export M2_HOME=/home/explorer436/Documents/apache-maven-3.9.1
+export M2_HOME=/home/explorer436/Documents/apache-maven
 export PATH=$M2_HOME/bin:$PATH
 
 neofetch
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
