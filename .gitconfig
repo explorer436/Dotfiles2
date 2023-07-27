@@ -6,9 +6,9 @@
    [fetch]
 	prune = true
    [pull]
-	rebase = false
-        ;; Set this to false unless you are really picky about the way the git tree looks. 
-        ;; Some people prefer `merge` to `rebase` for simplicity.
+	rebase = true
+	;; Setting this to true tells git to allow fast forwards on pulls
+        ;; Set this to false unless you are really picky about the way the git tree looks. Most people prefer `merge` to `rebase` for simplicity.
    [diff]
 	colorMoved = zebra
    [color]
