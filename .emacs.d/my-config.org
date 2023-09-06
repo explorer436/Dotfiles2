@@ -143,17 +143,6 @@
       )
     #+end_src
 
-***** dracula theme
-
-    Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
-    
-    #+begin_src emacs-lisp
-      (use-package dracula-theme
-         :config
-         (load-theme 'dracula t)
-         :ensure t)
-    #+end_src
-
 ***** flex-autopair
 
     #+begin_src emacs-lisp

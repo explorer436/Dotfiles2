@@ -27,6 +27,7 @@
 ;;(load-directory "~/.emacs.d/myconfigs3")
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/my-themes.org"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -37,7 +38,7 @@
    '("81c3de64d684e23455236abde277cda4b66509ef2c28f66e059aa925b8b12534" default))
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(package-selected-packages
-   '(marginalia orderless vertico htmlize ox-hugo consult rg js-import flex-autopair tide rjsx-mode ag ripgrep org-make-toc toc-org dap-java lsp-mode helm-lsp lsp-java lsp-ui yasnippet-snippets yasnippet company evil treemacs-magit treemacs-icons-dired treemacs-projectile treemacs projectile auto-complete beacon emacs-color-themes emacs-color-theme which-key use-package try multiple-cursors magit helm haskell-mode dracula-theme avy)))
+   '(soft-morning-theme firecode-theme marginalia orderless vertico htmlize ox-hugo consult rg js-import flex-autopair tide rjsx-mode ag ripgrep org-make-toc toc-org dap-java lsp-mode helm-lsp lsp-java lsp-ui yasnippet-snippets yasnippet company evil treemacs-magit treemacs-icons-dired treemacs-projectile treemacs projectile auto-complete beacon emacs-color-themes emacs-color-theme which-key use-package try multiple-cursors magit helm haskell-mode dracula-theme avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
