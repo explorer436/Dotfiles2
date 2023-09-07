@@ -256,10 +256,10 @@
 ***** evil-mode
 
     #+begin_src emacs-lisp
-      (use-package evil
-        :config 
-          (evil-mode 1)
-        :ensure t)
+      ;; (use-package evil
+      ;;   :config 
+      ;;     (evil-mode 1)
+      ;;   :ensure t)
     #+end_src
 
 ***** try
