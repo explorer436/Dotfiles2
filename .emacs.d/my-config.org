@@ -302,8 +302,18 @@
       )
     #+end_src
 
+***** whitespace-clean-up
+
+    #+begin_src emacs-lisp
+      (use-package whitespace-cleanup-mode
+	:ensure t
+      )
+
+      (global-whitespace-cleanup-mode t)
+    #+end_src
 
 ** Custom snippets
+
 ***** auto-refresh
 
     How to have Emacs auto-refresh all buffers when files have changed on disk?
