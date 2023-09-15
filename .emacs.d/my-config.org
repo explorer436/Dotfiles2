@@ -312,6 +312,14 @@
       (global-whitespace-cleanup-mode t)
     #+end_src
 
+***** string-inflection
+
+    #+begin_src emacs-lisp
+    (use-package string-inflection
+        :ensure t
+    )
+    #+end_src
+
 ** Custom snippets
 
 ***** auto-refresh
