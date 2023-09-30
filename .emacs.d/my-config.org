@@ -510,6 +510,8 @@
 
       Instead of adding the keys to the global map, we create a minor mode and add the keys to the ~emulation-mode-map-alist~ which takes precedents over minor and major mode maps.
 
+      You can install the ~use-package~ package available from Melpa and make use of ~bind-key*~ or ~bind-keys*~ macro that's part of the ~bind-key~ package that ships with ~use-package~.
+
       #+begin_src emacs-lisp
       (define-minor-mode my-override-mode
         "Overrides all major and minor mode keys" t)
