@@ -42,11 +42,17 @@
 
 ;; How to reload cache on-demand after making changes to files? Run: org-roam-db-sync.
 
-;; How to rename a note with everything updated at the same time? The references don't seem to get updated. Find a good solution for this.
+;; How to rename a note with everything updated at the same time?
+;; The references don't seem to get updated.
 
-;; Rename it within emacs e.g. using dired.
-;; Org-roam notices when renaming happens within emacs and will update your links accordingly.
-;; If you do it through a file editor, it has no idea!
+;; Solution:
+;; 1. Rename the title in the post.
+;;    1. Rename it within emacs e.g. using dired.
+;;    2. Org-roam notices when renaming happens within emacs and will update your links accordingly.
+;;    3. If you do it through a file editor, it has no idea!
+;; 2. Rename the file to match the title.
+;; 3. If you are converting the org files into markdown files, delete the markdown file with the previous name.
+
 
 ;; Rename the #+TITLE in your file and you should see the change in org-roam-find-file. You shouldn’t need to run org-roam-db-build-cache.
 
