@@ -17,5 +17,5 @@ git branch main -u remotes/origin/main
 
 ** Steps to do after setting up this repository in computer
 
-Copy the .bashrc from skel and import your customizations into it.
-Look at .bashrc_personal for details.
+1. Copy the .bashrc from skel and import your customizations into it.
+1. The details about how to do it are in ~.bashrc_personal~
