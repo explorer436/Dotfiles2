@@ -29,6 +29,9 @@
       )
 )
 
+;; A week starts on Sunday as opposed to Monday:
+(setq org-agenda-start-on-weekday 0)
+
 (setq org-agenda-timegrid-use-ampm t)
 ;; Reference:
 ;; (defcustom org-agenda-timegrid-use-ampm nil
