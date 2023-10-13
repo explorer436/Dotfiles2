@@ -45,3 +45,8 @@
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
+
+;; Customizations
+;; If you don't want to see the filename in org-agenda-list,
+;; and want to see something else,
+;; you can change that behavior by adding a CATEGORY property for the headings in question.
