@@ -321,6 +321,21 @@
     )
     #+end_src
 
+***** emacs-calfw
+
+    https://github.com/kiwanami/emacs-calfw
+
+    #+begin_src emacs-lisp
+    ;; (require 'calfw-org) 
+    (use-package 'calfw
+        :ensure t
+    )
+    (use-package 'calfw-org
+        :ensure t
+    )
+    #+end_src
+
+    Then, ~M-x cfw:open-org-calendar~
 
 ** Custom snippets
 
