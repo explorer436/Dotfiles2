@@ -25,6 +25,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 export M2_HOME=/home/explorer436/Documents/apache-maven
 export PATH=$M2_HOME/bin:$PATH
 
+export PATH=/home/explorer436/.cargo/bin:$PATH
+
 neofetch
 
 # Load Angular CLI autocompletion.
