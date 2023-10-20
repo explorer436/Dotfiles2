@@ -72,6 +72,28 @@
 	;; (dired-hide-details-mode 1)
       #+end_src
 
+***** Change the behaviour of org-agenda-goto to open org-file in a new frame
+
+      Reference: https://stackoverflow.com/questions/56628735/how-to-change-the-behaviour-of-org-agenda-goto-to-open-org-file-in-a-new-frame
+
+      You can use advice to temporarily redefine switch-to-buffer-other-window using cl-letf. Assuming your on at least emacs 25.1 you can use define-advice, eg.
+
+      (define-advice org-agenda-goto (:around (orig-fn &rest args) "new-frame")
+        (cl-letf (((symbol-function 'switch-to-buffer-other-window)
+                   (symbol-function 'switch-to-buffer-other-frame)))
+          (apply orig-fn args)))
+      In the advice orig-fn is a placeholder to org-agenda-goto. Alternatively, you could temporarily override display-buffer's function (there are a number of options you could use here -- see help for display-buffer), eg.
+      
+      (define-advice org-agenda-goto (:around (orig-fn &rest args) "new-frame")
+        (let ((display-buffer-overriding-action '(display-buffer-pop-up-frame)))
+          (apply orig-fn args)))
+
+      #+begin_src emacs-lisp
+      (define-advice org-agenda-goto (:around (org-agenda-goto &rest args) "new-frame")
+        (cl-letf (((symbol-function 'switch-to-buffer-other-window)
+                   (symbol-function 'switch-to-buffer-other-frame)))
+          (apply org-agenda-goto args)))
+      #+end_src
 
 ** Packages
 
