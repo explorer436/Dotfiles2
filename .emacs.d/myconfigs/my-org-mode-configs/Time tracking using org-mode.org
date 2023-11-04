@@ -1,0 +1,9 @@
+;; https://www.emacswiki.org/emacs/CategoryTimeTracking
+;; https://orgmode.org/manual/Clocking-Work-Time.html
+;; https://orgmode.org/manual/Clocking-commands.html
+;; https://thewanderingcoder.com/2015/02/beginning-emacs-org-mode-i/
+
+;; Important functions:
+;; Put the cursor on a task in an org file and call these functions
+;; 1. org-clock-in
+;; 1. org-clock-out

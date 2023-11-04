@@ -10,10 +10,11 @@
     #+begin_src emacs-lisp
       (setq inhibit-startup-screen t)
       (setq initial-buffer-choice
-        (lambda ()
-         ;; (org-agenda-list)
-         ;; (get-buffer "*Org Agenda*")
+	(lambda ()
+	 ;; (org-agenda-list)
+	 ;; (get-buffer "*Org Agenda*")
       ))
+      (setq visible-bell 1)
     #+end_src
 
     This is also called: (setq inhibit-splash-screen t)
