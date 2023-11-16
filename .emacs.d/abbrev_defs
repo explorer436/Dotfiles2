@@ -15,5 +15,7 @@
     ("togehter" "together" nil :count 0)
     ("yu" "you" nil :count 0)
     ("yuo" "you" nil :count 0)
+    ("waht" "what" nil :count 0)
+    ("ti" "it" nil :count 0)
    ))
 
