@@ -13,9 +13,9 @@
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org"
 	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/BookNotes.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org")
+	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Reading Material.org"
@@ -24,8 +24,9 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org")
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedMiscellaneousTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
 )
 
@@ -45,6 +46,8 @@
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
+(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
 ;; Customizations
 ;; If you don't want to see the filename in org-agenda-list,
