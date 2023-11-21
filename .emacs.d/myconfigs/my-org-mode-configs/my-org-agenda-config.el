@@ -29,6 +29,18 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
 )
+;; Why is refiling to specific files (e.g. one for programming) important?
+;; Because, if we refile everything to one file,
+;; it could be difficult to look at the tasks that are completed for one topic (like programming)
+;; and get an understanding of the progress made in that area.
+
+
+; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
+(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
+
 
 ;; A week starts on Sunday as opposed to Monday:
 (setq org-agenda-start-on-weekday 0)
@@ -42,12 +54,6 @@
 ;;   :type 'boolean)
 
 
-
-; Targets include this file and any file contributing to the agenda - up to 9 levels deep
-(setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (org-agenda-files :maxlevel . 9))))
-(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
-(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
 ;; Customizations
 ;; If you don't want to see the filename in org-agenda-list,
