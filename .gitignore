@@ -66,6 +66,7 @@
 .dmrc
 .eclipse/
 .emacs.d/.mc-lists.el
+.emacs.d/elfeed/
 .emacs.d/.org-id-locations
 .emacs.d/auto-save-list
 .emacs.d/bookmarks

@@ -360,6 +360,34 @@
 
     Then, ~M-x cfw:open-org-calendar~
 
+***** elfeed and elfeed-org
+
+      https://github.com/skeeto/elfeed
+
+      Configure Elfeed
+      #+begin_src emacs-lisp
+      (use-package elfeed
+        :custom
+        (elfeed-db-directory
+         (expand-file-name "elfeed" user-emacs-directory))
+         (elfeed-show-entry-switch 'display-buffer)
+      )
+      #+end_src
+
+      https://github.com/remyhonig/elfeed-org
+
+      Optionally specify a number of files containing elfeed configuration.
+      If not set then the location below is used.
+      (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+      #+begin_src emacs-lisp
+      (use-package elfeed-org
+          :config
+          (elfeed-org)
+          :custom
+          (rmh-elfeed-org-files (list "~/Downloads/GitRepositories/my-personal-things/Interesting articles/RssFeedList.org")))
+      #+end_src
+
+
 ** Custom snippets
 
 ***** auto-refresh
