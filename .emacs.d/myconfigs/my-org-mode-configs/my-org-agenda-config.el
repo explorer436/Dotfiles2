@@ -25,7 +25,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedMiscellaneousTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
 )
