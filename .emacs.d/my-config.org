@@ -372,6 +372,8 @@
          (expand-file-name "elfeed" user-emacs-directory))
          (elfeed-show-entry-switch 'display-buffer)
       )
+
+      (add-hook 'emacs-startup-hook (lambda () (run-at-time 5 5 'elfeed-update)))
       #+end_src
 
       https://github.com/remyhonig/elfeed-org
