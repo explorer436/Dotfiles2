@@ -1,4 +1,9 @@
+;; Read:
+;; https://orgmode.org/manual/Agenda-Commands.html
 ;; https://karl-voit.at/2017/01/15/org-clone-subtree-with-time-shift/
+
+;; How to
+;; Mark task status right from the agenda view without having to go into the file: Just use the letter "t"
 
 ;; C-' to cycle through the agenda files (org-cycle-agenda-files)
 
