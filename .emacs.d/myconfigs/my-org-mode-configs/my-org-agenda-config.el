@@ -17,21 +17,26 @@
 
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
-	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/BookNotes.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/birthdays/Birthdays.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/CompletedMiscellaneousTasks.org")
-      '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Reading Material.org"
+	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Daily reading.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
+      '("~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Daily reading.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
