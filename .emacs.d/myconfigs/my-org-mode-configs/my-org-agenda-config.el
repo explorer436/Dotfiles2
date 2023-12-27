@@ -24,7 +24,7 @@
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Reading Material.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Daily article for today.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Daily reading.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
