@@ -15,6 +15,16 @@
 ;; not creating duplicates in Google calendar when importing calendar from Org Agenda
 (setq org-icalendar-store-UID 'non-nil)
 
+;; Each state with ! is recorded as state change. In this case, we are logging TODO and DONE states
+(setq org-todo-keywords
+;;      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "NEXT(n)" "CANCELED(c)")))
+      '((sequence "TODO(t!)" "NEXT(n)" "STARTED(s)" "SOMEDAY(l)" "WAITING(w)" "|" "DONE(d!)" "CANC(c!)")))
+
+;; Log TODO creation also
+(setq org-treat-insert-todo-heading-as-state-change t)
+;; Log into LOGBOOK drawer
+(setq org-log-into-drawer t)
+
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
@@ -22,6 +32,7 @@
 	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
@@ -32,6 +43,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"

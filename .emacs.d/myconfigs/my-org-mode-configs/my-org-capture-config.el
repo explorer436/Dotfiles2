@@ -5,7 +5,7 @@
 (setq org-capture-templates
   (quote
     (
-      ("t" "todo" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/01ToDoList.org")
+      ("t" "todo" entry (file "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org")
          "\n* %^{Please write task heading here} \n\nCREATED ON:%U\n\n %?")
       ("q" "quote" entry (file "~/Downloads/GitRepositories/my-personal-wiki/raw_org_files/20230608153744-quotes_and_proverbs.org")
          "\n* %? \n")
