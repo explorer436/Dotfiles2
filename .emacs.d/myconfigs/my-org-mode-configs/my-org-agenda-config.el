@@ -18,7 +18,7 @@
 ;; Each state with ! is recorded as state change. In this case, we are logging TODO and DONE states
 (setq org-todo-keywords
 ;;      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "NEXT(n)" "CANCELED(c)")))
-      '((sequence "TODO(t!)" "NEXT(n)" "STARTED(s)" "SOMEDAY(l)" "WAITING(w)" "|" "DONE(d!)" "CANC(c!)")))
+      '((sequence "TODO(t!)" "NEXT(n)" "STARTED(s)" "SOMEDAY(l)" "WAITING(w)" "|" "DONE(d!)" "NOT DONE(N!)" "CANC(c!)")))
 
 ;; Log TODO creation also
 (setq org-treat-insert-todo-heading-as-state-change t)
