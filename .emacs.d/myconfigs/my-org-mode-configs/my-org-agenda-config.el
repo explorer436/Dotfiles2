@@ -81,3 +81,6 @@
 ;; If you don't want to see the filename in org-agenda-list,
 ;; and want to see something else,
 ;; you can change that behavior by adding a CATEGORY property for the headings in question.
+
+;; How to do?
+;; Color coding for agenda list
