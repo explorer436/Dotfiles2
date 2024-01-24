@@ -42,11 +42,13 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Daily reading.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Health and well being.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Wellbeing.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Personal Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Saturday.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
