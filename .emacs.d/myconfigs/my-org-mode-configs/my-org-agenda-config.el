@@ -38,6 +38,7 @@
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
             "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Saturday.org"
+            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
 	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
 	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
@@ -51,6 +52,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Saturday.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
