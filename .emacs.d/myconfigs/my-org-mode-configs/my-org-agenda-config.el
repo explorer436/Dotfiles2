@@ -54,6 +54,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Saturday.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Bad habits that I need to quit.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/nextcloud-inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
