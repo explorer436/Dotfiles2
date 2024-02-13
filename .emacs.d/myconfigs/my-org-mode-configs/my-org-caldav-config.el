@@ -31,16 +31,22 @@
 
   :config
   (setq org-icalendar-alarm-time 1)
+
   ;; This makes sure to-do items as a category can show up on the calendar
   (setq org-icalendar-include-todo t)
+
   ;; This ensures all org "deadlines" show up, and show up as due dates
   (setq org-icalendar-use-deadline '(event-if-todo event-if-not-todo todo-due))
+
   ;; This ensures "scheduled" org items show up, and show up as start times
   (setq org-icalendar-use-scheduled '(todo-start event-if-todo event-if-not-todo))
+
   ;; Add the delayed save hook with a five minute idle timer
   (add-hook 'after-save-hook
 	    (lambda ()
 	      (when (eq major-mode 'org-mode)
 		(org-caldav-sync-with-delay 300))))
+
   ;; Add the close emacs hook
-  (add-hook 'kill-emacs-hook 'org-caldav-sync-at-close))
+  ;; (add-hook 'kill-emacs-hook 'org-caldav-sync-at-close)
+)
