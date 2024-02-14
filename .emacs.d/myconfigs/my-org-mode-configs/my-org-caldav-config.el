@@ -14,6 +14,7 @@
   ;; the user.
   (defvar org-caldav-sync-timer nil
      "Timer that `org-caldav-push-timer' used to reschedule itself, or nil.")
+
   (defun org-caldav-sync-with-delay (secs)
     (when org-caldav-sync-timer
       (cancel-timer org-caldav-sync-timer))
@@ -26,8 +27,8 @@
 	org-caldav-files org-agenda-files
 	org-caldav-inbox "~/Downloads/GitRepositories/my-personal-things/Things to do/nextcloud-inbox.org")
 
-  (setq org-caldav-backup-file "~/org-caldav/org-caldav-backup.org")
-  (setq org-caldav-save-directory "~/org-caldav/")
+  (setq org-caldav-backup-file "~/.emacs.d/org-caldav/org-caldav-backup.org")
+  (setq org-caldav-save-directory "~/.emacs.d/org-caldav/")
 
   :config
   (setq org-icalendar-alarm-time 1)
