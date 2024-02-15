@@ -14,6 +14,7 @@
   ;; the user.
   (defvar org-caldav-sync-timer nil
      "Timer that `org-caldav-push-timer' used to reschedule itself, or nil.")
+
   (defun org-caldav-sync-with-delay (secs)
     (when org-caldav-sync-timer
       (cancel-timer org-caldav-sync-timer))
@@ -26,21 +27,27 @@
 	org-caldav-files org-agenda-files
 	org-caldav-inbox "~/Downloads/GitRepositories/my-personal-things/Things to do/nextcloud-inbox.org")
 
-  (setq org-caldav-backup-file "~/org-caldav/org-caldav-backup.org")
-  (setq org-caldav-save-directory "~/org-caldav/")
+  (setq org-caldav-backup-file "~/.emacs.d/org-caldav/org-caldav-backup.org")
+  (setq org-caldav-save-directory "~/.emacs.d/org-caldav/")
 
   :config
   (setq org-icalendar-alarm-time 1)
+
   ;; This makes sure to-do items as a category can show up on the calendar
   (setq org-icalendar-include-todo t)
+
   ;; This ensures all org "deadlines" show up, and show up as due dates
   (setq org-icalendar-use-deadline '(event-if-todo event-if-not-todo todo-due))
+
   ;; This ensures "scheduled" org items show up, and show up as start times
   (setq org-icalendar-use-scheduled '(todo-start event-if-todo event-if-not-todo))
+
   ;; Add the delayed save hook with a five minute idle timer
   (add-hook 'after-save-hook
 	    (lambda ()
 	      (when (eq major-mode 'org-mode)
 		(org-caldav-sync-with-delay 300))))
+
   ;; Add the close emacs hook
-  (add-hook 'kill-emacs-hook 'org-caldav-sync-at-close))
+  ;; (add-hook 'kill-emacs-hook 'org-caldav-sync-at-close)
+)
