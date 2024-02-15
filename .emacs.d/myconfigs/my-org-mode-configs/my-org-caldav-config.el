@@ -15,12 +15,12 @@
   (defvar org-caldav-sync-timer nil
      "Timer that `org-caldav-push-timer' used to reschedule itself, or nil.")
 
-  (defun org-caldav-sync-with-delay (secs)
-    (when org-caldav-sync-timer
-      (cancel-timer org-caldav-sync-timer))
-    (setq org-caldav-sync-timer
-	  (run-with-idle-timer
-	   (* 1 secs) nil 'org-caldav-sync)))
+  ;; (defun org-caldav-sync-with-delay (secs)
+  ;;   (when org-caldav-sync-timer
+  ;;     (cancel-timer org-caldav-sync-timer))
+  ;;   (setq org-caldav-sync-timer
+  ;;     (run-with-idle-timer
+  ;;      (* 1 secs) nil 'org-caldav-sync)))
 
   (setq org-caldav-calendar-id "personal"
 	org-caldav-url "https://nextcloud.explorer436.com/remote.php/dav/calendars/admin"
