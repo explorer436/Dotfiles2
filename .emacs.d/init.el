@@ -37,8 +37,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("81c3de64d684e23455236abde277cda4b66509ef2c28f66e059aa925b8b12534" default))
  '(elfeed-feeds '("https://blog.osm-ai.net/feed.xml"))
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(package-selected-packages
