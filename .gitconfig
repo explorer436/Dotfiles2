@@ -14,7 +14,8 @@
    [color]
 	ui = auto
    [core]
-	autocrlf = true
+	autocrlf = input
+	;; set autocrlf = true "only in Windows computers"
    [push]
 	default = simple
    [alias]
