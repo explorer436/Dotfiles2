@@ -369,14 +369,14 @@
 
       Configure Elfeed
       #+begin_src emacs-lisp
-      (use-package elfeed
-        :custom
-        (elfeed-db-directory
-         (expand-file-name "elfeed" user-emacs-directory))
-         (elfeed-show-entry-switch 'display-buffer)
-      )
-
-      (add-hook 'emacs-startup-hook (lambda () (run-at-time 5 5 'elfeed-update)))
+      ;; (use-package elfeed
+      ;;   :custom
+      ;;   (elfeed-db-directory
+      ;;    (expand-file-name "elfeed" user-emacs-directory))
+      ;;    (elfeed-show-entry-switch 'display-buffer)
+      ;; )
+      ;; 
+      ;; (add-hook 'emacs-startup-hook (lambda () (run-at-time 5 5 'elfeed-update)))
       #+end_src
 
       https://github.com/remyhonig/elfeed-org
@@ -385,13 +385,12 @@
       If not set then the location below is used.
       (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
       #+begin_src emacs-lisp
-      (use-package elfeed-org
-          :config
-          (elfeed-org)
-          :custom
-          (rmh-elfeed-org-files (list "~/Downloads/GitRepositories/my-personal-things/Interesting articles/RssFeedList.org")))
+      ;; (use-package elfeed-org
+      ;;     :config
+      ;;     (elfeed-org)
+      ;;     :custom
+      ;;     (rmh-elfeed-org-files (list "~/Downloads/GitRepositories/my-personal-things/Interesting articles/RssFeedList.org")))
       #+end_src
-
 
 ** Custom snippets
 

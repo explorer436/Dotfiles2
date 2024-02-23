@@ -21,5 +21,7 @@
     ("waht" "what" nil :count 0)
     ("ti" "it" nil :count 0)
     ("aroung" "around" nil :count 0)
+    ("yur" "your" nil :count 0)
+    ("hte" "the" nil :count 0)
    ))
 

@@ -57,6 +57,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/nextcloud-inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       )
 )
