@@ -42,6 +42,7 @@
 .config/galculator
 .config/gconf
 .config/gsimplecal/config
+.config/gthumb/
 .config/gtk-2.0/
 .config/gtk-3.0
 .config/gtk-4.0/
@@ -136,8 +137,7 @@
 .vim/plugged/
 .viminfo
 .vscode-oss/argv.json
-.vscode-oss/extensions/github.github-vscode-theme-6.3.4-universal/
-.vscode-oss/extensions/vscodevim.vim-1.27.2-universal/
+.vscode-oss/extensions/
 .xinitrc
 .xmonad/build-x86_64-linux/Main.hi
 .xmonad/build-x86_64-linux/Main.o
@@ -161,8 +161,10 @@
 .xsessionrc
 .zshenv
 .zshrc
+/.FBReader/
 /.emacs.d/session.*
 /.sudo_as_admin_successful
+/Calibre Library/
 /ps-pulse-ubuntu-debian.deb
 Desktop/*
 Documents/
@@ -175,5 +177,3 @@ eclipse-workspace/
 eclipse/
 paru/
 snap/
-/Calibre Library/
-/.FBReader/
