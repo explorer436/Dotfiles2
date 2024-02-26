@@ -23,5 +23,10 @@
     ("aroung" "around" nil :count 0)
     ("yur" "your" nil :count 0)
     ("hte" "the" nil :count 0)
+    ("didnt" "didn't" nil :count 0)
+    ("moeny" "money" nil :count 0)
+    ("yurself" "yourself" nil :count 0)
+    ("workth" "worth" nil :count 0)
+    ("jsut" "just" nil :count 0)
    ))
 

@@ -311,6 +311,8 @@
 
 ***** yasnippet
 
+    https://github.com/joaotavora/yasnippet
+
     If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
     
     #+begin_src emacs-lisp
@@ -325,6 +327,8 @@
         (yas-global-mode 1)
       )
     #+end_src
+
+    To look at the list of available snippets, use emacs ~describe~ function.
 
 ***** whitespace-clean-up
 
