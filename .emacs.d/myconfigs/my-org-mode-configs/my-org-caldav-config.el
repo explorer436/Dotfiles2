@@ -51,3 +51,20 @@
   ;; Add the close emacs hook
   ;; (add-hook 'kill-emacs-hook 'org-caldav-sync-at-close)
 )
+
+;; My custom function to call org-caldav-sync-everything first and then call org-caldav-sync
+(defun my-caldav-sync (pref)
+  (interactive "spref")
+  (org-caldav-delete-everything pref)
+  (org-caldav-sync)
+)
+
+;; (defun sort-and-dedup (beg end)
+;;    (interactive <mumble>)
+;;    (sort-lines nil beg end)
+;;    (delete-duplicate-lines beg end))
+
+;; (defun doodlebug (a b c)
+;;   "Nonce function"
+;;   (interactive "sAdjective: \nsNoun: \nsExclamation: \n")
+;;   (message "Its a %s thing, this %s, so it is, %s" a b c))

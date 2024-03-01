@@ -505,6 +505,7 @@
             (clipboard-kill-region (point-min) (point-max)))
           (message filename))))
     #+end_src
+
 ***** Open new lines above or below the current line
 
     With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
