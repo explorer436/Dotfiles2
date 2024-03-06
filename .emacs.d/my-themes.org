@@ -3,10 +3,10 @@
     Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
     
     #+begin_src emacs-lisp
-    ;; (use-package dracula-theme
-    ;;    :config
-    ;;    (load-theme 'dracula t)
-    ;;    :ensure t)
+    (use-package dracula-theme
+       :config
+       (load-theme 'dracula t)
+       :ensure t)
     #+end_src
 
 ***** firecode-theme
@@ -25,3 +25,11 @@
      ;;    :ensure t)
     #+end_src
 
+***** modus-vivendi-tinted
+    #+begin_src emacs-lisp
+    ;; (use-package modus-themes
+    ;;    :ensure t
+    ;;    :config
+    ;;    (load-theme 'modus-vivendi-tinted t)
+    ;; )
+    #+end_src
