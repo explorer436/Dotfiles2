@@ -2,7 +2,6 @@
 
 ** General settings
 
-
 *** Start-up behavior
 
 ***** Start-up screen
