@@ -17,3 +17,6 @@
   (org-timeblock)
   (org-timeblock-toggle-timeblock-list)
 )
+
+;; How can I show the Org-mode agenda on Emacs start-up?
+(add-hook 'after-init-hook 'my-custom-agenda-view)
