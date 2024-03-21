@@ -8,4 +8,12 @@
 
 (use-package org-timeblock
   :ensure t
-  :quelpa (org-timeblock :fetcher github :repo "ichernyshovvv/org-timeblock"))
+  :quelpa (org-timeblock :fetcher github :repo "ichernyshovvv/org-timeblock")
+)
+
+(defun my-custom-agenda-view ()
+  "Launch org-timeblock and org-timeblock-toggle-timeblock-list simulataneously"
+  (interactive)
+  (org-timeblock)
+  (org-timeblock-toggle-timeblock-list)
+)
