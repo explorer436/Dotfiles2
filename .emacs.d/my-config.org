@@ -31,7 +31,7 @@
 ***** Customize line numbers
 
     #+begin_src emacs-lisp
-      (global-display-line-numbers-mode 0) ;; disable line numbers
+      (global-display-line-numbers-mode 1) ;; disable line numbers
       ;; (global-display-line-numbers-mode) ;; enable line numbers
       (setq display-line-numbers-type 'relative)
     #+end_src
