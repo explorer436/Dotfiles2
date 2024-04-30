@@ -22,6 +22,8 @@
 (setq org-todo-keywords
 ;;      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "NEXT(n)" "CANCELED(c)")))
       '((sequence "TODO(t!)" "NEXT(n)" "STARTED(s)" "SOMEDAY(l)" "WAITING(w)" "|" "DONE(d!)" "NOT DONE(N!)" "CANCELLED(c!)")))
+;; How do we refresh the list of todo-keywords in a file after making changes in that specific file?
+;; M-x org-mode-restart
 
 ;; Log TODO creation also
 (setq org-treat-insert-todo-heading-as-state-change t)
