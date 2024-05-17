@@ -129,6 +129,7 @@
 .redhat/
 .rustup/
 .screenrc
+.sdkman/
 .ssh/*
 .stack/
 .swt/
@@ -162,6 +163,8 @@
 .zshenv
 .zshrc
 /.FBReader/
+/.config/lapce-stable/
+/.elfeed/
 /.emacs.d/session.*
 /.sudo_as_admin_successful
 /Calibre Library/
@@ -177,5 +180,3 @@ eclipse-workspace/
 eclipse/
 paru/
 snap/
-/.config/lapce-stable/
-/.elfeed/
