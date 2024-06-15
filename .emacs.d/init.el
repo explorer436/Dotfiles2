@@ -32,6 +32,15 @@
 (org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/my-themes.org"))
 
+;; https://orgmode.org/manual/Evaluating-Code-Blocks.html
+;; https://orgmode.org/manual/Languages.html
+(org-babel-do-load-languages
+  'org-babel-load-languages '(
+    (haskell . t)
+    (python . t)
+  )
+)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
