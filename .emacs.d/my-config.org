@@ -324,14 +324,18 @@
     
     #+begin_src emacs-lisp
       (add-to-list 'load-path
-                    "~/.emacs.d/plugins/yasnippet")
+        "~/.emacs.d/plugins/yasnippet")
       (use-package yasnippet
-        :ensure t
-        :config
-          (use-package yasnippet-snippets
-            :ensure t)
-        (yas-reload-all) 
-        (yas-global-mode 1)
+	:ensure t
+	:config
+	  (use-package yasnippet-snippets
+	    :ensure t)
+
+	(setq yas-snippet-dirs
+	'("~/.emacs.d/snippets"))                 ;; personal snippets
+
+	(yas-reload-all)
+	(yas-global-mode 1)
       )
     #+end_src
 
@@ -357,7 +361,7 @@
 
 ***** emacs-calfw
 
-    https://github.com/kiwanami/emacs-calfw
+    https://gitnhub.com/kiwanami/emacs-calfw
 
     
 

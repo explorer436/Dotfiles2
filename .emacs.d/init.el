@@ -51,7 +51,9 @@
  '(package-selected-packages
    '(quelpa-use-package org-timeblock org-modern org-caldav elfeed-org elfeed calfw-org calfw org-tree-slide string-inflection embark-consult embark whitespace-cleanup-mode soft-morning-theme firecode-theme marginalia orderless vertico htmlize ox-hugo consult rg js-import flex-autopair tide rjsx-mode ag ripgrep org-make-toc toc-org dap-java lsp-mode helm-lsp lsp-java lsp-ui yasnippet-snippets yasnippet company evil treemacs-magit treemacs-icons-dired treemacs-projectile treemacs projectile auto-complete beacon emacs-color-themes emacs-color-theme which-key use-package try multiple-cursors magit helm haskell-mode dracula-theme avy))
  '(safe-local-variable-values
-   '((org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/my-personal-things/finances/literacy/org-roam.db")
+   '((org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/mindset-notes/org/org-roam.db")
+     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/mindset-notes/org")
+     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/my-personal-things/finances/literacy/org-roam.db")
      (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/my-personal-things/finances/literacy"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
