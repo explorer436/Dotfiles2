@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: my-haskell-snippet
+# key: myhaskellsnippet
+# type: snippet
+# To use this, type the word myhaskellsnippet in a buffer and hit tab.
+# --
+
+#+begin_src haskell :exports both :results output
+
+#+end_src
