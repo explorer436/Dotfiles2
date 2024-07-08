@@ -64,7 +64,8 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/nextcloud-inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
       )
 )
 ;; Why is refiling to specific files (e.g. one for programming) important?

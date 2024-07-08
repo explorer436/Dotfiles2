@@ -225,10 +225,10 @@
     #+begin_src emacs-lisp
       ;; (require 'ob-haskell)
 
-      (use-package haskell-mode
-	:ensure t
-	:mode "\\.hs\\'"
-	:hook (haskell-mode . turn-on-haskell-indent))
+      ;; (use-package haskell-mode
+      ;;  :ensure t
+      ;;  :mode "\\.hs\\'"
+      ;;  :hook (haskell-mode . turn-on-haskell-indent))
 
       ;; Prerequisite: stack needs to be installed and available
       ;; (setq haskell-process-type 'stack-ghci)
