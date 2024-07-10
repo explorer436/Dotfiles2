@@ -23,3 +23,13 @@
 ;; https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings
 ;; https://en.wikipedia.org/wiki/Commonly_misspelled_English_words
 
+;; Use case 1 - fixing incorrectly typed spellings for words
+;; How to add an abbrev to the global file on the file?
+;; Lets say, you wanted to type one word, but incorrectly typed some other spelling of that word.
+;; What I shouldn't do is, remove the word and then type the spelling correctly again.
+;; What I should do is, put the cursor after the incorrectly typed spelling, M-x inverse-add-global-abbrev and then type the correct spelling in the buffer.
+;; This will save the incorrect spelling as an abbev in the global abbreviations file and emacs will fix the spelling for us everytime we type that spelling incorrectly.
+
+;; Use case 2 - notice that is taking too much time to type and then add an abbrev for it.
+;; Put your cursor after some text in a buffer and call the function "M-x add-global-abbrev". And type a shortcut for that difficult to type text.
+;; This will be saved to the global abbrev file and you can just use the shortcut from now on instead of typing the whole text again.
