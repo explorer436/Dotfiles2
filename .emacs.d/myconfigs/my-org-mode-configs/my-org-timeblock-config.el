@@ -11,12 +11,13 @@
   :quelpa (org-timeblock :fetcher github :repo "ichernyshovvv/org-timeblock")
 )
 
-(defun my-custom-agenda-view ()
+(defun my-timeblock-views ()
   "Launch org-timeblock and org-timeblock-toggle-timeblock-list simulataneously"
   (interactive)
   (org-timeblock)
   (org-timeblock-toggle-timeblock-list)
+  (kill-buffer "*org-timeblock*")
 )
 
 ;; How can I show the Org-mode agenda on Emacs start-up?
-(add-hook 'after-init-hook 'my-custom-agenda-view)
+(add-hook 'after-init-hook 'my-timeblock-views)
