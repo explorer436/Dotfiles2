@@ -388,14 +388,14 @@
     
 
     #+begin_src emacs-lisp
-    (require 'calfw) 
-    (require 'calfw-org) 
-;;    (use-package 'calfw
-;;        :ensure t
-;;    )
-;;    (use-package 'calfw-org
-;;        :ensure t
-;;    )
+    ;; (require 'calfw) 
+    ;; (require 'calfw-org) 
+      (use-package calfw
+          :ensure t
+      )
+      (use-package calfw-org
+          :ensure t
+      )
     #+end_src
 
     Then, ~M-x cfw:open-org-calendar~
