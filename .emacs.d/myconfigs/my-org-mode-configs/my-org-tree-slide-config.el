@@ -1,4 +1,5 @@
 (use-package org-tree-slide
+  :ensure t
   :custom
   (org-image-actual-width nil))
 ;; do not let large images take up the entire screen or more size than the screen.
