@@ -1,8 +1,10 @@
 ;;-*-coding: utf-8;-*-
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("abut" "about" nil :count 1)
     ("ahve" "have" nil :count 1)
     ("aroung" "around" nil :count 0)
+    ("atht" "that" nil :count 1)
     ("byu" "buy" nil :count 6)
     ("cant" "can't" nil :count 1)
     ("cn" "can" nil :count 1)
@@ -22,13 +24,14 @@
     ("ot" "to" nil :count 1)
     ("saed" "saved" nil :count 1)
     ("taht" "that" nil :count 10)
+    ("tat" "that" nil :count 1)
     ("teh" "the" nil :count 11)
     ("tehm" "them" nil :count 0)
     ("tehy" "they" nil :count 1)
     ("theri" "their" nil :count 0)
     ("thier" "their" nil :count 0)
     ("thsi" "This" nil :count 1)
-    ("tht" "that" nil :count 1)
+    ("tht" "that" nil :count 2)
     ("thta" "that" nil :count 1)
     ("ti" "it" nil :count 1)
     ("togehter" "together" nil :count 0)
