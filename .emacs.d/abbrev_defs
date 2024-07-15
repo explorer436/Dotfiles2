@@ -3,6 +3,7 @@
   '(
     ("abut" "about" nil :count 1)
     ("ahve" "have" nil :count 1)
+    ("aobut" "about" nil :count 1)
     ("aroung" "around" nil :count 0)
     ("atht" "that" nil :count 1)
     ("byu" "buy" nil :count 6)
@@ -16,6 +17,7 @@
     ("fro" "for" nil :count 1)
     ("globla" "global" nil :count 2)
     ("hte" "the" nil :count 1)
+    ("htis" "this" nil :count 1)
     ("hve" "have" nil :count 0)
     ("ive" "I have" nil :count 6)
     ("jsut" "just" nil :count 0)
