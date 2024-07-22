@@ -8,13 +8,14 @@
 ;; C-' to cycle through the agenda files (org-cycle-agenda-files)
 
 ;; How can I show the Org-mode agenda on Emacs start-up?
-;; (add-hook 'after-init-hook 'my-custom-agenda-views)
+;; (add-hook 'after-init-hook 'my-agenda-view)
 
-(defun my-custom-agenda-views ()
+(defun my-agenda-view ()
   "Launch org-timeblock and org-timeblock-toggle-timeblock-list simulataneously"
   (interactive)
   (org-agenda-list)
   ;; (org-agenda-day-view)
+  (org-agenda-day-view)
 )
 
 ;; Location of the combined exported agenda file that will be exported by org-mode
