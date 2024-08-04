@@ -69,6 +69,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Saturday.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Wellbeing.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/NearFutureTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/nextcloud-inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
