@@ -65,6 +65,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Recurring personal Tasks.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Pending menial tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/ProgrammingTasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Saturday.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Wellbeing.org"
