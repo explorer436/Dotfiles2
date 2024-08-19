@@ -58,7 +58,7 @@
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/Bad habits that I need to quit.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/BirthdaysAndImportantEvents.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/One article for every day.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Book reading for every day.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Books.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance Tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
