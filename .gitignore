@@ -24,6 +24,7 @@
 .config/JetBrains/
 .config/Kvantum
 .config/Postman/
+.config/Proton
 .config/QtProject.conf
 .config/Thunar
 .config/Trolltech.conf
@@ -92,6 +93,7 @@
 .conkyrc
 .dmrc
 .eclipse/
+.emacs.d/.org-id-locations
 .emacs.d/auto-save-list
 .emacs.d/auto-save-list
 .emacs.d/elpa
