@@ -1,19 +1,33 @@
-* How to git clone into home directory in Linux
+* First steps in setting up a computer
 
-** Prerequisites
+(Arch Linux)
 
-Install Git and set-up ssh keys in GitHub
+1. Install paru
+   #+begin_src
+   $ yay -S paru
+   #+end_src
+2. Install brave-bin
+   #+begin_src
+   $ paru -S brave-bin
+   #+end_src
+3. Add brave-bin to the sync chain
+   1. Let the extensions install
+   2. Set up the password manager
+4. Set-up ssh keys in the computer
+5. Login to github.com
+   1. Add the ssh key in github
+6. Close this and the rest of the repositories (Prerequisites: Git)
+   1. Before cloning this repo, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
 
-Before doing this, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
-
-#+NAME: Set up instructions
-#+BEGIN_SRC
-cd ~
-git init
-git remote add origin git@github.com:explorer436/Dotfiles2.git
-git pull origin main( --allow-unrelated-histories)
-git branch main -u remotes/origin/main
-#+END_SRC
+      #+NAME: Set up instructions
+      #+BEGIN_SRC
+      cd ~
+      git init
+      git remote add origin git@github.com:explorer436/Dotfiles2.git
+      git pull origin main --allow-unrelated-histories
+      git branch -m main
+      git branch main -u remotes/origin/main
+      #+END_SRC
 
 ** Steps to do after setting up this repository in computer
 

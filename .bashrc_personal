@@ -17,7 +17,7 @@
 # This is to import .bash_aliases into .bashrc_personal. You don't have to import it into .bashrc again.
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
-# Use sdkman for managing jdk versions
+# Do not use this method. Instead, use sdkman for managing jdk versions.
 # Prerequisite: Download and put the directory there.
 # export JAVA_HOME=~/Documents/jdk-18
 # export PATH=$JAVA_HOME/bin:$PATH
@@ -25,8 +25,6 @@
 # Prerequisite: Download and put the directory there.
 export M2_HOME=/home/explorer436/Documents/apache-maven
 export PATH=$M2_HOME/bin:$PATH
-
-export PATH=/home/explorer436/.cargo/bin:$PATH
 
 neofetch
 

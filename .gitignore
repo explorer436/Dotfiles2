@@ -61,6 +61,7 @@
 .config/kdenliverc
 .config/knfsshare
 .config/libreoffice/
+.config/lxqt
 .config/memos.json
 .config/mimeapps.list
 .config/nano
@@ -69,6 +70,7 @@
 .config/nomacs
 .config/pamac
 .config/paru
+.config/pcmanfm-qt
 .config/pdfarranger/
 .config/polybar
 .config/pulse
