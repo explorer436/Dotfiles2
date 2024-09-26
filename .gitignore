@@ -99,7 +99,10 @@
 .emacs.d/auto-save-list
 .emacs.d/auto-save-list
 .emacs.d/elpa
+.emacs.d/history
 .emacs.d/org-caldav/org-caldav-backup.org
+.emacs.d/org-roam.db
+.emacs.d/projectile-bookmarks.eld
 .emacs.d/quelpa/
 .emacs.d/url/cache/
 .emacs.d/url/cookies
