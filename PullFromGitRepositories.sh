@@ -10,7 +10,7 @@
 # tmux attach -t pullFromGitRepos (to attach to the session ListOfAppsToBeStarted)
 # Ctrl-b w to select the window to jump to.
 
-session="pull"
+session="pull-from-github"
 tmux new-session -d -s $session
 
 window=0
@@ -69,4 +69,4 @@ tmux send-keys -t $session:$window 'git pull' C-m
 # "docker stop $(docker ps -a -q)" to stop all the containers.
 # "docker system prune -a" to clean up docker containers and images.
 
-tmux attach -t pull
+tmux attach -t pull-from-github
