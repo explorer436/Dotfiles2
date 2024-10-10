@@ -22,5 +22,10 @@ alias mvnt='mvn clean test'
 alias mvnv='mvn clean verify'
 alias mvni='mvn clean install'
 
+# variety command
+alias varietys='variety --move-to-favorites'
+alias varietyn='variety --next'
+alias varietyp='variety --previous'
+
 # Make sure you put this line in .bashrc after copying it from skel
 # [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
