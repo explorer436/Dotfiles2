@@ -60,6 +60,14 @@ tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/career-notes'
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
+window=8
+tmux new-window -t $session:$window -n 'my-articles-collection'
+tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-articles-collection' C-m
+tmux send-keys -t $session:$window 'git remote update' C-m
+tmux send-keys -t $session:$window 'git pull' C-m
+
+
+
 # And use this url in a browser: http://localhost:8080/topics to view the kafka topics
 
 # And use this url in a browser: http://localhost:5601/app/dev_tools#/console to view OpenSearch UI dashboard
