@@ -16,7 +16,7 @@
 # git config --bool branch.main.sync true
 # git config --bool branch.main.syncNewFiles true
 
-./buildHugoSites.sh
+sh ./buildHugoSites.sh
 
 cd ~/Downloads/GitRepositories/my-personal-things
 /home/explorer436/Downloads/GitRepositories/git-sync/git-sync
