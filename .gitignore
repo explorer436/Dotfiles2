@@ -18,24 +18,38 @@
 .cinnamon/configs/
 .cinnamon/spices.cache/
 .config/BraveSoftware
+.config/Code - OSS/.org*
 .config/Code - OSS/Cache/
 .config/Code - OSS/CachedData/
 .config/Code - OSS/CachedExtensionVSIXs/
+.config/Code - OSS/CachedProfilesData/
 .config/Code - OSS/Code Cache/
+.config/Code - OSS/Cookies*
 .config/Code - OSS/Crashpad/
 .config/Code - OSS/DawnCache/
 .config/Code - OSS/DawnGraphiteCache/
+.config/Code - OSS/DawnWebGPUCache/
+.config/Code - OSS/Dictionaries/
 .config/Code - OSS/GPUCache/
 .config/Code - OSS/Local Storage/
+.config/Code - OSS/Network Persistent State
+.config/Code - OSS/Preferences
 .config/Code - OSS/Service Worker/
 .config/Code - OSS/Session Storage/
 .config/Code - OSS/Shared Dictionary/
+.config/Code - OSS/SharedStorage
+.config/Code - OSS/TransportSecurity
+.config/Code - OSS/Trust Tokens
+.config/Code - OSS/Trust Tokens-journal
 .config/Code - OSS/User/History/
 .config/Code - OSS/User/globalStorage/
 .config/Code - OSS/User/workspaceStorage/
 .config/Code - OSS/WebStorage/
+.config/Code - OSS/code.lock
 .config/Code - OSS/databases/
+.config/Code - OSS/languagepacks.json
 .config/Code - OSS/logs/
+.config/Code - OSS/machineid
 .config/EOS-greeter.conf
 .config/GIMP/
 .config/JetBrains/
@@ -85,6 +99,7 @@
 .config/mimeapps.list
 .config/nano
 .config/neofetch
+.config/news-flash/
 .config/nitrogen
 .config/nomacs
 .config/pamac
@@ -211,18 +226,3 @@ eclipse/
 go/
 paru/
 snap/
-
-.config/Code - OSS/.org*
-.config/Code - OSS/CachedProfilesData/
-.config/Code - OSS/Cookies*
-.config/Code - OSS/DawnWebGPUCache/
-.config/Code - OSS/Dictionaries/
-.config/Code - OSS/Network Persistent State
-.config/Code - OSS/Preferences
-.config/Code - OSS/SharedStorage
-.config/Code - OSS/TransportSecurity
-.config/Code - OSS/Trust Tokens
-.config/Code - OSS/Trust Tokens-journal
-.config/Code - OSS/code.lock
-.config/Code - OSS/languagepacks.json
-.config/Code - OSS/machineid
