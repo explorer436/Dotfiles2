@@ -72,6 +72,7 @@
 .config/dunst/
 .config/eos-update-notifier.first_init
 .config/example.picom.conf
+.config/featherpad/
 .config/fontconfig
 .config/galculator
 .config/gconf
@@ -93,7 +94,10 @@
 .config/knfsshare
 .config/konsolerc
 .config/konsolesshconfig
+.config/kwalletmanagerrc
+.config/kwalletrc
 .config/libreoffice/
+.config/lximage-qt/
 .config/lxqt
 .config/memos.json
 .config/mimeapps.list
@@ -112,6 +116,7 @@
 .config/ristretto/
 .config/ristretto/accels.scm
 .config/rofi
+.config/screengrab/
 .config/systemd/
 .config/termite
 .config/torbrowser/
