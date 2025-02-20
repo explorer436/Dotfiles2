@@ -16,27 +16,29 @@
    [core]
 	autocrlf = input
 	;; set autocrlf = true "only in Windows computers"
+	protectNTFS = false
+	;; What is this for? git Checkout Returns 'error: invalid path' on Windows
    [push]
 	default = simple
    [alias]
         ;; reference: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
         ;; reference: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
-	la = "!git config -l | grep alias | cut -c 7-"  ;; list all the local aliases
-        co = checkout                                   ;; git checkout
+	la = !git config -l | grep alias | cut -c 7- ;; list all the local aliases
+        co = checkout ;; git checkout
 	s = status
 	rup = remote update --prune
 	;; working with logs
 ;;  	lol = log --color --graph --pretty=format:'%C(yellow)%h %C(green)%cd %C(cyan)[%an] %Creset%s' --date=format:'%F %T'
-        lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(yellow)%cd %C(bold blue)<%an>%Creset' --abbrev-commit --                                      ;; customize the log command
+        lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(yellow)%cd %C(bold blue)<%an>%Creset' --abbrev-commit -- ;; customize the log command
 	;; working with stashes
 	;;gstu = stash --include-untracked                ;; To stash everything, whether or not it is staged for commit
 	;;gstp = stash pop                                ;; To restore everything you've stashed
         ;; working with branches        
-        bl = branch -l            ;; list local branches
-        ba = branch -a            ;; list all branches
-        bd = branch -d            ;; Delete a local branch. The branch must be fully merged in its upstream branch.
-        bdd = branch -D           ;; Force the deletion of a local branch even if it’s not merged with upstream.
-        br = branch -r            ;; What does this do?
+        bl = branch -l ;; list local branches
+        ba = branch -a ;; list all branches
+        bd = branch -d ;; Delete a local branch. The branch must be fully merged in its upstream branch.
+        bdd = branch -D ;; Force the deletion of a local branch even if it’s not merged with upstream.
+        br = branch -r ;; What does this do?
 	;; git add
 	a = add
         ai = add -i
