@@ -62,7 +62,6 @@ tmux send-keys -t $session:$window 'git pull' C-m
 
 window=8
 tmux new-window -t $session:$window -n 'my-articles-collection'
-tmux send-keys -t $session:$window 'git remote set-url origin git@gitlab.com:explorer436/my-articles-collection.git'
 tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-articles-collection' C-m
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
