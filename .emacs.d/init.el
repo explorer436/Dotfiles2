@@ -32,8 +32,8 @@
 ;;(load-directory "~/.emacs.d/myconfigs3")
 
 (when (eq system-type 'gnu/linux)
-  (load "/home/explorer436/.emacs.d/load-directory")
-  (load-directory "/home/explorer436/.emacs.d/myconfigs")
+  (load "~/.emacs.d/load-directory")
+  (load-directory "~/.emacs.d/myconfigs")
 )
 (when (eq system-type 'windows-nt)
   (load "C:/Users/vardh/Downloads/GitRepositories/my-personal-things/.emacs.d/load-directory")
@@ -49,8 +49,8 @@
 (setq sentence-end-double-space nil)
 
 (when (eq system-type 'gnu/linux)
-  (org-babel-load-file (expand-file-name "/home/explorer436/.emacs.d/my-config.org"))
-  (org-babel-load-file (expand-file-name "/home/explorer436/.emacs.d/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/my-themes.org"))
 )
 
 (setq org-plantuml-jar-path
@@ -89,21 +89,21 @@
  '(package-selected-packages
    '(smartscan fzf edraw-org dired-sidebar quelpa-use-package org-timeblock org-modern org-caldav elfeed-org elfeed calfw-org calfw org-tree-slide string-inflection embark-consult embark whitespace-cleanup-mode soft-morning-theme firecode-theme marginalia orderless vertico htmlize ox-hugo consult rg js-import flex-autopair tide rjsx-mode ag ripgrep org-make-toc toc-org dap-java lsp-mode helm-lsp lsp-java lsp-ui yasnippet-snippets yasnippet company evil treemacs-magit treemacs-icons-dired treemacs-projectile treemacs projectile auto-complete beacon emacs-color-themes emacs-color-theme which-key use-package try multiple-cursors magit helm haskell-mode dracula-theme avy))
  '(safe-local-variable-values
-   '((org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/my-personal-things/Books/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/my-personal-things/Books/")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/mindset-notes/org/.dir-locals.el")
-     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/my-articles-collection/org/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/my-articles-collection/org")
-     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/career-notes/org/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/career-notes/org")
-     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/health-notes/org/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/health-notes/org")
-     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/finance-notes/org/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/finance-notes/org")
-     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/mindset-notes/org/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/mindset-notes/org")
-     (org-roam-db-location . "/home/explorer436/Downloads/GitRepositories/programming-notes/org/org-roam.db")
-     (org-roam-directory . "/home/explorer436/Downloads/GitRepositories/programming-notes/org"))))
+   '((org-roam-db-location . "~/Downloads/GitRepositories/my-personal-things/Books/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/my-personal-things/Books/")
+     (org-roam-directory . "~/Downloads/GitRepositories/mindset-notes/org/.dir-locals.el")
+     (org-roam-db-location . "~/Downloads/GitRepositories/my-articles-collection/org/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/my-articles-collection/org")
+     (org-roam-db-location . "~/Downloads/GitRepositories/career-notes/org/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/career-notes/org")
+     (org-roam-db-location . "~/Downloads/GitRepositories/health-notes/org/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/health-notes/org")
+     (org-roam-db-location . "~/Downloads/GitRepositories/finance-notes/org/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/finance-notes/org")
+     (org-roam-db-location . "~/Downloads/GitRepositories/mindset-notes/org/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/mindset-notes/org")
+     (org-roam-db-location . "~/Downloads/GitRepositories/programming-notes/org/org-roam.db")
+     (org-roam-directory . "~/Downloads/GitRepositories/programming-notes/org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
