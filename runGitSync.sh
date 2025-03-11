@@ -7,14 +7,14 @@
 
 # Or, navigate to the git/config file for that repository and add these two lines at the end: ~/Downloads/GitRepositories/my-personal-things/.git/config
 
+# git config --bool branch.main.sync true
+# git config --bool branch.main.syncNewFiles true
+
 # [branch "main"]
 #	remote = origin
 #	merge = refs/heads/main
 #	sync = true
 #	syncNewFiles = true
-
-# git config --bool branch.main.sync true
-# git config --bool branch.main.syncNewFiles true
 
 sh ./buildHugoSites.sh
 

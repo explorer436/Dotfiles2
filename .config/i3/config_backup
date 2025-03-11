@@ -321,7 +321,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
@@ -428,7 +427,7 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # dunst config used ~/.config/dunst/dunstrc
 # set alternative config if needed:
 #exec --no-startup-id /usr/bin/dunst --config ~/.config/dunst/dunstrc
-# may yneed to run dbus-launch explicitly: 
+# may need to run dbus-launch explicitly: 
 #exec --no-startup-id dbus-launch /usr/bin/dunst
 exec --no-startup-id /usr/bin/dunst
 # alternative if you installed aside with XFCE4:

@@ -57,6 +57,7 @@
     ("ti" "it" nil :count 1)
     ("tis" "This" nil :count 2)
     ("togehter" "together" nil :count 1)
+    ("updae" "update" nil :count 1)
     ("usdername" "username" nil :count 1)
     ("waht" "what" nil :count 0)
     ("wehre" "where" nil :count 1)
