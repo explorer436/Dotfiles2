@@ -3,8 +3,11 @@
 
 ### ALIASES ###
 
+# grep commands
+alias grep='grep --color=auto'
+
 # list commands
-alias ls='ls -ltaX'
+alias ls='ls -ltaX --color=auto'
 alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
