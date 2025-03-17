@@ -55,8 +55,8 @@
 
 (setq org-plantuml-jar-path
       (if (eq system-type 'windows-nt)
-          '("C:/Users/vardh/Downloads/GitRepositories/my-personal-things/.emacs.d/plantuml-mit-1.2025.0.jar")
-      '("~/Downloads/GitRepositories/my-personal-things/.emacs.d/plantuml-mit-1.2025.0.jar"))
+	  (setq org-plantuml-jar-path (expland-file-name "C:/Users/vardh/Downloads/GitRepositories/my-personal-things/.emacs.d/plantuml-mit-1.2025.0.jar"))
+      (setq org-plantuml-jar-path (expand-file-name "~/.emacs.d/plantuml-mit-1.2025.0.jar")))
 )
 
 (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
