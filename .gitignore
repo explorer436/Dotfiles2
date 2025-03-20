@@ -143,6 +143,7 @@
 .emacs.d/eln-cache/
 .emacs.d/elpa
 .emacs.d/history
+.emacs.d/my-custom-variables-and-faces.el
 .emacs.d/org-caldav/org-caldav-backup.org
 .emacs.d/org-roam.db
 .emacs.d/projectile-bookmarks.eld

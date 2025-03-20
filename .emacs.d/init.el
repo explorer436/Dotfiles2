@@ -78,58 +78,6 @@
      (:results . value)
 ))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(nil nil t)
- '(org-export-backends '(ascii html icalendar latex md odt))
- '(package-selected-packages
-   '(avy beacon calfw calfw-org delight dired-sidebar dracula-theme
-	 embark-consult evil flex-autopair fzf git-gutter magit
-	 marginalia multiple-cursors orderless org-caldav org-modern
-	 org-roam-ui org-tree-slide projectile quelpa-use-package rg
-	 smartscan string-inflection toc-org vertico
-	 whitespace-cleanup-mode yasnippet-snippets))
- '(safe-local-variable-values
-   '((org-roam-db-location
-      . "/home/explorer436/Downloads/GitRepositories/programming-notes/org/org-roam.db")
-     (org-roam-directory
-      . "/home/explorer436/Downloads/GitRepositories/programming-notes/org")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/my-personal-things/Books/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/my-personal-things/Books/")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/mindset-notes/org/.dir-locals.el")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/my-articles-collection/org/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/my-articles-collection/org")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/career-notes/org/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/career-notes/org")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/health-notes/org/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/health-notes/org")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/finance-notes/org/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/finance-notes/org")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/mindset-notes/org/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/mindset-notes/org")
-     (org-roam-db-location
-      . "~/Downloads/GitRepositories/programming-notes/org/org-roam.db")
-     (org-roam-directory
-      . "~/Downloads/GitRepositories/programming-notes/org"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq custom-file "~/.emacs.d/my-custom-variables-and-faces.el")
+(load custom-file)  
+
