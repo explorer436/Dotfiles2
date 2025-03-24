@@ -1,0 +1,26 @@
+* How do I find out the class for an application to assign it to a workspace in i3?
+
+https://www.reddit.com/r/i3wm/comments/8ms1ym/how_do_i_find_out_the_class_for_an_application_to/?rdt=54760
+
+How can we determine the class of an application so that we can use the assign function, aside from trial and error.
+e.g. I'd like Libre Office Writer assigned to workspace 3, and Calc assigned to workspace 4.
+
+** Option 1
+
+You can run the following command in terminal
+
+#+begin_src
+xprop | grep WM_CLASS | awk '{ print $4 }'
+#+end_src
+
+Then click in the window you want to get class from, then it will print the class name in the terminal.
+
+** Option 2
+
+Use the file ./i3-get-window-criteria.sh
+
+Prerequisite: xorg-xwininfo
+
+#+begin_src
+paru -S xorg-xwininfo
+#+end_src
