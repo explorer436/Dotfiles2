@@ -20,6 +20,7 @@ alias udpate='update'
 # git commands
 alias gits='git status'
 alias gitpush='git push'
+alias gitpull='git pull'
 
 # maven commands
 alias mvnt='mvn clean test'
