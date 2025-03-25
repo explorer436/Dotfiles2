@@ -12,6 +12,7 @@
     ("aroung" "around" nil :count 0)
     ("atht" "that" nil :count 2)
     ("availabel" "available" nil :count 1)
+    ("befor" "before" nil :count 1)
     ("buidl" "build" nil :count 1)
     ("byu" "buy" nil :count 6)
     ("cahnges" "changes" nil :count 1)
