@@ -17,6 +17,7 @@
     ("byu" "buy" nil :count 6)
     ("cahnges" "changes" nil :count 1)
     ("cant" "can't" nil :count 1)
+    ("chagne" "change" nil :count 1)
     ("cn" "can" nil :count 1)
     ("couldnt" "could not" nil :count 1)
     ("didnt" "didn't" nil :count 0)
