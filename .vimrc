@@ -32,15 +32,6 @@
 " If you do not know where vimrc is located, running this command would help.
 " `:e $MYVIMRC`
 
-" Before using `Plugin` in vimrc to install plug-ins, 
-" we need to install it in the machine.
-" Look at the githut repo for the plugin manager "plug" 
-" for details about installing it : https://github.com/junegunn/vim-plug 
-
-" After making changes to the list of plugins in the .vimrc file,
-" if we want to make them effective immediately, 
-" run this `:PlugInstall` (from within vim)
-
 
 " If you want to use this vimrc settings in a machine, 
 
