@@ -336,18 +336,18 @@ set $ws10 "10"
 # for_window [class=TelegramDesktop] focus
 
 # bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws3
-assign [class="(?i)firefox"] $ws7
-assign [class="Thunar"] $ws4
 assign [class="Brave-browser"] $ws1
-assign [class="TelegramDesktop"] $ws5
+assign [class="Emacs"] $ws2
+assign [class="Xfce4-terminal"] $ws3
+assign [class="Thunar"] $ws4
+assign [class="(?i)firefox"] $ws7
 
 # automatic set focus new window if it opens on another workspace than the current:
-for_window [class=Xfce4-terminal] focus
-for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
 for_window [class=Brave-browser] focus
-for_window [class=TelegramDesktop] focus
+for_window [class=Emacs] focus
+for_window [class=Xfce4-terminal] focus
+for_window [class=Thunar] focus
+for_window [class=(?i)firefox] focus
 
 ##############
 # compositor #
