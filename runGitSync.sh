@@ -39,5 +39,5 @@ cd ~/Downloads/GitRepositories/health-notes
 cd ~/Downloads/GitRepositories/mindset-notes
 ~/Downloads/GitRepositories/git-sync/git-sync
 
-cd ~/Downloads/GitRepositories/my-articles-collection
+cd ~/Downloads/GitRepositories/my-kitchen-sink
 ~/Downloads/GitRepositories/git-sync/git-sync
