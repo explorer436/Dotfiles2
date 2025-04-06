@@ -44,7 +44,7 @@ else
   pagefind --site "public"
 fi
 
-cd ~/Downloads/GitRepositories/my-articles-collection
+cd ~/Downloads/GitRepositories/my-kitchen-sink
 echo "${PWD##*/}"
 if [ -z "$(git status --porcelain)" ]; then
   echo "Working directory clean"
