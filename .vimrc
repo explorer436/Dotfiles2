@@ -1,38 +1,3 @@
-" In Linux, the system vimrc file is in /etc.
-" However, if we want to change vim settings, do not mess with the system vimrc.
-" Instead, do all the customizations to user vimrc 
-" which is located at /home/user/.vimrc
-" If it is not already available, create it manually.
-" The plugins also go into the ".vim" directory located here : /home/user/.vim
-
-" To create and edit our .vimrc, open terminal and run this : vim ~/.vimrc
-
-" FOR A CLEAN START : 
-" To remove the .vim directory, open terminal and run this : rm -rf ~/.vim
-" To remove the .vimrc file, open terminal and run this : rm ~/.vimrc
-
-
-" VIM SETTINGS FILE ON WINDOWS:
-
-" On Windows systems, the best way to find the value of $HOME is from within Vim, as follows. These commands are useful to see what directories your Vim is using:
-
-" :version
-" :echo expand('~')
-" :echo $HOME
-" :echo $VIM
-" :echo $VIMRUNTIME
-
-" Note the system vimrc file and user vimrc file paths displayed by the :version command. The system vimrc file can be created by an administrator to customize Vim for all users. In addition, each user can have his or her own user vimrc.
-" Tip: Do not create a system vimrc file. Use a user vimrc file instead.
-" Especially, if you are going to need administrator access to do anything in the computer.
-
-" After making changes to the .vimrc file,
-" if we want to make them effective immediately (called sourcing them),
-" :source % (from within vim)
-" If you do not know where vimrc is located, running this command would help.
-" `:e $MYVIMRC`
-
-
 " If you want to use this vimrc settings in a machine, 
 
 " either put this line in your .vimrc file : source /home/explorer436/Downloads/GitRepositories/thoughts-notes/my-vim-notes/vimrcFiles/my_vimrc.vim
