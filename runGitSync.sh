@@ -16,7 +16,7 @@
 #	sync = true
 #	syncNewFiles = true
 
-sh ./buildHugoSites.sh
+# sh ./buildHugoSites.sh
 
 cd ~/Downloads/GitRepositories/my-personal-things
 ~/Downloads/GitRepositories/git-sync/git-sync
