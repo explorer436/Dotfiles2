@@ -6,7 +6,7 @@
 
 ***** Start-up screen
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (setq inhibit-startup-screen t)
       (setq initial-buffer-choice
 	(lambda ()
@@ -21,7 +21,7 @@
 
 ***** visual line mode
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (global-visual-line-mode t)
     #+end_src    
 
@@ -29,7 +29,7 @@
    
 ***** Customize line numbers
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (global-display-line-numbers-mode 0) ;; disable line numbers
       ;; (global-display-line-numbers-mode 1) ;; enable line numbers
       ;; (setq display-line-numbers-type 'relative)
@@ -40,7 +40,7 @@
     Hide the menu bar, tool bar and scroll bar. Doing so early avoids ever having to see them - not even for a brief flash when starting Emacs.
     Toggle them on and off using M-x tool-bar-mode etc.
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
       (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
       (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -50,7 +50,7 @@
 
     This enables wrapping but kill-line still kills the whole line.
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (setq-default word-wrap t)
     #+end_src
 
@@ -58,7 +58,7 @@
 
     This highlights the current line in the buffer
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (global-hl-line-mode t)
     #+end_src
 
@@ -67,7 +67,7 @@
       Make dired less verbose.
       You can toggle this on and off using "("
 
-      #+begin_src emacs-lisp
+      #+begin_src elisp
 	;; (dired-hide-details-mode 1)
       #+end_src
 
@@ -87,7 +87,7 @@
         (let ((display-buffer-overriding-action '(display-buffer-pop-up-frame)))
           (apply orig-fn args)))
 
-      #+begin_src emacs-lisp
+      #+begin_src elisp
       (define-advice org-agenda-goto (:around (org-agenda-goto &rest args) "new-frame")
         (cl-letf (((symbol-function 'switch-to-buffer-other-window)
                    (symbol-function 'switch-to-buffer-other-frame)))
@@ -98,7 +98,7 @@
 
 ***** dired-sidebar
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
      (use-package dired-sidebar
        :ensure t
        :commands (dired-sidebar-toggle-sidebar))
@@ -110,7 +110,7 @@
 
   https://github.com/jaypei/emacs-neotree?tab=readme-ov-file
 
-  #+begin_src emacs-lisp
+  #+begin_src elisp
   ;; (use-package neotree
   ;;   :ensure t
   ;; )
@@ -124,7 +124,7 @@
 
     Use rg in emacs
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package rg
         :ensure t
         :config 
@@ -145,7 +145,7 @@
 
   https://github.com/bling/fzf.el
 
-  #+begin_src emacs-lisp
+  #+begin_src elisp
   (use-package fzf
   ;; :bind
   ;; Don't forget to set keybinds!
@@ -166,7 +166,7 @@
 
     https://github.com/abo-abo/avy
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package avy
 	:config 
 	  (global-set-key (kbd "C-c jc1") 'avy-goto-char)
@@ -183,7 +183,7 @@
 
     This applies a beacon effect to the highlighted line
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package beacon 
          :ensure t
          :config
@@ -192,7 +192,7 @@
 
 ***** cl-lib
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package cl-lib
         :ensure t)
     #+end_src
@@ -201,7 +201,7 @@
 
     https://github.com/uk-ar/flex-autopair
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package flex-autopair
         :ensure t
         :config
@@ -213,7 +213,7 @@
 
   https://github.com/emacsorphanage/git-gutter/tree/master
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package git-gutter
         :ensure t
         :config
@@ -235,7 +235,7 @@
 
     https://magit.vc/manual/magit/Resolving-Conflicts.html
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package magit
 		:ensure t
 		:config
@@ -255,8 +255,27 @@
     The config is for this:
     
     Full screen magit-status.
+
     This code makes magit-status run alone in the frame, and then restores the old window configuration when you quit out of magit.
-    No more juggling windows after commiting. It's magit#+begin_src emacs-lisp
+    No more juggling windows after commiting. It's magit bliss.
+    After you are done with magit, do M-x quit-window
+
+    #+begin_src emacs-lisp
+      (use-package magit
+		:ensure t
+		:config
+			(defadvice magit-status (around magit-fullscreen activate)
+		  (window-configuration-to-register :magit-fullscreen)
+		  ad-do-it
+		  (delete-other-windows))
+
+		(defadvice magit-mode-quit-window (after magit-restore-screen activate)
+		  "Restores the previous window configuration and kills the magit buffer"
+		  (jump-to-register :magit-fullscreen))
+
+		(define-key magit-status-mode-map (kbd "q") 'magit-mode-quit-window)	
+      )
+    #+end_src 
     
 ***** multiple cursors
 
@@ -271,7 +290,7 @@
 
     https://github.com/magnars/multiple-cursors.el
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package multiple-cursors
         :config
         (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -286,7 +305,7 @@
     https://github.com/bbatsov/projectile
     https://docs.projectile.mx/projectile/index.html
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package projectile
         :config
         (projectile-mode +1)
@@ -297,7 +316,7 @@
 
 ***** evil-mode
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package evil
         :config 
           (evil-mode 0)
@@ -306,7 +325,7 @@
 
 ***** which-key
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package which-key
         :config 
           (setq which-key-idle-delay 0.3)
@@ -324,7 +343,7 @@
 
     If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (add-to-list 'load-path
 	"~/.emacs.d/plugins/yasnippet")
 
@@ -339,13 +358,16 @@
       )
     #+end_src
 
+    #+RESULTS:
+    : t
+
     To look at the list of available snippets, use emacs ~describe~ function.
 
 ***** whitespace-clean-up
 
   https://github.com/purcell/whitespace-cleanup-mode/tree/master
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package whitespace-cleanup-mode
 	:ensure t
       )
@@ -355,7 +377,7 @@
 
 ***** string-inflection
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
     (use-package string-inflection
         :ensure t
     )
@@ -365,7 +387,7 @@
 
     https://gitnhub.com/kiwanami/emacs-calfw
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
     ;; (require 'calfw) 
     ;; (require 'calfw-org) 
     (use-package calfw
@@ -390,7 +412,7 @@
 
     https://www.masteringemacs.org/article/smart-scan-jump-symbols-buffer
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (use-package smartscan
 	  :ensure t
 	  :config
@@ -404,14 +426,14 @@
 
     How to have Emacs auto-refresh all buffers when files have changed on disk?
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (global-auto-revert-mode t)
     #+end_src
 
     Auto refresh dired buffers, but be quiet about it.
     The last line makes sure that you are not alerted every time this happens.
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (setq global-auto-revert-non-file-buffers t)
       (setq auto-revert-verbose nil)
     #+end_src
@@ -420,7 +442,7 @@
 
     In dired, M-> and M- never take me where I want to go.
     With this code, instead of taking me to the very beginning or very end, they now take me to the first or last file.
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (defun dired-back-to-top ()
         (interactive)
         (beginning-of-buffer)
@@ -439,7 +461,7 @@
 
      With point anywhere on the first line, I simply press M-j multiple times to pull the lines up.
 
-     #+begin_src emacs-lisp
+     #+begin_src elisp
        (global-set-key (kbd "M-j")
             (lambda ()
                   (interactive)
@@ -452,7 +474,7 @@
 
     I like the feel between C-x k to kill the buffer and C-x C-k to kill the file. Release ctrl to kill it a little, hold to kill it a lot.
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (defun delete-current-buffer-file ()
       "Removes file connected to current buffer and kills buffer."
       (interactive)
@@ -473,7 +495,7 @@
 
     You don't have to type the name out from scratch - but get the current name to modify.
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (defun rename-current-buffer-file ()
         "Renames current buffer and file it is visiting."
         (interactive)
@@ -498,7 +520,7 @@
 
     You don't have to type the name out from scratch - but get the current name to modify.
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
     (defun my-put-file-name-on-clipboard ()
       "Put the current file name on the clipboard"
       (interactive)
@@ -518,7 +540,7 @@
 
     These are not very helpful if you are using evil-mode.
 
-    #+begin_src emacs-lisp
+    #+begin_src elisp
       (defun open-line-below ()
         (interactive)
         (end-of-line)
@@ -543,7 +565,7 @@
 
      These are not very helpful if you are using evil-mode.
 
-     #+begin_src emacs-lisp
+     #+begin_src elisp
        (global-set-key (kbd "C-S-n")
                 (lambda ()
                   (interactive)
@@ -571,7 +593,7 @@
 
      Display a counter showing the number of the current and the other matches.  Place it before the prompt, though it can be after it.
 
-     #+begin_src emacs-lisp
+     #+begin_src elisp
      (setq isearch-lazy-count t)
      (setq lazy-count-prefix-format "(%s/%s) ")
      (setq lazy-count-suffix-format nil)
@@ -579,7 +601,7 @@
 
      Make regular Isearch interpret the empty space as a regular expression that matches any character between the words you give it.
 
-     #+begin_src emacs-lisp
+     #+begin_src elisp
      (setq search-whitespace-regexp ".*?")
      #+end_src
 
@@ -595,7 +617,7 @@
 
       You can install the ~use-package~ package available from Melpa and make use of ~bind-key*~ or ~bind-keys*~ macro that's part of the ~bind-key~ package that ships with ~use-package~.
 
-      #+begin_src emacs-lisp
+      #+begin_src elisp
       (define-minor-mode my-override-mode
         "Overrides all major and minor mode keys" t)
       
@@ -628,7 +650,7 @@
 
 Evil mode provides it's own emulation map. So you need to add this line
 
-     #+begin_src emacs-lisp
+     #+begin_src elisp
      (evil-make-intercept-map my-override-map)
      #+end_src
 
