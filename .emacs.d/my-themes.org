@@ -26,6 +26,10 @@
 
 * dracula theme
 
+    If we use doom-themes, we wouldn't need this one.
+
+    doom-themes' doom-darcula looks exactly similar to this one. With some additional changes like highlighting for src code blocks, etc.
+
     Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
     
     #+begin_src emacs-lisp
