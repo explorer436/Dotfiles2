@@ -8,9 +8,9 @@
                          ("melpa" . "https://melpa.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
-;; How do I change Emacs' default font size and font type?
-;; https://stackoverflow.com/questions/6026713/how-do-i-change-emacs-default-font-size-and-font-type
-;; (set-frame-font "Open Sans 10" nil t)
+;; (set-frame-font "DejaVu Sans Mono" nil t)
+(set-frame-font "DejaVu Sans Mono 12" nil t)
+;; (set-frame-font "Monospace Regular" nil t)
 
 ;; To manage the package configurations with use-package, you must install it with the following code snippet.
 (unless (package-installed-p 'use-package)
