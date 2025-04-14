@@ -1,4 +1,4 @@
-***** dracula theme
+* dracula theme
 
     Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
     
@@ -9,7 +9,7 @@
        :ensure t)
     #+end_src
 
-***** firecode-theme
+* firecode-theme
     #+begin_src emacs-lisp
      ;; (use-package firecode-theme
      ;;    :config
@@ -17,7 +17,7 @@
      ;;    :ensure t)
     #+end_src
 
-***** soft-morning
+* soft-morning
     #+begin_src emacs-lisp
      ;; (use-package soft-morning-theme
      ;;    :config
@@ -25,7 +25,7 @@
      ;;    :ensure t)
     #+end_src
 
-***** modus-vivendi-tinted
+* modus-vivendi-tinted
     #+begin_src emacs-lisp
     ;; (use-package modus-themes
     ;;    :ensure t
