@@ -54,6 +54,7 @@
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
+        "~/Downloads/GitRepositories/my-personal-things/Things to do/Notes from Youtube.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Near future tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Programming tasks.org"
         "~/Downloads/GitRepositories/my-personal-things/Things to do/Recurring personal tasks.org"
