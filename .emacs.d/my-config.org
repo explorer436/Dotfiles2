@@ -658,8 +658,8 @@ Evil mode provides it's own emulation map. So you need to add this line
 
   Disable arrow keys
 
-  #+begin_src elisp
-  (defun toggle-window-split ()
+  #+begin_src emacs-lisp
+  (defun my-toggle-window-split ()
     (interactive)
       (if (= (count-windows) 2)
           (let* ((this-win-buffer (window-buffer))
