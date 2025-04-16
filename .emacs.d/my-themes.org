@@ -1,4 +1,19 @@
 
+* modus-vivendi
+
+   #+begin_src elisp
+   (load-theme 'modus-vivendi) 
+   #+end_src
+
+* modus-vivendi-tinted
+    #+begin_src elisp
+    ;; (use-package modus-themes
+    ;;    :ensure t
+    ;;    :config
+    ;;    (load-theme 'modus-vivendi-tinted t)
+    ;; )
+    #+end_src
+
 * doom-emacs themes
 
   https://github.com/doomemacs/themes?tab=readme-ov-file
@@ -10,8 +25,9 @@
     ;; Global settings (defaults)
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
           doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-gruvbox t)
+    ;; (load-theme 'doom-gruvbox t)
     ;; (load-theme 'doom-dracula t)    
+    ;; (load-theme 'doom-acario-dark t)
 
     ;; Enable flashing mode-line on errors
     ;; (doom-themes-visual-bell-config)
@@ -32,7 +48,7 @@
 
     Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
     
-    #+begin_src emacs-lisp
+    #+begin_src elisp
     ;; (use-package dracula-theme
     ;;    :config
     ;;    (load-theme 'dracula t)
@@ -40,7 +56,7 @@
     #+end_src
 
 * firecode-theme
-    #+begin_src emacs-lisp
+    #+begin_src elisp
      ;; (use-package firecode-theme
      ;;    :config
      ;;    (load-theme 'firecode t)
@@ -48,18 +64,10 @@
     #+end_src
 
 * soft-morning
-    #+begin_src emacs-lisp
+    #+begin_src elisp
      ;; (use-package soft-morning-theme
      ;;    :config
      ;;    (load-theme 'soft-morning t)
      ;;    :ensure t)
     #+end_src
 
-* modus-vivendi-tinted
-    #+begin_src emacs-lisp
-    ;; (use-package modus-themes
-    ;;    :ensure t
-    ;;    :config
-    ;;    (load-theme 'modus-vivendi-tinted t)
-    ;; )
-    #+end_src
