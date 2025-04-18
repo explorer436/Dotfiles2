@@ -41,3 +41,6 @@ cd ~/Downloads/GitRepositories/mindset-notes
 
 cd ~/Downloads/GitRepositories/my-kitchen-sink
 ~/Downloads/GitRepositories/git-sync/git-sync
+
+cd ~/Downloads/GitRepositories/soft-skills
+~/Downloads/GitRepositories/git-sync/git-sync
