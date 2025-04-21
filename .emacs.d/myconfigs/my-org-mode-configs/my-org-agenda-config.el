@@ -12,6 +12,7 @@
 
 ;; Location of the combined exported agenda file that will be exported by org-mode
 (setq org-icalendar-combined-agenda-file "~/Downloads/GitRepositories/my-personal-things/Things to do/CalendarEvents/fromEmacs.ics")
+;; Alt-x org-icalendar-combine-agenda-files
 
 ;; Set a UUID on each entry in the org files.
 ;; Essentially, this will help with
