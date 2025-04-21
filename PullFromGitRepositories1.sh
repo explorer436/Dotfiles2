@@ -67,6 +67,12 @@ tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-articles-c
 tmux send-keys -t $session:$window 'git remote update' C-m
 tmux send-keys -t $session:$window 'git pull' C-m
 
+window=9
+tmux new-window -t $session:$window -n 'soft-skills'
+tmux send-keys -t $session:$window 'cd ~/Downloads/GitRepositories/my-articles-collection' C-m
+tmux send-keys -t $session:$window 'git remote update' C-m
+tmux send-keys -t $session:$window 'git pull' C-m
+
 # Clean-up
 # You can use "tmux kill-server" to cleanly and gracefully kill all tmux open sessions (and server).
 # "docker stop $(docker ps -a -q)" to stop all the containers.

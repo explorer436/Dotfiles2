@@ -420,6 +420,21 @@
       )
     #+end_src
 
+***** ledger-mode
+
+    https://github.com/ledger/ledger-mode
+
+    Helpful features:
+
+    1. Sorting entries in a ledger file.
+    1. Aligning prices, completing accounts and generating upcoming transactions are other features
+
+    #+begin_src elisp
+      (use-package ledger-mode
+	  :ensure t
+      )
+    #+end_src
+
 ** Custom snippets
 
 ***** auto-refresh

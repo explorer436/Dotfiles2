@@ -8,8 +8,8 @@
                          ("melpa" . "https://melpa.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
-;; (set-frame-font "DejaVu Sans Mono" nil t)
-(set-frame-font "DejaVu Sans Mono 12" nil t)
+(set-frame-font "DejaVu Sans Mono" nil t)
+;; (set-frame-font "DejaVu Sans Mono 10" nil t)
 ;; (set-frame-font "Monospace Regular" nil t)
 
 ;; To manage the package configurations with use-package, you must install it with the following code snippet.

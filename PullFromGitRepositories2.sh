@@ -35,3 +35,7 @@ git pull
 cd ~/Downloads/GitRepositories/my-kitchen-sink
 git remote update
 git pull
+
+cd ~/Downloads/GitRepositories/soft-skills
+git remote update
+git pull
