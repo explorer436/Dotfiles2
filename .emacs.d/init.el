@@ -8,7 +8,9 @@
                          ("melpa" . "https://melpa.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
-(set-frame-font "DejaVu Sans Mono" nil t)
+(when (eq system-type 'gnu/linux)
+  (set-frame-font "DejaVu Sans Mono" nil t)
+)
 ;; (set-frame-font "DejaVu Sans Mono 10" nil t)
 ;; (set-frame-font "Monospace Regular" nil t)
 
