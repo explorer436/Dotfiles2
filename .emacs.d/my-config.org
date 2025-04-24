@@ -319,7 +319,7 @@
     #+begin_src elisp
       (use-package evil
         :config 
-          (evil-mode 0)
+          (evil-mode 1)
         :ensure t)
     #+end_src
 
