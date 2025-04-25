@@ -18,9 +18,12 @@ alias pdw='pwd'
 alias udpate='update'
 
 # git commands
+# See .gitconfig to find out what the letters mean
 alias gits='git status'
 alias gitpush='git push'
 alias gitpull='git pull'
+alias gitba='git ba'
+alias gitrup='git rup'
 
 # maven commands
 alias mvnt='mvn clean test'
