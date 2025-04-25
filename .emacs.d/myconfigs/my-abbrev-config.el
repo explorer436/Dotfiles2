@@ -6,12 +6,12 @@
 (setq save-abbrevs 'silently)        ;; automatically saves abbrevs when files are saved
 
 (when (eq system-type 'gnu/linux)
-  (setq abbrev-file-name "/home/explorer436/.emacs.d/abbrev_defs")
-  (read-abbrev-file "/home/explorer436/.emacs.d/abbrev_defs")
+  (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+  (read-abbrev-file "~/.emacs.d/abbrev_defs")
 )
 (when (eq system-type 'darwin)
-  (setq abbrev-file-name "/home/explorer436/.emacs.d/abbrev_defs")
-  (read-abbrev-file "/home/explorer436/.emacs.d/abbrev_defs")
+  (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+  (read-abbrev-file "~/.emacs.d/abbrev_defs")
 )
 (when (eq system-type 'windows-nt)
   (setq abbrev-file-name "C:/Users/vardh/Downloads/GitRepositories/my-personal-things/.emacs.d/abbrev_defs")
