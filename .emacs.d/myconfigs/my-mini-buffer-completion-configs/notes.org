@@ -2,7 +2,7 @@
 
 Reference: https://www.reddit.com/r/emacs/comments/ol2luk/comment/h5dxiw5/?utm_source=share&utm_medium=web2x&context=3
 
-If you are happy with your workflow and Helm in general, I think you should keep your existing workflow. You can try the packages out of course in case you are curious, even without replacing Helm. These packages have a different style than Helm, they are build from smaller independent components you can add and understand step by step. Each component tries to be focused on its niche and tries to be as non-intrusive as possible.
+If you are happy with your workflow and Helm in general, I think you should keep your existing workflow. Of course, you can try the packages out in case you are curious, even without replacing Helm. These packages have a different style than Helm, they are build from smaller independent components you can add and understand step by step. Each component tries to be focused on its niche and tries to be as non-intrusive as possible.
 
 For example:
 
