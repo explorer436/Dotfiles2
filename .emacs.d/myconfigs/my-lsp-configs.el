@@ -1,6 +1,7 @@
 ;; lsp-java
-;; Its a good idea to make sure that Java 11 is installed before trying to use lsp-java. Getting it to work with Java 8 wasn't successful.
-    
+;; Its a good idea to make sure that Java 11 is installed before trying to use lsp-java.
+;; Getting it to work with Java 8 wasn't successful.
+
 ;;(use-package lsp-java
 ;;  :config (add-hook 'java-mode-hook 'lsp)
 ;;  :ensure t

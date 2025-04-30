@@ -4,7 +4,7 @@
 
 *** Start-up behavior
 
-***** Start-up screen
+**** Start-up screen
 
     #+begin_src elisp
       (setq inhibit-startup-screen t)
@@ -19,15 +19,9 @@
     This is also called: (setq inhibit-splash-screen t)
     They are just aliases for each other.
 
-***** visual line mode
-
-    #+begin_src elisp
-      (global-visual-line-mode t)
-    #+end_src    
-
 *** UI Settings
-   
-***** Customize line numbers
+
+**** Customize line numbers
 
     #+begin_src elisp
       (global-display-line-numbers-mode 0) ;; disable line numbers
@@ -35,10 +29,12 @@
       ;; (setq display-line-numbers-type 'relative)
     #+end_src
 
-***** Hide UI bars
+**** Hide UI bars
 
-    Hide the menu bar, tool bar and scroll bar. Doing so early avoids ever having to see them - not even for a brief flash when starting Emacs.
-    Toggle them on and off using M-x tool-bar-mode etc.
+    Hide the menu bar, tool bar and scroll bar.
+    Doing so early avoids ever having to see them - not even for a brief flash when starting Emacs.
+    Toggle them on and off.
+    e.g. ~M-x tool-bar-mode~
 
     #+begin_src elisp
       (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -46,23 +42,45 @@
       (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
     #+end_src
 
-***** Enable word wrap
+**** Show column-numbers
 
-    This enables wrapping but kill-line still kills the whole line.
-    
+  Show column position in addition to the line number.
+
+  Syntax errors also mention column numbers.
+
     #+begin_src elisp
-      (setq-default word-wrap t)
+    (column-number-mode 1)
     #+end_src
 
-***** Highlight current line
+**** visual line mode
 
-    This highlights the current line in the buffer
-    
+    When Visual Line mode is enabled, ‘word-wrap’ is turned on in this buffer, and simple editing commands are redefined to act on visual lines, not logical lines.  See Info node ‘Visual Line Mode’ for details.
+
+    When we edit prose, and the format requires paragraphs to fit on a single line of the output file. I want my editor to wrap properly at word boundaries.
+
+    #+begin_src elisp
+      (global-visual-line-mode t)
+    #+end_src
+
+**** Highlight current line
+
+    As we switch back and forth between the editor and other things, we have to quickly remind ourselves where the cursor is positioned.
+
+    Do this by highlighting the current line.
+
     #+begin_src elisp
       (global-hl-line-mode t)
     #+end_src
 
-***** Change how dired looks
+**** Enable word wrap
+
+    This enables wrapping but kill-line still kills the whole line.
+
+    #+begin_src elisp
+      (setq-default word-wrap t)
+    #+end_src
+
+**** Change how dired looks
 
       Make dired less verbose.
       You can toggle this on and off using "("
@@ -71,7 +89,35 @@
 	;; (dired-hide-details-mode 1)
       #+end_src
 
-***** Change the behaviour of org-agenda-goto to open org-file in a new frame
+**** global-whitespace-mode
+
+    Many tools choke when there is excess whitespace characters, or when they are in the wrong place. It is also common for coding styles to encourage a line width limit.
+
+    #+begin_src elisp
+    (global-whitespace-mode 1)
+    ;; see the apropos entry for whitespace-style
+
+    (setq
+       whitespace-style
+       '(face ; viz via faces
+         trailing ; trailing blanks visualized
+         lines-tail ; lines beyond
+                    ; whitespace-line-column
+         space-before-tab
+         space-after-tab
+         newline ; lines with only blanks
+         indentation ; spaces used for indent
+                     ; when config wants tabs
+         empty
+            ; empty lines at beginning or end
+         )
+       whitespace-line-column 100
+            ; column at which
+            ; whitespace-mode says the line is too long
+    )
+    #+end_src
+
+**** Change the behaviour of org-agenda-goto to open org-file in a new frame
 
       Reference: https://stackoverflow.com/questions/56628735/how-to-change-the-behaviour-of-org-agenda-goto-to-open-org-file-in-a-new-frame
 
@@ -82,7 +128,7 @@
                    (symbol-function 'switch-to-buffer-other-frame)))
           (apply orig-fn args)))
       In the advice orig-fn is a placeholder to org-agenda-goto. Alternatively, you could temporarily override display-buffer's function (there are a number of options you could use here -- see help for display-buffer), eg.
-      
+
       (define-advice org-agenda-goto (:around (orig-fn &rest args) "new-frame")
         (let ((display-buffer-overriding-action '(display-buffer-pop-up-frame)))
           (apply orig-fn args)))
@@ -96,7 +142,7 @@
 
 ** Packages
 
-***** dired-sidebar
+*** dired-sidebar
 
     #+begin_src elisp
      (use-package dired-sidebar
@@ -104,7 +150,7 @@
        :commands (dired-sidebar-toggle-sidebar))
     #+end_src
 
-***** emacs-neotree
+*** emacs-neotree
 
   This is an emacs port of vim's NERDTree.
 
@@ -116,18 +162,18 @@
   ;; )
   #+end_src
 
-  Use dired-sidebar instead. 
+  Use dired-sidebar instead.
 
   This is not showing the tree view for the directory in which the file exists. It is always showing the same tree view that it initially launches - even though we open files from a different directory.
 
-***** rg
+*** rg
 
     Use rg in emacs
-    
+
     #+begin_src elisp
       (use-package rg
         :ensure t
-        :config 
+        :config
         (rg-enable-default-bindings)
       )
     #+end_src
@@ -141,7 +187,7 @@
     You can save the results of a particular search by using the letter ~s~
     You can navigate to it exactly the same way you navigate to all the buffers - using ~Ctrl X b~
 
-***** fzf.el
+*** fzf.el
 
   https://github.com/bling/fzf.el
 
@@ -162,13 +208,13 @@
         fzf/window-height 15))
   #+end_src
 
-***** avy
+*** avy
 
     https://github.com/abo-abo/avy
 
     #+begin_src elisp
       (use-package avy
-	:config 
+	:config
 	  (global-set-key (kbd "C-c jc1") 'avy-goto-char)
 	  (global-set-key (kbd "C-c jc2") 'avy-goto-char-2)
 	  (global-set-key (kbd "C-c jl") 'avy-goto-line)
@@ -179,25 +225,27 @@
 	  :ensure t)
     #+end_src
 
-***** beacon
+*** beacon
 
     This applies a beacon effect to the highlighted line
-    
+
     #+begin_src elisp
-      (use-package beacon 
+      (use-package beacon
          :ensure t
          :config
          (beacon-mode 1))
     #+end_src
 
-***** cl-lib
+*** cl-lib
 
     #+begin_src elisp
       (use-package cl-lib
         :ensure t)
     #+end_src
 
-***** flex-autopair
+*** flex-autopair
+
+    The alternative to using this is ~(show-paren-mode 1)~
 
     https://github.com/uk-ar/flex-autopair
 
@@ -209,7 +257,7 @@
       )
     #+end_src
 
-***** git-gutter
+*** git-gutter
 
   https://github.com/emacsorphanage/git-gutter/tree/master
 
@@ -221,7 +269,7 @@
       )
     #+end_src
 
-***** magit
+*** magit
 
     (When this gets reasonably big, pull this section into a separate file of its own.)
     To launch magit when you are editing a file that is in a git repository, ~Ctrl c g~
@@ -248,12 +296,12 @@
 		  "Restores the previous window configuration and kills the magit buffer"
 		  (jump-to-register :magit-fullscreen))
 
-		(define-key magit-status-mode-map (kbd "q") 'magit-mode-quit-window)	
+		(define-key magit-status-mode-map (kbd "q") 'magit-mode-quit-window)
       )
     #+end_src
 
     The config is for this:
-    
+
     Full screen magit-status.
 
     This code makes magit-status run alone in the frame, and then restores the old window configuration when you quit out of magit.
@@ -273,11 +321,11 @@
 		  "Restores the previous window configuration and kills the magit buffer"
 		  (jump-to-register :magit-fullscreen))
 
-		(define-key magit-status-mode-map (kbd "q") 'magit-mode-quit-window)	
+		(define-key magit-status-mode-map (kbd "q") 'magit-mode-quit-window)
       )
-    #+end_src 
-    
-***** multiple cursors
+    #+end_src
+
+*** multiple cursors
 
     Install multiple-cursors and (the dependent package cl-lib) first.
     If you want to start multiple cursors at a word (or a tag or anything) that exists on multiple lines (the lines do not have to be continuous),
@@ -299,12 +347,12 @@
         (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
         :ensure t)
     #+end_src
-    
-***** projectile
+
+*** projectile
 
     https://github.com/bbatsov/projectile
     https://docs.projectile.mx/projectile/index.html
-    
+
     #+begin_src elisp
       (use-package projectile
         :config
@@ -314,35 +362,37 @@
         :ensure t)
     #+end_src
 
-***** evil-mode
+*** evil-mode
 
     #+begin_src elisp
       (use-package evil
-        :config 
+        :config
           (evil-mode 1)
         :ensure t)
     #+end_src
 
-***** which-key
+*** which-key
 
     #+begin_src elisp
       (use-package which-key
-        :config 
+        :config
           (setq which-key-idle-delay 0.3)
           (setq which-key-popup-type 'frame)
           (which-key-mode)
           (which-key-setup-minibuffer)
-          (set-face-attribute 'which-key-local-map-description-face nil 
+          (set-face-attribute 'which-key-local-map-description-face nil
              :weight 'bold)
           :ensure t)
     #+end_src
 
-***** yasnippet
+*** yasnippet
 
     https://github.com/joaotavora/yasnippet
 
     If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
-    
+
+    To study the current snippets, I suggest that you use M-x yas-describe-tables, which will show a table representation of all the snippets that are available in the current mode.
+ 
     #+begin_src elisp
       (add-to-list 'load-path
 	"~/.emacs.d/plugins/yasnippet")
@@ -358,12 +408,9 @@
       )
     #+end_src
 
-    #+RESULTS:
-    : t
-
     To look at the list of available snippets, use emacs ~describe~ function.
 
-***** whitespace-clean-up
+*** whitespace-clean-up
 
   https://github.com/purcell/whitespace-cleanup-mode/tree/master
 
@@ -375,7 +422,7 @@
       (global-whitespace-cleanup-mode t)
     #+end_src
 
-***** string-inflection
+*** string-inflection
 
     #+begin_src elisp
     (use-package string-inflection
@@ -383,13 +430,13 @@
     )
     #+end_src
 
-***** emacs-calfw
+*** emacs-calfw
 
     https://gitnhub.com/kiwanami/emacs-calfw
-    
+
     #+begin_src elisp
-    ;; (require 'calfw) 
-    ;; (require 'calfw-org) 
+    ;; (require 'calfw)
+    ;; (require 'calfw-org)
     (use-package calfw
         :ensure t
     )
@@ -406,7 +453,7 @@
 
     Then, ~M-x cfw:open-org-calendar~
 
-***** smartscan
+*** smartscan
 
     https://github.com/mickeynp/smart-scan
 
@@ -420,7 +467,7 @@
       )
     #+end_src
 
-***** ledger-mode
+*** ledger-mode
 
     https://github.com/ledger/ledger-mode
 
@@ -437,10 +484,10 @@
 
 ** Custom snippets
 
-***** auto-refresh
+*** auto-refresh
 
     How to have Emacs auto-refresh all buffers when files have changed on disk?
-    
+
     #+begin_src elisp
       (global-auto-revert-mode t)
     #+end_src
@@ -453,7 +500,7 @@
       (setq auto-revert-verbose nil)
     #+end_src
 
-***** Navigation in dired
+*** Navigation in dired
 
     In dired, M-> and M- never take me where I want to go.
     With this code, instead of taking me to the very beginning or very end, they now take me to the first or last file.
@@ -469,10 +516,10 @@
         (end-of-buffer)
         (dired-next-line -1))
       (define-key dired-mode-map
-        (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)  
+        (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
     #+end_src
 
-***** Join lines
+*** Join lines
 
      With point anywhere on the first line, I simply press M-j multiple times to pull the lines up.
 
@@ -483,7 +530,7 @@
                   (join-line -1)))
      #+end_src
 
-***** Delete current buffer
+*** Delete current buffer
 
     C-x C-k: file begone!
 
@@ -506,7 +553,7 @@
       (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
     #+end_src
 
-***** Rename current buffer    
+*** Rename current buffer
 
     You don't have to type the name out from scratch - but get the current name to modify.
 
@@ -531,7 +578,7 @@
       (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
     #+end_src
 
-***** Copy file path to clipboard in Emacs
+*** Copy file path to clipboard in Emacs
 
     You don't have to type the name out from scratch - but get the current name to modify.
 
@@ -549,7 +596,7 @@
           (message filename))))
     #+end_src
 
-***** Open new lines above or below the current line
+*** Open new lines above or below the current line
 
     With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
 
@@ -568,12 +615,12 @@
         (newline)
         (forward-line -1)
         (indent-for-tab-command))
-      
+
       (global-set-key (kbd "<C-return>") 'open-line-below)
       (global-set-key (kbd "<C-S-return>") 'open-line-above)
     #+end_src
 
-***** Move around in a buffer quickly
+*** Move around in a buffer quickly
 
      Are Ctrl-n and Ctrl-p too slow for you?
      Move in a buffer more quickly.
@@ -590,19 +637,19 @@
                        (lambda ()
                          (interactive)
                          (ignore-errors (previous-line 5))))
-       
+
        (global-set-key (kbd "C-S-f")
                        (lambda ()
                          (interactive)
                          (ignore-errors (forward-char 5))))
-       
+
        (global-set-key (kbd "C-S-b")
                        (lambda ()
                          (interactive)
                          (ignore-errors (backward-char 5))))
      #+end_src
 
-***** Move around in a buffer quickly
+*** Move around in a buffer quickly
 
      https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/
 
@@ -621,12 +668,12 @@
      #+end_src
 
      Install the `wgrep' package.  It makes the grep buffers editable.
-     
+
      Install the `consult' package.  It provides lots of useful commands that enhance the minibuffer experience of Emacs (e.g. for searching lines/heading).
-     
+
      Install the `embark' package.  It allows you to perform context-sensitive actions, using a prompt and then a key/action selection interface.
 
-***** Disable arrow keys
+*** Disable arrow keys
 
       Instead of adding the keys to the global map, we create a minor mode and add the keys to the ~emulation-mode-map-alist~ which takes precedents over minor and major mode maps.
 
@@ -635,28 +682,28 @@
       #+begin_src elisp
       (define-minor-mode my-override-mode
         "Overrides all major and minor mode keys" t)
-      
+
       (defvar my-override-map (make-sparse-keymap "my-override-map")
         "Override all major and minor mode keys")
-      
+
       (add-to-list 'emulation-mode-map-alists
         `((my-override-mode . ,my-override-map)))
-      
+
       (define-key my-override-map (kbd "<left>")
         (lambda ()
           (interactive)
           (message "Use Vim keys: h for Left")))
-      
+
       (define-key my-override-map (kbd "<right>")
         (lambda ()
           (interactive)
           (message "Use Vim keys: l for Right")))
-      
+
       (define-key my-override-map (kbd "<up>")
         (lambda ()
           (interactive)
           (message "Use Vim keys: k for Up")))
-      
+
       (define-key my-override-map (kbd "<down>")
         (lambda ()
           (interactive)
@@ -669,7 +716,7 @@ Evil mode provides it's own emulation map. So you need to add this line
      (evil-make-intercept-map my-override-map)
      #+end_src
 
-***** Toggle Window Split
+*** Toggle Window Split
 
   Disable arrow keys
 
@@ -698,7 +745,7 @@ Evil mode provides it's own emulation map. So you need to add this line
     	  (set-window-buffer (next-window) next-win-buffer)
     	  (select-window first-win)
     	  (if this-win-2nd (other-window 1))))))
-  
+
   (define-key ctl-x-4-map "t" 'toggle-window-split)
   #+end_src
 

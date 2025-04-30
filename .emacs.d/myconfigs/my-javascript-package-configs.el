@@ -8,13 +8,13 @@
 
 ;; rjsx-mode
 ;; https://github.com/felipeochoa/rjsx-mode
-    
+
 ;; (use-package rjsx-mode
 ;;   :ensure t
 ;;   :mode "\\.js\\'"
 ;; )
 
-;; tide    
+;; tide
 
 ;; prerequisite for tide: npm install -g typescript
 
@@ -27,14 +27,14 @@
 ;;   (tide-ho-identifier-mode +1)
 ;;   (company-mode +1)
 ;; )
-    
+   
 ;; https://github.com/ananthakumaran/tide
 ;; (use-package tide
 ;;   :ensure t
 ;;   ;; :after (rjsx-mode company flycheck)
 ;;   :after (rjsx-mode company)
 ;;   :hook (rjsx-mode . setup-tide-mode)
-;;   :config 
+;;   :config
 ;;   (global-set-key (kbd "C-c jd") 'tide-jump-to-definition)
 ;;   (global-set-key (kbd "C-c jb") 'tide-jump-back)
 ;; )

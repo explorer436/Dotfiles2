@@ -11,11 +11,13 @@
 " file.
 " Identify the line and disable it.
 
-"""""""""""""""""""""""""""""""""                                        Use Vim settings, rather then Vi settings. 
-"""""""""""""""""""""""""""""""""                                          This setting must be as early as possible, as it has side effects.
+"""""""""""""""""""""""""""""""""                                        
+" Use Vim settings, rather then Vi settings. 
+" This setting must be as early as possible, as it has side effects.
 	set nocompatible
 
-"""""""""""""""""""""""""""""""""                                        SET SPACE BAR AS THE LEADER KEY
+"""""""""""""""""""""""""""""""""                                        
+" SET SPACE BAR AS THE LEADER KEY
 	let mapleader = " "
 
 """""""""""""""""""""""""""""""""                                        TABS
@@ -27,10 +29,13 @@
     "close the tab and all windows in it
     nnoremap <leader>tc :tabc<CR>               
 
-"""""""""""""""""""""""""""""""""                                        Run internal vim terminal at current file's directory
+"""""""""""""""""""""""""""""""""                                        
+
+" Run internal vim terminal at current file's directory
     map <F6> :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR> 
 
-"""""""""""""""""""""""""""""""""                                        Move 1 more lines up or down in normal and visual selection modes.
+"""""""""""""""""""""""""""""""""                                        
+" Move 1 more lines up or down in normal and visual selection modes.
 
     " Disabling this in normal mode because it is messing with Vim's default behaviour for J (join lines)
     " nnoremap K :m .-2<CR>==
