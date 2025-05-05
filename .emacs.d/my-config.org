@@ -89,34 +89,6 @@
 	;; (dired-hide-details-mode 1)
       #+end_src
 
-**** global-whitespace-mode
-
-    Many tools choke when there is excess whitespace characters, or when they are in the wrong place. It is also common for coding styles to encourage a line width limit.
-
-    #+begin_src elisp
-    (global-whitespace-mode 1)
-    ;; see the apropos entry for whitespace-style
-
-    (setq
-       whitespace-style
-       '(face ; viz via faces
-         trailing ; trailing blanks visualized
-         lines-tail ; lines beyond
-                    ; whitespace-line-column
-         space-before-tab
-         space-after-tab
-         newline ; lines with only blanks
-         indentation ; spaces used for indent
-                     ; when config wants tabs
-         empty
-            ; empty lines at beginning or end
-         )
-       whitespace-line-column 100
-            ; column at which
-            ; whitespace-mode says the line is too long
-    )
-    #+end_src
-
 **** Change the behaviour of org-agenda-goto to open org-file in a new frame
 
       Reference: https://stackoverflow.com/questions/56628735/how-to-change-the-behaviour-of-org-agenda-goto-to-open-org-file-in-a-new-frame
@@ -409,18 +381,6 @@
     #+end_src
 
     To look at the list of available snippets, use emacs ~describe~ function.
-
-*** whitespace-clean-up
-
-  https://github.com/purcell/whitespace-cleanup-mode/tree/master
-
-    #+begin_src elisp
-      (use-package whitespace-cleanup-mode
-	:ensure t
-      )
-
-      (global-whitespace-cleanup-mode t)
-    #+end_src
 
 *** string-inflection
 
