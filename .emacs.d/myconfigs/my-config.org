@@ -138,47 +138,6 @@
 
   This is not showing the tree view for the directory in which the file exists. It is always showing the same tree view that it initially launches - even though we open files from a different directory.
 
-*** rg
-
-    Use rg in emacs
-
-    #+begin_src elisp
-      (use-package rg
-        :ensure t
-        :config
-        (rg-enable-default-bindings)
-      )
-    #+end_src
-
-    To edit the results buffer, you need to wgrep-change-to-wgrep-mode
-
-    Make the search results editable by enabling ~wgrep~ mode.  When done press ~C-c C-c~ to commit your changes to the underlying files or ~C-c C-k~ to drop the changes.
-
-    You can save the results of a particular search by using the letter ~s~
-
-    You can navigate to it exactly the same way you navigate to all the buffers - using ~Ctrl X b~
-
-*** fzf.el
-
-  https://github.com/bling/fzf.el
-
-  #+begin_src elisp
-  (use-package fzf
-  ;; :bind
-  ;; Don't forget to set keybinds!
-  :config
-  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
-        fzf/executable "fzf"
-        fzf/git-grep-args "-i --line-number %s"
-        ;; command used for `fzf-grep-*` functions
-        ;; example usage for ripgrep:
-        ;; fzf/grep-command "rg --no-heading -nH"
-        fzf/grep-command "grep -nrH"
-        ;; If nil, the fzf buffer will appear at the top of the window
-        fzf/position-bottom t
-        fzf/window-height 15))
-  #+end_src
-
 *** avy
 
     https://github.com/abo-abo/avy

@@ -61,11 +61,13 @@
 (when (eq system-type 'gnu/linux)
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-config.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/searching.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-mini-buffer-completion-configs.org"))
 )
 (when (eq system-type 'darwin)
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-config.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/searching.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-mini-buffer-completion-configs.org"))
 )
 

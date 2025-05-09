@@ -2,7 +2,7 @@
 
   https://github.com/minad/vertico
 
-  Enable vertico
+  For incremental minibuffer completion - as we type - based on matching files/folders
 
    #+begin_src elisp
      (use-package vertico
@@ -72,6 +72,30 @@
    (use-package savehist
      :init
      (savehist-mode))
+  #+end_src
+
+* marginalia
+
+  ;; Enable rich annotations using the Marginalia package
+
+  #+begin_src elisp
+     (use-package marginalia
+
+    :ensure t
+
+    ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+    ;; available in the *Completions* buffer, add it to the
+    ;; `completion-list-mode-map'.
+    :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
+
+    ;; The :init section is always executed.
+    :init
+
+    ;; Marginalia must be activated in the :init section of use-package such that
+    ;; the mode gets enabled right away. Note that this forces loading the
+    ;; package.
+    (marginalia-mode)
+  )
   #+end_src
 
 * consult
@@ -234,27 +258,6 @@
 ;;   :hook
 ;;   (embark-collect-mode . consult-preview-at-point-mode))
 
-* marginalia
-
-;; ;; Enable rich annotations using the Marginalia package
-;; (use-package marginalia
-
-;;   :ensure t
-
-;;   ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
-;;   ;; available in the *Completions* buffer, add it to the
-;;   ;; `completion-list-mode-map'.
-;;   :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
-
-;;   ;; The :init section is always executed.
-;;   :init
-
-;;   ;; Marginalia must be activated in the :init section of use-package such that
-;;   ;; the mode gets enabled right away. Note that this forces loading the
-;;   ;; package.
-;;   (marginalia-mode)
-;; )
-
 * helm
 
 ;; (use-package helm
@@ -262,7 +265,7 @@
 ;;   :init
 ;;     (setq helm-split-window-in-side-p t
 ;;           helm-move-to-line-cycle-in-source t)
-;;   :config 
+;;   :config
 ;;     (helm-mode 1)
 ;;     (helm-autoresize-mode 1)
 ;;     (global-set-key (kbd "C-x b") 'helm-buffers-list)
@@ -288,20 +291,15 @@
 
 Reference: https://www.reddit.com/r/emacs/comments/ol2luk/comment/h5dxiw5/?utm_source=share&utm_medium=web2x&context=3
 
-If you are happy with your workflow and Helm in general, I think you should keep your existing workflow. Of course, you can try the packages out in case you are curious, even without replacing Helm. These packages have a different style than Helm, they are build from smaller independent components you can add and understand step by step. Each component tries to be focused on its niche and tries to be as non-intrusive as possible.
+If you are happy with your workflow and Helm in general, I think you should keep your existing workflow. Of course, you can try the packages out in case you are curious, even without replacing Helm. These packages have a different style than Helm, they are built from smaller independent components. You can add and understand step by step. Each component tries to be focused on its niche and tries to be as non-intrusive as possible.
 
 For example:
 
 1. Start with plain Emacs.
+2. Install vertico and enable vertico-mode to get incremental minibuffer completion.
+3. Install orderless and/or configure the built-in completion styles for more flexible minibuffer filtering.
+4. Install marginalia if you like rich minibuffer annotations. Exisiting commands are enhanced with these annotations, e.g., find-file.
+5. Install embark and add two keybindings for embark-dwim and embark-act. I am using M-. and C-.. These commands allow you to act on the object at point or in the minibuffer. No actions on multiple candidates for now though.
+6. Install consult if you want additional featureful completion commands, e.g, the buffer switcher consult-buffer with preview or the line-based search consult-line. consult-buffer can work with multiple candidate sources similar to helm-mini.
 
-1. Install vertico and enable vertico-mode to get incremental minibuffer completion.
-
-1. Install orderless and/or configure the built-in completion styles for more flexible minibuffer filtering.
-
-1. Install marginalia if you like rich minibuffer annotations. Exisiting commands are enhanced with these annotations, e.g., find-file.
-
-1. Install embark and add two keybindings for embark-dwim and embark-act. I am using M-. and C-.. These commands allow you to act on the object at point or in the minibuffer. No actions on multiple candidates for now though.
-
-1. Install consult if you want additional featureful completion commands, e.g, the buffer switcher consult-buffer with preview or the line-based search consult-line. consult-buffer can work with multiple candidate sources similar to helm-mini.
-
-You don't have to use all of these components. Use only the ones you like and the ones which fit well into your setup. Note that in steps 1. to 4. no new commands are introduced over plain Emacs. In step 5. the commands embark-act and embark-dwim are introduced. In step 6. you get the Consult commands, some offer new functionality not present in Emacs already (e.g., consult-line) and some are substitutes (e.g., consult-buffer for switch-to-buffer).
+You don't have to use all of these components. Use only the ones you like and the ones which fit well into your setup. Note that in steps 1 to 4, no new commands are introduced over plain Emacs. In step 5, the commands ~embark-act~ and ~embark-dwim~ are introduced. In step 6, you get the Consult commands, some offer new functionality not present in Emacs already (e.g., ~consult-line~) and some are substitutes (e.g., ~consult-buffer~ for ~switch-to-buffer~).
