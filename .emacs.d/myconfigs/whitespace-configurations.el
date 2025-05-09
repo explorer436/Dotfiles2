@@ -44,3 +44,5 @@
       )
 
       (global-whitespace-cleanup-mode t)
+
+;; To manually clean-up whitespaces in a file, do ~M-x whitespace-cleanup~
