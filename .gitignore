@@ -143,8 +143,9 @@
 .emacs.d/elpa
 .emacs.d/history
 .emacs.d/my-custom-variables-and-faces.el
-.emacs.d/my-config.el
-.emacs.d/my-themes.el
+.emacs.d/myconfigs/my-config.el
+.emacs.d/myconfigs/my-mini-buffer-completion-configs.el
+.emacs.d/myconfigs/my-themes.el
 .emacs.d/org-caldav/org-caldav-backup.org
 .emacs.d/org-roam.db
 .emacs.d/projectile-bookmarks.eld

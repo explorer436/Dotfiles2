@@ -152,11 +152,10 @@
 
     To edit the results buffer, you need to wgrep-change-to-wgrep-mode
 
-    Make the search results editable by enabling ~wgrep~ mode.  When
-    done press ~C-c C-c~ to commit your changes to the underlying files
-    or ~C-c C-k~ to drop the changes.
+    Make the search results editable by enabling ~wgrep~ mode.  When done press ~C-c C-c~ to commit your changes to the underlying files or ~C-c C-k~ to drop the changes.
 
     You can save the results of a particular search by using the letter ~s~
+
     You can navigate to it exactly the same way you navigate to all the buffers - using ~Ctrl X b~
 
 *** fzf.el
@@ -364,7 +363,7 @@
     If you don't remember all the shortcuts to various available snippets, use M-x yas-describe-tables to view the available snippets from the documentation.
 
     To study the current snippets, I suggest that you use M-x yas-describe-tables, which will show a table representation of all the snippets that are available in the current mode.
- 
+
     #+begin_src elisp
       (add-to-list 'load-path
 	"~/.emacs.d/plugins/yasnippet")
@@ -560,7 +559,7 @@
 
     With these shortcuts you can open a new line above or below the current one, even if the cursor is midsentence.
 
-    These are not very helpful if you are using evil-mode.
+    These are alternatives to using ~o~ and ~O~ in evil-mode.
 
     #+begin_src elisp
       (defun open-line-below ()

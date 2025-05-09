@@ -59,12 +59,14 @@
 (setq sentence-end-double-space nil)
 
 (when (eq system-type 'gnu/linux)
-  (org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-config.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-mini-buffer-completion-configs.org"))
 )
 (when (eq system-type 'darwin)
-  (org-babel-load-file (expand-file-name "~/.emacs.d/my-config.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-config.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-themes.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-mini-buffer-completion-configs.org"))
 )
 
 (setq org-plantuml-jar-path
