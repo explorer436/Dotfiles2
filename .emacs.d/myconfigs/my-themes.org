@@ -2,7 +2,7 @@
 * modus-vivendi
 
    #+begin_src elisp
-   (load-theme 'modus-vivendi) 
+   (load-theme 'modus-operandi) 
    #+end_src
 
 * modus-vivendi-tinted
