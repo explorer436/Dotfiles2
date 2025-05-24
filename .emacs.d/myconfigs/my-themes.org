@@ -1,8 +1,20 @@
 
+* https://github.com/ianyepan/jetbrains-darcula-emacs-theme
+
+   #+begin_src elisp
+
+     (use-package jetbrains-darcula-theme
+	:ensure t
+     )
+
+     (load-theme jetbrains-darcula)
+
+   #+end_src
+
 * modus-vivendi
 
    #+begin_src elisp
-   (load-theme 'modus-operandi) 
+   ;; (load-theme 'modus-operandi) 
    #+end_src
 
 * modus-vivendi-tinted

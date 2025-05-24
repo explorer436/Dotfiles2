@@ -400,6 +400,16 @@
       )
     #+end_src
 
+*** try packages without installing them
+
+    #+begin_src elisp
+      (use-package try
+	  :ensure t
+      )
+    #+end_src
+
+    #+RESULTS:
+
 ** Custom snippets
 
 *** auto-refresh
