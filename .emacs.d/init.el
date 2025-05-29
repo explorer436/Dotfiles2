@@ -5,11 +5,11 @@
 
 ;; To install packages, it is useful to configure the package sources.
 (setq package-archives '(("elpa" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")
-                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+			 ("melpa" . "https://melpa.org/packages/")
+			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
 (when (eq system-type 'gnu/linux)
-  (set-frame-font "DejaVu Sans Mono" nil t)
+  (set-frame-font "DejaVu Sans Mono 8" nil t)
 )
 ;; (set-frame-font "DejaVu Sans Mono 10" nil t)
 ;; (set-frame-font "Monospace Regular" nil t)
@@ -97,5 +97,4 @@
 ))
 
 (setq custom-file "~/.emacs.d/my-custom-variables-and-faces.el")
-(load custom-file)  
-
+(load custom-file)
