@@ -14,8 +14,7 @@
    1. Let the extensions install
    2. Set up the password manager
 4. Set-up ssh keys in the computer: https://programming-notes.explorer436.com/posts/20230101220234-git_set_up_ssh_keys
-5. Login to github.com
-   1. Add the ssh key in github
+5. Add the ssh key in github.com and gitlab.com
 6. Clone this and the rest of the repositories (Prerequisites: Git)
    1. Before cloning this repo, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
 
