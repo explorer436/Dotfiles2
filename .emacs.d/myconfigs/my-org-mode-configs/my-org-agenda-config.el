@@ -34,44 +34,44 @@
 
 (setq org-agenda-files
       (if (eq system-type 'windows-nt)
-          '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/Bad habits that I need to quit.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Birthdays and Important events.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Every Saturday.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Finance tasks.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Near future tasks.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Programming tasks.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Recurring personal tasks.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Well being.org"
-            "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Work.org")
+	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/Bad habits that I need to quit.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Birthdays and Important events.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Every Saturday.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Finance tasks.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Near future tasks.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Programming tasks.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Recurring personal tasks.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Well being.org"
+	    "~/../../Downloads/GitRepositories/my-personal-things/Things to do/Work.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/Bad habits that I need to quit.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Birthdays and Important events.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Every Saturday.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Finance tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Moving the needle.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Notes from Youtube.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Near future tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Programming tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Recurring personal tasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Well being.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org")
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Birthdays and Important events.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Field manual for the day.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Every Saturday.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Finance tasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Fixed volume tasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Health.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Moving the needle.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Notes from Youtube.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Near future tasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Programming tasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Recurring personal tasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Well being.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/Work.org")
       )
 )
 (setq my-org-refile-targets
       (if (eq system-type 'windows-nt)
 	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
-	          "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
+		  "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
-        "~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
+	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
       )
 )
 ;; Why is refiling to specific files (e.g. one for programming) important?
@@ -82,7 +82,7 @@
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (my-org-refile-targets :maxlevel . 9))))
+				 (my-org-refile-targets :maxlevel . 9))))
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 

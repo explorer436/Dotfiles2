@@ -96,20 +96,20 @@
       You can use advice to temporarily redefine switch-to-buffer-other-window using cl-letf. Assuming your on at least emacs 25.1 you can use define-advice, eg.
 
       (define-advice org-agenda-goto (:around (orig-fn &rest args) "new-frame")
-        (cl-letf (((symbol-function 'switch-to-buffer-other-window)
-                   (symbol-function 'switch-to-buffer-other-frame)))
-          (apply orig-fn args)))
+	(cl-letf (((symbol-function 'switch-to-buffer-other-window)
+		   (symbol-function 'switch-to-buffer-other-frame)))
+	  (apply orig-fn args)))
       In the advice orig-fn is a placeholder to org-agenda-goto. Alternatively, you could temporarily override display-buffer's function (there are a number of options you could use here -- see help for display-buffer), eg.
 
       (define-advice org-agenda-goto (:around (orig-fn &rest args) "new-frame")
-        (let ((display-buffer-overriding-action '(display-buffer-pop-up-frame)))
-          (apply orig-fn args)))
+	(let ((display-buffer-overriding-action '(display-buffer-pop-up-frame)))
+	  (apply orig-fn args)))
 
       #+begin_src elisp
       (define-advice org-agenda-goto (:around (org-agenda-goto &rest args) "new-frame")
-        (cl-letf (((symbol-function 'switch-to-buffer-other-window)
-                   (symbol-function 'switch-to-buffer-other-frame)))
-          (apply org-agenda-goto args)))
+	(cl-letf (((symbol-function 'switch-to-buffer-other-window)
+		   (symbol-function 'switch-to-buffer-other-frame)))
+	  (apply org-agenda-goto args)))
       #+end_src
 
 ** Packages
@@ -161,16 +161,16 @@
 
     #+begin_src elisp
       (use-package beacon
-         :ensure t
-         :config
-         (beacon-mode 1))
+	 :ensure t
+	 :config
+	 (beacon-mode 1))
     #+end_src
 
 *** cl-lib
 
     #+begin_src elisp
       (use-package cl-lib
-        :ensure t)
+	:ensure t)
     #+end_src
 
 *** flex-autopair
@@ -181,9 +181,9 @@
 
     #+begin_src elisp
       (use-package flex-autopair
-        :ensure t
-        :config
-          (flex-autopair-mode 1)
+	:ensure t
+	:config
+	  (flex-autopair-mode 1)
       )
     #+end_src
 
@@ -193,9 +193,9 @@
 
     #+begin_src elisp
       (use-package git-gutter
-        :ensure t
-        :config
-          (global-git-gutter-mode +1)
+	:ensure t
+	:config
+	  (global-git-gutter-mode +1)
       )
     #+end_src
 
@@ -270,12 +270,12 @@
 
     #+begin_src elisp
       (use-package multiple-cursors
-        :config
-        (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-        (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-        (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-        (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-        :ensure t)
+	:config
+	(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+	(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+	(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+	(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+	:ensure t)
     #+end_src
 
 *** projectile
@@ -285,34 +285,34 @@
 
     #+begin_src elisp
       (use-package projectile
-        :config
-        (projectile-mode +1)
-        (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-        (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-        :ensure t)
+	:config
+	(projectile-mode +1)
+	(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+	(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+	:ensure t)
     #+end_src
 
 *** evil-mode
 
     #+begin_src elisp
       (use-package evil
-        :config
-          (evil-mode 0)
-        :ensure t)
+	:config
+	  (evil-mode 0)
+	:ensure t)
     #+end_src
 
 *** which-key
 
     #+begin_src elisp
       (use-package which-key
-        :config
-          (setq which-key-idle-delay 0.3)
-          (setq which-key-popup-type 'frame)
-          (which-key-mode)
-          (which-key-setup-minibuffer)
-          (set-face-attribute 'which-key-local-map-description-face nil
-             :weight 'bold)
-          :ensure t)
+	:config
+	  (setq which-key-idle-delay 0.3)
+	  (setq which-key-popup-type 'frame)
+	  (which-key-mode)
+	  (which-key-setup-minibuffer)
+	  (set-face-attribute 'which-key-local-map-description-face nil
+	     :weight 'bold)
+	  :ensure t)
     #+end_src
 
 *** yasnippet
@@ -344,7 +344,7 @@
 
     #+begin_src elisp
     (use-package string-inflection
-        :ensure t
+	:ensure t
     )
     #+end_src
 
@@ -356,10 +356,10 @@
     ;; (require 'calfw)
     ;; (require 'calfw-org)
     (use-package calfw
-        :ensure t
+	:ensure t
     )
     (use-package calfw-org
-        :ensure t
+	:ensure t
     )
 
     (defun my-calfw-view ()
@@ -434,17 +434,17 @@
     With this code, instead of taking me to the very beginning or very end, they now take me to the first or last file.
     #+begin_src elisp
       (defun dired-back-to-top ()
-        (interactive)
-        (beginning-of-buffer)
-        (dired-next-line 4))
+	(interactive)
+	(beginning-of-buffer)
+	(dired-next-line 4))
       (define-key dired-mode-map
-        (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+	(vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
       (defun dired-jump-to-bottom ()
-        (interactive)
-        (end-of-buffer)
-        (dired-next-line -1))
+	(interactive)
+	(end-of-buffer)
+	(dired-next-line -1))
       (define-key dired-mode-map
-        (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+	(vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
     #+end_src
 
 *** Join lines
@@ -453,14 +453,14 @@
 
      #+begin_src elisp
        (global-set-key (kbd "M-j")
-            (lambda ()
-                  (interactive)
-                  (join-line -1)))
+	    (lambda ()
+		  (interactive)
+		  (join-line -1)))
      #+end_src
 
 *** Delete current buffer
 
-    C-x C-k: file begone!
+    ~C-x C-k~ file begone!
 
     I like the feel between C-x k to kill the buffer and C-x C-k to kill the file. Release ctrl to kill it a little, hold to kill it a lot.
 
@@ -469,14 +469,14 @@
       "Removes file connected to current buffer and kills buffer."
       (interactive)
       (let ((filename (buffer-file-name))
-            (buffer (current-buffer))
-            (name (buffer-name)))
-        (if (not (and filename (file-exists-p filename)))
-            (ido-kill-buffer)
-          (when (yes-or-no-p "Are you sure you want to remove this file? ")
-            (delete-file filename)
-            (kill-buffer buffer)
-            (message "File '%s' successfully removed" filename)))))
+	    (buffer (current-buffer))
+	    (name (buffer-name)))
+	(if (not (and filename (file-exists-p filename)))
+	    (ido-kill-buffer)
+	  (when (yes-or-no-p "Are you sure you want to remove this file? ")
+	    (delete-file filename)
+	    (kill-buffer buffer)
+	    (message "File '%s' successfully removed" filename)))))
 
       (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
     #+end_src
@@ -487,21 +487,21 @@
 
     #+begin_src elisp
       (defun rename-current-buffer-file ()
-        "Renames current buffer and file it is visiting."
-        (interactive)
-        (let ((name (buffer-name))
-              (filename (buffer-file-name)))
-          (if (not (and filename (file-exists-p filename)))
-              (error "Buffer '%s' is not visiting a file!" name)
-            (let ((new-name (read-file-name "New name: " filename)))
-              (if (get-buffer new-name)
-                  (error "A buffer named '%s' already exists!" new-name)
-                (rename-file filename new-name 1)
-                (rename-buffer new-name)
-                (set-visited-file-name new-name)
-                (set-buffer-modified-p nil)
-                (message "File '%s' successfully renamed to '%s'"
-                         name (file-name-nondirectory new-name)))))))
+	"Renames current buffer and file it is visiting."
+	(interactive)
+	(let ((name (buffer-name))
+	      (filename (buffer-file-name)))
+	  (if (not (and filename (file-exists-p filename)))
+	      (error "Buffer '%s' is not visiting a file!" name)
+	    (let ((new-name (read-file-name "New name: " filename)))
+	      (if (get-buffer new-name)
+		  (error "A buffer named '%s' already exists!" new-name)
+		(rename-file filename new-name 1)
+		(rename-buffer new-name)
+		(set-visited-file-name new-name)
+		(set-buffer-modified-p nil)
+		(message "File '%s' successfully renamed to '%s'"
+			 name (file-name-nondirectory new-name)))))))
 
       (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
     #+end_src
@@ -515,13 +515,13 @@
       "Put the current file name on the clipboard"
       (interactive)
       (let ((filename (if (equal major-mode 'dired-mode)
-                          default-directory
-                        (buffer-file-name))))
-        (when filename
-          (with-temp-buffer
-            (insert filename)
-            (clipboard-kill-region (point-min) (point-max)))
-          (message filename))))
+			  default-directory
+			(buffer-file-name))))
+	(when filename
+	  (with-temp-buffer
+	    (insert filename)
+	    (clipboard-kill-region (point-min) (point-max)))
+	  (message filename))))
     #+end_src
 
 *** Open new lines above or below the current line
@@ -532,17 +532,17 @@
 
     #+begin_src elisp
       (defun open-line-below ()
-        (interactive)
-        (end-of-line)
-        (newline)
-        (indent-for-tab-command))
+	(interactive)
+	(end-of-line)
+	(newline)
+	(indent-for-tab-command))
 
       (defun open-line-above ()
-        (interactive)
-        (beginning-of-line)
-        (newline)
-        (forward-line -1)
-        (indent-for-tab-command))
+	(interactive)
+	(beginning-of-line)
+	(newline)
+	(forward-line -1)
+	(indent-for-tab-command))
 
       (global-set-key (kbd "<C-return>") 'open-line-below)
       (global-set-key (kbd "<C-S-return>") 'open-line-above)
@@ -557,24 +557,24 @@
 
      #+begin_src elisp
        (global-set-key (kbd "C-S-n")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (next-line 5))))
+		(lambda ()
+		  (interactive)
+		  (ignore-errors (next-line 5))))
 
        (global-set-key (kbd "C-S-p")
-                       (lambda ()
-                         (interactive)
-                         (ignore-errors (previous-line 5))))
+		       (lambda ()
+			 (interactive)
+			 (ignore-errors (previous-line 5))))
 
        (global-set-key (kbd "C-S-f")
-                       (lambda ()
-                         (interactive)
-                         (ignore-errors (forward-char 5))))
+		       (lambda ()
+			 (interactive)
+			 (ignore-errors (forward-char 5))))
 
        (global-set-key (kbd "C-S-b")
-                       (lambda ()
-                         (interactive)
-                         (ignore-errors (backward-char 5))))
+		       (lambda ()
+			 (interactive)
+			 (ignore-errors (backward-char 5))))
      #+end_src
 
 *** Move around in a buffer quickly
@@ -609,33 +609,33 @@
 
       #+begin_src elisp
       (define-minor-mode my-override-mode
-        "Overrides all major and minor mode keys" t)
+	"Overrides all major and minor mode keys" t)
 
       (defvar my-override-map (make-sparse-keymap "my-override-map")
-        "Override all major and minor mode keys")
+	"Override all major and minor mode keys")
 
       (add-to-list 'emulation-mode-map-alists
-        `((my-override-mode . ,my-override-map)))
+	`((my-override-mode . ,my-override-map)))
 
       (define-key my-override-map (kbd "<left>")
-        (lambda ()
-          (interactive)
-          (message "Use Vim keys: h for Left")))
+	(lambda ()
+	  (interactive)
+	  (message "Use Vim keys: h for Left")))
 
       (define-key my-override-map (kbd "<right>")
-        (lambda ()
-          (interactive)
-          (message "Use Vim keys: l for Right")))
+	(lambda ()
+	  (interactive)
+	  (message "Use Vim keys: l for Right")))
 
       (define-key my-override-map (kbd "<up>")
-        (lambda ()
-          (interactive)
-          (message "Use Vim keys: k for Up")))
+	(lambda ()
+	  (interactive)
+	  (message "Use Vim keys: k for Up")))
 
       (define-key my-override-map (kbd "<down>")
-        (lambda ()
-          (interactive)
-          (message "Use Vim keys: j for Down")))
+	(lambda ()
+	  (interactive)
+	  (message "Use Vim keys: j for Down")))
       #+end_src
 
 Evil mode provides it's own emulation map. So you need to add this line
@@ -646,35 +646,53 @@ Evil mode provides it's own emulation map. So you need to add this line
 
 *** Toggle Window Split
 
-  Disable arrow keys
+  Toggle between horizontal and vertical window splits.
 
   #+begin_src emacs-lisp
   (defun my-toggle-window-split ()
     (interactive)
       (if (= (count-windows) 2)
-          (let* ((this-win-buffer (window-buffer))
-    	     (next-win-buffer (window-buffer (next-window)))
-    	     (this-win-edges (window-edges (selected-window)))
-    	     (next-win-edges (window-edges (next-window)))
-    	     (this-win-2nd (not (and (<= (car this-win-edges)
-    					 (car next-win-edges))
-    				     (<= (cadr this-win-edges)
-    					 (cadr next-win-edges)))))
-    	     (splitter
-    	      (if (= (car this-win-edges)
-    		     (car (window-edges (next-window))))
-    		  'split-window-horizontally
-    		'split-window-vertically)))
-    	(delete-other-windows)
-    	(let ((first-win (selected-window)))
-    	  (funcall splitter)
-    	  (if this-win-2nd (other-window 1))
-    	  (set-window-buffer (selected-window) this-win-buffer)
-    	  (set-window-buffer (next-window) next-win-buffer)
-    	  (select-window first-win)
-    	  (if this-win-2nd (other-window 1))))))
+	  (let* ((this-win-buffer (window-buffer))
+	     (next-win-buffer (window-buffer (next-window)))
+	     (this-win-edges (window-edges (selected-window)))
+	     (next-win-edges (window-edges (next-window)))
+	     (this-win-2nd (not (and (<= (car this-win-edges)
+					 (car next-win-edges))
+				     (<= (cadr this-win-edges)
+					 (cadr next-win-edges)))))
+	     (splitter
+	      (if (= (car this-win-edges)
+		     (car (window-edges (next-window))))
+		  'split-window-horizontally
+		'split-window-vertically)))
+	(delete-other-windows)
+	(let ((first-win (selected-window)))
+	  (funcall splitter)
+	  (if this-win-2nd (other-window 1))
+	  (set-window-buffer (selected-window) this-win-buffer)
+	  (set-window-buffer (next-window) next-win-buffer)
+	  (select-window first-win)
+	  (if this-win-2nd (other-window 1))))))
 
   (define-key ctl-x-4-map "t" 'toggle-window-split)
   #+end_src
 
+*** Customize org-link-frame-setup
 
+  For help, ~describe-variable org-link-frame-setup~
+
+  https://orgmode.org/manual/Handling-Links.html
+
+  For FILE, use any of
+    ‘find-file’ -- This one opens files in the current window (over the previous file that you are in)
+    ‘find-file-other-window’ -- This one opens files in the same window - to the right or to the bottom
+    ‘find-file-other-frame’ -- This one opens files in an entirely new frame
+
+   #+begin_src emacs-lisp
+   (setq org-link-frame-setup
+      '((vm . vm-visit-folder-other-frame)
+	(vm-imap . vm-visit-imap-folder-other-frame)
+	(gnus . org-gnus-no-new-news)
+	(file . find-file-other-frame) ;; Opens files in the current window
+	(wl . wl-other-frame)))
+   #+end_src
