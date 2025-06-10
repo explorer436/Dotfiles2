@@ -14,7 +14,9 @@
    [color]
 	ui = auto
    [core]
-	autocrlf = input
+	ignorecase = false
+	;; tell git to take account of the case
+        autocrlf = input
 	;; set autocrlf = true "only in Windows computers"
 	protectNTFS = false
 	;; What is this for? git Checkout Returns 'error: invalid path' on Windows
