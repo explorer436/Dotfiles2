@@ -108,6 +108,30 @@ The beauty of the whole Vertico/Marginalia/Orderless/Consult suite is that, it f
 
    I would recommend enabling most of the consult commands as it feels like plain old emacs with a better preview.
 
+   consult-theme makes switching between themes a breeze. I've got a couple dozen themes and just changing things up from time to time brings me a little extra bit of happiness.
+
+   I use consult-yank-pop, consult-imenu, consult-outline, and consult-focus-lines pretty frequently.
+
+   consult-yank-pop is genius
+
+   I'm a developer, I spend most of my time writing and searching in a pretty big codebase. To me consult-ripgrep is a huge help mostly thanks to the preview it offers.
+
+   consult-buffer is also really nice since I usually have a lot of buffers open, sometimes with the same file name.
+
+   consult-flymake can be useful if you do programming in emacs.
+
+   I use consult-register, it breaks down your registers by type as well.
+   Additionally, consult-buffer and the project version of it. I also use consult-ripgrep, pretty handy and integrates well with project.el. I basically use consult for everything if possible. If you use posframe you can also get a nice ui for it.
+
+   I have a few favorites in the Consult package, which had some impact on my workflow. Most of them have already been listed in other comments I think.
+   1. consult-buffer: This one is quite obvious. It is my main entry point to access buffers and files.
+   1. consult-line: Searching, important when I am interested in all matches. For jumping I often use Isearch though.
+   1. consult-(rip)grep: Search and replace (Embark + Wgrep!) in projects.
+   1. consult-info: This one has made it much easier for me to quickly look up something in the Emacs manual. I am sure there exist other good alternatives to search the manual, but I always found the info system a bit inaccessible. The documentation is one of the main strengths of Emacs and this motivated me to add this command.
+   1. consult-flymake: Jumping around, fixing compilation warnings and errors when coding.
+   1. consult-history: I use Eshell, where I need this command the most.
+   1. consult-locate: Searching my music collection and enqueuing via Embark. This is certainly an obscure use case you and you will likely fare better with some database approach.
+
    #+begin_src elisp
 
    ;; Example configuration for Consult

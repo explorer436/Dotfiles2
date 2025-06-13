@@ -1,3 +1,9 @@
+* How to preview themes?
+
+  Use the preview feature of consult.
+
+  ~consult-theme~ makes switching between themes a breeze. I've got a couple dozen themes and just changing things up from time to time brings me a little extra bit of happiness.
+
 * https://github.com/ianyepan/jetbrains-darcula-emacs-theme
 
    #+begin_src elisp
