@@ -1,0 +1,11 @@
+* csv mode
+
+  1. https://www.emacswiki.org/emacs/CsvMode
+
+  2. https://www.reddit.com/r/emacs/comments/26c71k/comment/chq2r8m/
+
+     #+begin_src elisp
+     (use-package csv-mode
+	:ensure t
+     )
+     #+end_src
