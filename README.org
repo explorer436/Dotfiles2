@@ -33,3 +33,7 @@
 1. Copy the .bashrc from skel and import your customizations into it.
 2. The details about how to do it are in ~.bashrc_personal~
 3. Make sure you put this line in .bashrc (or .zprofile if it is a Macbook) after copying it from skel: ~[[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal~
+4. Install ninja build tool: ~sudo apt install ninja-build~
+5. Install sdkman and jdk
+6. Install nvm and Nodejs
+7. Install hugo
