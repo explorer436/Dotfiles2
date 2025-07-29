@@ -53,3 +53,4 @@
 14. Set-up git-sync for the repositories.
 15. Install jetbrains toolbox
     1. https://programming-notes.explorer436.com/posts/20250220112327-installing_different_products_from_jetbrains/
+16. Install ripgrep
