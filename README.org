@@ -7,6 +7,7 @@
    $ yay -S paru
    #+end_src
 2. Install brave-bin
+   https://brave.com/linux/
    #+begin_src
    $ paru -S brave-bin
    #+end_src
@@ -15,7 +16,9 @@
    2. Set up the password manager
 4. Set-up ssh keys in the computer: https://programming-notes.explorer436.com/posts/20230101220234-git_set_up_ssh_keys
 5. Add the ssh key in github.com and gitlab.com
-6. Clone this and the rest of the repositories (Prerequisites: Git)
+6. Install git
+   1. https://programming-notes.explorer436.com/posts/20230718134010-git_installation_tips/
+7. Clone this and the rest of the repositories
    1. Before cloning this repo, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
 
       #+NAME: Set up instructions
@@ -27,13 +30,26 @@
       git branch -m main
       git branch main -u remotes/origin/main
       #+END_SRC
-
-** Steps to do after setting up this repository in computer
-
-1. Copy the .bashrc from skel and import your customizations into it.
-2. The details about how to do it are in ~.bashrc_personal~
-3. Make sure you put this line in .bashrc (or .zprofile if it is a Macbook) after copying it from skel: ~[[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal~
-4. Install ninja build tool: ~sudo apt install ninja-build~
-5. Install sdkman and jdk
-6. Install nvm and Nodejs
-7. Install hugo
+8. Clone Mainroad theme into the appropriate repos
+   #+begin_src
+   mkdir themes
+   cd themes
+   git clone git@github.com:explorer436/Mainroad.git
+   #+end_src
+9. Copy the .bashrc from skel and import your customizations into it.
+   1. The details about how to do it are in ~.bashrc_personal~
+   2. Make sure you put this line in .bashrc (or .zprofile if it is a Macbook) after copying it from skel.
+      #+begin_src
+      [[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal
+      #+end_src
+10. Install ninja build tool
+    1. https://programming-notes.explorer436.com/posts/20231128114033-ninja_build_tool/
+11. Install sdkman and jdk
+    1. https://programming-notes.explorer436.com/posts/20240427081810-using_sdkman_to_install_and_manage_jdk_versions/
+12. Install nvm and Nodejs
+    1. https://programming-notes.explorer436.com/posts/20221203111757-npm_and_yarn/
+13. Install hugo
+    1. https://programming-notes.explorer436.com/posts/20231130003623-hugo_themes_and_customizations/
+14. Set-up git-sync for the repositories.
+15. Install jetbrains toolbox
+    1. https://programming-notes.explorer436.com/posts/20250220112327-installing_different_products_from_jetbrains/
