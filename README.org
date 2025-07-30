@@ -14,10 +14,9 @@
 3. Add brave-bin to the sync chain
    1. Let the extensions install
    2. Set up the password manager
-4. Set-up ssh keys in the computer: https://programming-notes.explorer436.com/posts/20230101220234-git_set_up_ssh_keys
+4. Set-up ssh keys in the computer.
 5. Add the ssh key in github.com and gitlab.com
 6. Install git
-   1. https://programming-notes.explorer436.com/posts/20230718134010-git_installation_tips/
 7. Clone this and the rest of the repositories
    1. Before cloning this repo, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
 
@@ -43,14 +42,10 @@
       [[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal
       #+end_src
 10. Install ninja build tool
-    1. https://programming-notes.explorer436.com/posts/20231128114033-ninja_build_tool/
 11. Install sdkman and jdk
-    1. https://programming-notes.explorer436.com/posts/20240427081810-using_sdkman_to_install_and_manage_jdk_versions/
 12. Install nvm and Nodejs
-    1. https://programming-notes.explorer436.com/posts/20221203111757-npm_and_yarn/
 13. Install hugo
-    1. https://programming-notes.explorer436.com/posts/20231130003623-hugo_themes_and_customizations/
 14. Set-up git-sync for the repositories.
 15. Install jetbrains toolbox
-    1. https://programming-notes.explorer436.com/posts/20250220112327-installing_different_products_from_jetbrains/
 16. Install ripgrep
+17. Install Accounting tools
