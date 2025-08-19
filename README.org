@@ -1,11 +1,5 @@
 * First steps in setting up a computer
 
-(Arch Linux)
-
-1. Install paru
-   #+begin_src
-   $ yay -S paru
-   #+end_src
 2. Install brave-bin
    https://brave.com/linux/
    #+begin_src
