@@ -46,6 +46,8 @@
 12. Install nvm and Nodejs
 13. Install hugo
 14. Set-up git-sync for the repositories.
-15. Install jetbrains toolbox
+15. Install jetbrains toolbox and the required IDEs
 16. Install ripgrep
 17. Install Accounting tools
+18. Install pcloud
+19. Install ProtonVPN
