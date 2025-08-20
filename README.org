@@ -8,8 +8,9 @@
    3. Change the default search engine in brave
 3. Set-up ssh keys in the computer
 4. Add the ssh key in github.com and gitlab.com
-5. Install git
-6. Clone this and the rest of the repositories
+5. ~sudo apt install emacs-gtk~
+6. Install git
+7. Clone this and the rest of the repositories
    1. Before cloning this repo, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
 
       #+NAME: Set up instructions
@@ -21,7 +22,8 @@
       git branch -m main
       git branch main -u remotes/origin/main
       #+END_SRC
-7. Go to ~SetUpRepositories.org~ and run the commands to set up the necessary tools.scr
-8. Install jetbrains toolbox and the required IDEs
-9. Install pcloud
-10. Install ProtonVPN
+8. Go to ~SetUpRepositories.org~ and run the commands to set up the necessary tools.scr
+9. Install jetbrains toolbox and the required IDEs
+10. Install pcloud
+11. Install ProtonVPN
+12. Install tor-browser
