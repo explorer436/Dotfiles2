@@ -22,8 +22,5 @@
       git branch -m main
       git branch main -u remotes/origin/main
       #+END_SRC
-8. Go to ~SetUpRepositories.org~ and run the commands to set up the necessary tools.scr
-9. Install jetbrains toolbox and the required IDEs
-10. Install pcloud
-11. Install ProtonVPN
-12. Install browsers
+8. Go to ~SetUpRepositories.org~ and run the commands to set up the necessary tools.
+   1. Install the rest of the tools listed in this file.
