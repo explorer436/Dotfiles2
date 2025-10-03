@@ -8,7 +8,7 @@
    3. Change the default search engine in brave
 3. Set-up ssh keys in the computer
 4. Add the ssh key in github.com and gitlab.com
-5. ~sudo apt install emacs-gtk~
+5. Install emacs
 6. Install git
 7. Clone this and the rest of the repositories
    1. Before cloning this repo, see if there are any files in your computer in the same directories as these that are going to conflict with these. If so, take a backup of those files.
