@@ -26,4 +26,4 @@
 9. Install jetbrains toolbox and the required IDEs
 10. Install pcloud
 11. Install ProtonVPN
-12. Install tor-browser
+12. Install browsers
