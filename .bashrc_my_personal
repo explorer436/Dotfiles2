@@ -12,10 +12,10 @@
 # So one could replace a corrupt .bashrc simply by overwitting from there.
 # Copy the existing raw .bashrc from /etc/skel to your home directory by
 # cp /etc/skel/.bashrc ~/
-# Make sure you put this line in .bashrc (or .zprofile if it is a Macbook) after copying it from skel: [[ -f ~/.bashrc_personal ]] && . ~/.bashrc_personal
+# Make sure you put this line in .bashrc (or .zprofile if it is a Macbook) after copying it from skel: [[ -f ~/.bashrc_my_personal ]] && . ~/.bashrc_my_personal
 
 # This is to import .bash_aliases into .bashrc_personal. You don't have to import it into .bashrc again.
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/.bash_my_aliases ]] && . ~/.bash_my_aliases
 
 # Do not use this method. Instead, use sdkman for managing jdk versions.
 # Prerequisite: Download and put the directory there.
