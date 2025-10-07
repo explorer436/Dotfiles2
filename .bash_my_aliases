@@ -1,5 +1,5 @@
 # If you see errors when you try to import this file into .bashrc, run this command:
-#dos2unix .bash_aliases
+# dos2unix .bash_aliases
 
 ### ALIASES ###
 
@@ -7,10 +7,19 @@
 alias grep='grep --color=auto'
 
 # list commands
-alias ls='ls -ltaX --color=auto'
-alias la='ls -a'
-alias ll='ls -alFh'
-alias l='ls'
+# alias l='ls'
+# alias ls='ls -ltaX --color=auto'
+# alias la='ls -a'
+# alias ll='ls -alFh'
+
+# Replace ls with eza
+# if [[ -x /usr/bin/eza ]]; then
+#   alias ls='eza -al --color=always --group-directories-first --icons'     # preferred listing
+#   alias la='eza -a --color=always --group-directories-first --icons'      # all files and dirs
+#   alias ll='eza -l --color=always --group-directories-first --icons'      # long format
+#   alias lt='eza -aT --color=always --group-directories-first --icons'     # tree listing
+#   alias l.='eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+# fi
 
 # fix obvious typo's
 alias cd..='cd ..'
@@ -36,4 +45,4 @@ alias varietyn='variety --next'
 alias varietyp='variety --previous'
 
 # Make sure you put this line in .bashrc after copying it from skel
-# [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+# [[ -f ~/.bash_my_aliases ]] && . ~/.bash_my_aliases
