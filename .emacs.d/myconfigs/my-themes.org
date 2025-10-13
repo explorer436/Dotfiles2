@@ -1,3 +1,9 @@
+* How to start emacs without theme?
+
+#+begin_src
+M-x disable-theme
+#+end_src
+
 * How to preview themes?
 
   Use the preview feature of consult.
@@ -66,10 +72,10 @@
     Use t in (load-theme 'dracula t) to make sure that it wouldn't ask for confirmation at start-up.
 
     #+begin_src elisp
-    (use-package dracula-theme
-       :config
-       (load-theme 'dracula t)
-       :ensure t)
+  ;;  (use-package dracula-theme
+  ;;     :config
+  ;;     (load-theme 'dracula t)
+  ;;     :ensure t)
     #+end_src
 
     #+RESULTS:
