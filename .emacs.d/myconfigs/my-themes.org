@@ -6,7 +6,16 @@ M-x disable-theme
 
 * How to preview themes?
 
-  Use the preview feature of consult.
+** Without using consult
+
+1. Use menu bar
+2. If it is turned off, turn it on using ~menu-bar-mode~
+3. Options -> Customize Emacs -> Custom themes
+4. Click on each theme to see what it looks like
+
+** Using consult
+
+Use the preview feature of consult.
 
   ~consult-theme~ makes switching between themes a breeze. I've got a couple dozen themes and just changing things up from time to time brings me a little extra bit of happiness.
 
