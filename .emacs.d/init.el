@@ -9,7 +9,7 @@
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
 (when (eq system-type 'gnu/linux)
-  (set-frame-font "Noto Sans 8" nil t)
+  (set-frame-font "Noto Sans 12" nil t)
 )
 ;; (set-frame-font "DejaVu Sans Mono 10" nil t)
 ;; (set-frame-font "Monospace Regular" nil t)

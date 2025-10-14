@@ -10,7 +10,9 @@ M-x disable-theme
 
   ~consult-theme~ makes switching between themes a breeze. I've got a couple dozen themes and just changing things up from time to time brings me a little extra bit of happiness.
 
-* https://github.com/ianyepan/jetbrains-darcula-emacs-theme
+* Jetbrains darcula theme
+
+  https://github.com/ianyepan/jetbrains-darcula-emacs-theme
 
    #+begin_src elisp
 
@@ -77,9 +79,6 @@ M-x disable-theme
   ;;     (load-theme 'dracula t)
   ;;     :ensure t)
     #+end_src
-
-    #+RESULTS:
-    : t
 
 * firecode-theme
     #+begin_src elisp
