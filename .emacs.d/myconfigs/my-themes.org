@@ -4,6 +4,15 @@
 M-x disable-theme
 #+end_src
 
+* My opinions about themes
+
+1. I used dracula theme for a long time and pretty happy with it.
+   1. However, it comes with it's own customizations to fonts and other things.
+   2. I had to disable it when customizing to use specific fonts.
+2. Sometimes, it feels like using emacs without themes is a pretty good way to go about things
+3. When I do have to use dark mode, "tsdh-dark" (comes with emacs - don't have to install anything) seems like a good choice
+   1. "tsdh-light" also seems good for day times
+
 * How to preview themes?
 
 ** Without using consult
@@ -52,27 +61,27 @@ Use the preview feature of consult.
 
   https://github.com/doomemacs/themes?tab=readme-ov-file
 
-  #+begin_src elisp
-    (use-package doom-themes
-    :ensure t
-    :config
-    ;; Global settings (defaults)
-    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-	  doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    ;; (load-theme 'doom-gruvbox t)
-    ;; (load-theme 'doom-dracula t)
-    ;; (load-theme 'doom-acario-dark t)
-
-    ;; Enable flashing mode-line on errors
-    ;; (doom-themes-visual-bell-config)
-    ;; Enable custom neotree theme (nerd-icons must be installed!)
-    ;; (doom-themes-neotree-config)
-    ;; or for treemacs users
-    ;; (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-    ;; (doom-themes-treemacs-config)
-    ;; Corrects (and improves) org-mode's native fontification.
-    (doom-themes-org-config))
-  #+end_src
+;;  #+begin_src elisp
+;;    (use-package doom-themes
+;;    :ensure t
+;;    :config
+;;    ;; Global settings (defaults)
+;;    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+;;	  doom-themes-enable-italic t) ; if nil, italics is universally disabled
+;;    ;; (load-theme 'doom-gruvbox t)
+;;    ;; (load-theme 'doom-dracula t)
+;;    ;; (load-theme 'doom-acario-dark t)
+;;
+;;    ;; Enable flashing mode-line on errors
+;;    ;; (doom-themes-visual-bell-config)
+;;    ;; Enable custom neotree theme (nerd-icons must be installed!)
+;;    ;; (doom-themes-neotree-config)
+;;    ;; or for treemacs users
+;;    ;; (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+;;    ;; (doom-themes-treemacs-config)
+;;    ;; Corrects (and improves) org-mode's native fontification.
+;;    (doom-themes-org-config))
+;;  #+end_src
 
 * dracula theme
 
