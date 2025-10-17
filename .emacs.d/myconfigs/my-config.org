@@ -114,6 +114,27 @@
 
 ** Packages
 
+*** nov mode
+
+  https://depp.brause.cc/nov.el/
+
+  Prerequisite: nov.el
+
+  Installation
+  1. M-x list-packages
+  2. Search for nov
+  3. Install it
+
+  Navigation in the epub in emacs:
+  1. Use the arrow keys or Page-Up/Page-Down to move through the content.
+  1. t takes you to the table of contents.
+  1. n and p navigate to the next and previous chapters, respectively.
+  1. q exits the ebook reader.
+
+    #+begin_src elisp
+    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+    #+end_src
+
 *** dired-sidebar
 
     #+begin_src elisp
