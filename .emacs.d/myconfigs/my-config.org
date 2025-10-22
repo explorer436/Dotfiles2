@@ -172,7 +172,6 @@
     )
 
     (defun my-calfw-view ()
-      "Launch org-timeblock and org-timeblock-toggle-timeblock-list simulataneously"
       (interactive)
       (cfw:open-org-calendar)
     )
@@ -326,6 +325,11 @@
     #+end_src
 
 *** nov mode
+
+    #+begin_src elisp
+      (use-package nov
+	:ensure t)
+    #+end_src
 
   To read epub files in emacs
 
