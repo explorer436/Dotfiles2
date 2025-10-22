@@ -114,51 +114,6 @@
 
 ** Packages
 
-*** nov mode
-
-  https://depp.brause.cc/nov.el/
-
-  Prerequisite: nov.el
-
-  Installation
-  1. M-x list-packages
-  2. Search for nov
-  3. Install it
-
-  Navigation in the epub in emacs:
-  1. Use the arrow keys or Page-Up/Page-Down to move through the content.
-  1. t takes you to the table of contents.
-  1. n and p navigate to the next and previous chapters, respectively.
-  1. q exits the ebook reader.
-
-    #+begin_src elisp
-    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-    #+end_src
-
-*** dired-sidebar
-
-    #+begin_src elisp
-     (use-package dired-sidebar
-       :ensure t
-       :commands (dired-sidebar-toggle-sidebar))
-    #+end_src
-
-*** emacs-neotree
-
-  This is an emacs port of vim's NERDTree.
-
-  https://github.com/jaypei/emacs-neotree?tab=readme-ov-file
-
-  #+begin_src elisp
-  ;; (use-package neotree
-  ;;   :ensure t
-  ;; )
-  #+end_src
-
-  Use dired-sidebar instead.
-
-  This is not showing the tree view for the directory in which the file exists. It is always showing the same tree view that it initially launches - even though we open files from a different directory.
-
 *** avy
 
     https://github.com/abo-abo/avy
@@ -194,6 +149,62 @@
 	:ensure t)
     #+end_src
 
+*** dired-sidebar
+
+    #+begin_src elisp
+     (use-package dired-sidebar
+       :ensure t
+       :commands (dired-sidebar-toggle-sidebar))
+    #+end_src
+
+*** emacs-calfw
+
+    https://gitnhub.com/kiwanami/emacs-calfw
+
+    #+begin_src elisp
+    ;; (require 'calfw)
+    ;; (require 'calfw-org)
+    (use-package calfw
+	:ensure t
+    )
+    (use-package calfw-org
+	:ensure t
+    )
+
+    (defun my-calfw-view ()
+      "Launch org-timeblock and org-timeblock-toggle-timeblock-list simulataneously"
+      (interactive)
+      (cfw:open-org-calendar)
+    )
+    #+end_src
+
+    Then, ~M-x cfw:open-org-calendar~
+
+*** emacs-neotree
+
+  This is an emacs port of vim's NERDTree.
+
+  https://github.com/jaypei/emacs-neotree?tab=readme-ov-file
+
+  #+begin_src elisp
+  ;; (use-package neotree
+  ;;   :ensure t
+  ;; )
+  #+end_src
+
+  Use dired-sidebar instead.
+
+  This is not showing the tree view for the directory in which the file exists. It is always showing the same tree view that it initially launches - even though we open files from a different directory.
+
+*** evil-mode
+
+    #+begin_src elisp
+      (use-package evil
+	:config
+	  (evil-mode 0)
+	:ensure t)
+    #+end_src
+
 *** flex-autopair
 
     The alternative to using this is ~(show-paren-mode 1)~
@@ -217,6 +228,21 @@
 	:ensure t
 	:config
 	  (global-git-gutter-mode +1)
+      )
+    #+end_src
+
+*** ledger-mode
+
+    https://github.com/ledger/ledger-mode
+
+    Helpful features:
+
+    1. Sorting entries in a ledger file.
+    1. Aligning prices, completing accounts and generating upcoming transactions are other features
+
+    #+begin_src elisp
+      (use-package ledger-mode
+	  :ensure t
       )
     #+end_src
 
@@ -299,6 +325,29 @@
 	:ensure t)
     #+end_src
 
+*** nov mode
+
+  To read epub files in emacs
+
+  https://depp.brause.cc/nov.el/
+
+  Prerequisite: nov.el
+
+  Installation
+  1. M-x list-packages
+  2. Search for nov
+  3. Install it
+
+  Navigation in the epub in emacs:
+  1. Use the arrow keys or Page-Up/Page-Down to move through the content.
+  1. t takes you to the table of contents.
+  1. n and p navigate to the next and previous chapters, respectively.
+  1. q exits the ebook reader.
+
+    #+begin_src elisp
+    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+    #+end_src
+
 *** projectile
 
     https://github.com/bbatsov/projectile
@@ -313,14 +362,45 @@
 	:ensure t)
     #+end_src
 
-*** evil-mode
+*** smartscan
+
+    https://github.com/mickeynp/smart-scan
+
+    https://www.masteringemacs.org/article/smart-scan-jump-symbols-buffer
 
     #+begin_src elisp
-      (use-package evil
-	:config
-	  (evil-mode 0)
-	:ensure t)
+      (use-package smartscan
+	  :ensure t
+	  :config
+	 (global-smartscan-mode 1)
+      )
     #+end_src
+
+*** string-inflection
+
+    #+begin_src elisp
+    (use-package string-inflection
+	:ensure t
+    )
+    #+end_src
+
+*** switch-window
+
+    #+begin_src elisp
+    (use-package switch-window
+	:ensure t
+    )
+    #+end_src
+
+*** try packages without installing them
+
+    #+begin_src elisp
+      (use-package try
+	  :ensure t
+      )
+    #+end_src
+
+    #+RESULTS:
 
 *** which-key
 
@@ -360,76 +440,6 @@
     #+end_src
 
     To look at the list of available snippets, use emacs ~describe~ function.
-
-*** string-inflection
-
-    #+begin_src elisp
-    (use-package string-inflection
-	:ensure t
-    )
-    #+end_src
-
-*** emacs-calfw
-
-    https://gitnhub.com/kiwanami/emacs-calfw
-
-    #+begin_src elisp
-    ;; (require 'calfw)
-    ;; (require 'calfw-org)
-    (use-package calfw
-	:ensure t
-    )
-    (use-package calfw-org
-	:ensure t
-    )
-
-    (defun my-calfw-view ()
-      "Launch org-timeblock and org-timeblock-toggle-timeblock-list simulataneously"
-      (interactive)
-      (cfw:open-org-calendar)
-    )
-    #+end_src
-
-    Then, ~M-x cfw:open-org-calendar~
-
-*** smartscan
-
-    https://github.com/mickeynp/smart-scan
-
-    https://www.masteringemacs.org/article/smart-scan-jump-symbols-buffer
-
-    #+begin_src elisp
-      (use-package smartscan
-	  :ensure t
-	  :config
-	 (global-smartscan-mode 1)
-      )
-    #+end_src
-
-*** ledger-mode
-
-    https://github.com/ledger/ledger-mode
-
-    Helpful features:
-
-    1. Sorting entries in a ledger file.
-    1. Aligning prices, completing accounts and generating upcoming transactions are other features
-
-    #+begin_src elisp
-      (use-package ledger-mode
-	  :ensure t
-      )
-    #+end_src
-
-*** try packages without installing them
-
-    #+begin_src elisp
-      (use-package try
-	  :ensure t
-      )
-    #+end_src
-
-    #+RESULTS:
 
 ** Custom snippets
 
