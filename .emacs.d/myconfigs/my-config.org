@@ -185,17 +185,13 @@
 
   This is an emacs port of vim's NERDTree.
 
-  https://github.com/jaypei/emacs-neotree?tab=readme-ov-file
+  https://github.com/jaypei/emacs-neotree
 
   #+begin_src elisp
-  ;; (use-package neotree
-  ;;   :ensure t
-  ;; )
+  (use-package neotree
+    :ensure t
+  )
   #+end_src
-
-  Use dired-sidebar instead.
-
-  This is not showing the tree view for the directory in which the file exists. It is always showing the same tree view that it initially launches - even though we open files from a different directory.
 
 *** evil-mode
 
@@ -222,7 +218,7 @@
 
 *** git-gutter
 
-  https://github.com/emacsorphanage/git-gutter/tree/master
+  https://github.com/emacsorphanage/git-gutter
 
     #+begin_src elisp
       (use-package git-gutter
