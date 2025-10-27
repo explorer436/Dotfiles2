@@ -54,12 +54,14 @@
 
 **** visual line mode
 
-    When Visual Line mode is enabled, ‘word-wrap’ is turned on in this buffer, and simple editing commands are redefined to act on visual lines, not logical lines.  See Info node ‘Visual Line Mode’ for details.
+    When Visual Line mode is enabled, ‘word-wrap’ is turned on in this buffer, and simple editing commands are redefined to act on visual lines, not logical lines.
+
+    See Info node ‘Visual Line Mode’ for details.
 
     When we edit prose, and the format requires paragraphs to fit on a single line of the output file. I want my editor to wrap properly at word boundaries.
 
     #+begin_src elisp
-      (global-visual-line-mode t)
+    (global-visual-line-mode t)
     #+end_src
 
 **** Highlight current line
@@ -69,7 +71,7 @@
     Do this by highlighting the current line.
 
     #+begin_src elisp
-      (global-hl-line-mode t)
+    (global-hl-line-mode t)
     #+end_src
 
 **** Enable word wrap
@@ -77,7 +79,7 @@
     This enables wrapping but kill-line still kills the whole line.
 
     #+begin_src elisp
-      (setq-default word-wrap t)
+    (setq-default word-wrap t)
     #+end_src
 
 **** Change how dired looks
@@ -447,7 +449,7 @@
 
 ** Custom snippets
 
-*** auto-refresh
+*** Auto-refresh buffers when files change on disk
 
     How to have Emacs auto-refresh all buffers when files have changed on disk?
 
