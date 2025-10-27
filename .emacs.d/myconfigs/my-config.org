@@ -193,6 +193,15 @@
   )
   #+end_src
 
+*** emacs org-side-tree
+
+  Honestly, I cannot see what this will give us that "Shift Tab" does not. But it is good to know that it is out there.
+
+    #+begin_src elisp
+      (use-package org-side-tree
+	:ensure t)
+    #+end_src
+
 *** evil-mode
 
     #+begin_src elisp
