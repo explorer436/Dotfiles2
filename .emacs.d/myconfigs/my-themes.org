@@ -6,12 +6,18 @@ M-x disable-theme
 
 * My opinions about themes
 
-1. I used dracula theme for a long time and pretty happy with it.
+1. When I do have to use dark mode, these themes look good
+   1. They come with emacs - don't have to install anything
+   2. misterioso
+   3. tsdh-dark
+   4. dracula (doesn't come with emacs)
+2. For day light, these themes lood good
+   1. It feels like using emacs without themes is a pretty good way to go about things
+   2. leuven - more pronounced headings
+   3. tsdh-light
+3. I used dracula theme for a long time and pretty happy with it.
    1. However, it comes with it's own customizations to fonts and other things.
    2. I had to disable it when customizing to use specific fonts.
-2. Sometimes, it feels like using emacs without themes is a pretty good way to go about things
-3. When I do have to use dark mode, "tsdh-dark" (comes with emacs - don't have to install anything) seems like a good choice
-   1. "tsdh-light" also seems good for day times
 
 * How to preview themes?
 
