@@ -195,7 +195,11 @@
 
 *** emacs org-side-tree
 
-  Honestly, I cannot see what this will give us that "Shift Tab" does not. But it is good to know that it is out there.
+  This can be helpful for navigation within an org file.
+
+  I cannot tell whether this is better than "Shift Tab" to see all the headings within the org file.
+
+  But it is good to know that it is out there.
 
     #+begin_src elisp
       (use-package org-side-tree
