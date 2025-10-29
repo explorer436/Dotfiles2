@@ -251,9 +251,35 @@
     1. Aligning prices, completing accounts and generating upcoming transactions are other features
 
     #+begin_src elisp
-      (use-package ledger-mode
-	  :ensure t
-      )
+    (use-package flycheck-ledger
+      :ensure t
+    )
+    #+end_src
+
+    #+begin_src elisp
+    ;;  (use-package ledger-mode
+    ;;	  :ensure t
+    ;;  )
+    #+end_src
+
+    #+begin_src elisp
+    (use-package ledger-mode
+			    :mode ("\\.dat\\'"
+			     "\\.ledger\\'"
+			       "\\.journal\\'")
+	:bind (:map ledger-mode-map
+			  ("C-x C-s" . my/ledger-save))
+	:custom (ledger-clear-whole-transactions t)
+	:preface
+	(defun my/ledger-save ()
+		    "Automatically clean the ledger buffer at each save."
+		    (interactive)
+		    (save-excursion
+		      (when (buffer-modified-p)
+			  (with-demoted-errors (ledger-mode-clean-buffer))
+			  (save-buffer)))))
+
+    (use-package flycheck-ledger :after ledger-mode)
     #+end_src
 
 *** magit
