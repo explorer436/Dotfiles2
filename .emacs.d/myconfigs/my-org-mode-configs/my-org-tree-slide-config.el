@@ -1,3 +1,4 @@
+;; https://github.com/takaxp/org-tree-slide
 (use-package org-tree-slide
   :ensure t
   :custom

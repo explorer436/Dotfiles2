@@ -195,6 +195,8 @@
 
 *** emacs org-side-tree
 
+  https://github.com/localauthor/org-side-tree
+
   This can be helpful for navigation within an org file.
 
   I cannot tell whether this is better than "Shift Tab" to see all the headings within the org file.
