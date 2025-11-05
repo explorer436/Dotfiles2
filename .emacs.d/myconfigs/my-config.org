@@ -159,6 +159,17 @@
        :commands (dired-sidebar-toggle-sidebar))
     #+end_src
 
+*** elfeed
+
+  #+begin_src elisp
+    (use-package elfeed
+      :ensure t
+;;      :config
+;;      (setq elfeed-show-entry-switch 'display-buffer)
+;;      (setq elfeed-search-remain-on-entry t)
+    )
+  #+end_src
+
 *** emacs-calfw
 
     https://gitnhub.com/kiwanami/emacs-calfw
