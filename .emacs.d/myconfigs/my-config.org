@@ -172,7 +172,7 @@
 
 *** emacs-calfw
 
-    https://gitnhub.com/kiwanami/emacs-calfw
+    https://github.com/kiwanami/emacs-calfw
 
     #+begin_src elisp
     ;; (require 'calfw)
