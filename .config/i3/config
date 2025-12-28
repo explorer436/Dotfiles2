@@ -20,7 +20,7 @@ set $lockScreenWallpaper /usr/share/wallpapers/garuda-wallpapers/Dr460nized\ Hon
 
 ### Applications: ###
 
-set $preferredTerminalEmulator /usr/bin/alacritty
+set $preferredTerminalEmulator /usr/bin/xfce4-terminal
 set $preferredBrowser /usr/bin/firedragon
 set $preferredFileManager /usr/bin/thunar
 set $preferredMailClient /usr/bin/geary
@@ -369,3 +369,4 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
