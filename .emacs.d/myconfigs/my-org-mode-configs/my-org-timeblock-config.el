@@ -13,7 +13,8 @@
 ;; load-with-code-conversion: Cannot open load file: No such file or directory, compat-macs
 ;; Not sure how to fix it. So, I am disabling this package.
 
-
+(use-package org-timeblock
+  :quelpa (org-timeblock :fetcher github :repo "ichernyshovvv/org-timeblock"))
 
 ;; (use-package org-timeblock
 ;;   :ensure t

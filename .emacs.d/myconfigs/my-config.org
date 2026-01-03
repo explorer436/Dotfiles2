@@ -186,7 +186,7 @@
 
     (defun my-calfw-view ()
       (interactive)
-      (cfw:open-org-calendar)
+      (calfw-org-open-calendar)
     )
     #+end_src
 

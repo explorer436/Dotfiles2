@@ -24,6 +24,7 @@
 
   #+begin_src elisp
   (use-package fzf
+    :ensure t
   ;; :bind
   ;; Don't forget to set keybinds!
   :config

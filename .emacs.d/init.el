@@ -1,12 +1,39 @@
 ;; Location of config files in Windows: C:\Users\vardh\AppData\Roaming\.emacs.d
 
+;; Tell Emacs it's okay to upgrade built-in stubs
+;; Allows upgrading built-ins like compat if needed
+(setq package-install-upgrade-built-in t)
+
 (require 'package)
-(package-initialize)
 
 ;; To install packages, it is useful to configure the package sources.
 (setq package-archives '(("elpa" . "https://elpa.gnu.org/packages/")
 			 ("melpa" . "https://melpa.org/packages/")
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+
+;; Initialize the package system
+(package-initialize)
+
+;; Manually find the "compat" folder from "elpa" and shove it to the front of the load-path
+(let ((compat-dir (file-expand-wildcards (expand-file-name "elpa/compat-*" user-emacs-directory))))
+  (when compat-dir
+    (setq load-path (append compat-dir load-path))))
+
+;; Ensure we have the latest info
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Force full external compat if not present
+;; Force full external compat if any older compat-NN.el file is missing (built-in has none)
+(unless (or (locate-library "compat-25")
+	    (locate-library "compat-26")
+	    (locate-library "compat-27")
+	    (locate-library "compat-28")
+	    (locate-library "compat-29"))
+  (package-install 'compat))
+
+;; Use 'load' instead of 'require' to bypass any feature-masking
+(load "compat" t)
 
 (when (eq system-type 'gnu/linux)
   (set-frame-font "Noto Sans Mono 11" nil t)
