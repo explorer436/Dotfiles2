@@ -74,3 +74,6 @@ background = "#f1fa8c"
 
 foreground = "#f1fa8c"
 background = "#282a36"
+
+[terminal.shell]
+program = "zellij"
