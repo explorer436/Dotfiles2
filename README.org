@@ -25,3 +25,8 @@
 8. Go to ~SetUpRepositories.org~
    1. Run the commands to set up the necessary tools.
    2. Install the rest of the tools manually.
+9. Use ~meld~ to compare configurations with backups and update them.
+   #+begin_src
+   meld /home/explorer436/.config/i3/config /home/explorer436/.config/i3/endeavouros_config-working-copy
+   cp /home/explorer436/.config/variety/backup_variety.conf /home/explorer436/.config/variety/variety.conf
+   #+end_src
