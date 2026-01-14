@@ -7,7 +7,7 @@
    2. Set up the password manager
    3. Change the default search engine in brave
 3. Set-up ssh keys in the computer
-4. Add the ssh key in github.com and gitlab.com
+4. Add the ssh key in github.com and gitlab.com (sudo pacman -S geany)
 5. Install emacs
 6. Install git
 7. Clone this and the rest of the repositories
