@@ -22,5 +22,6 @@
       git branch -m main
       git branch main -u remotes/origin/main
       #+END_SRC
-8. Go to ~SetUpRepositories.org~ and run the commands to set up the necessary tools.
-   1. Install the rest of the tools listed in this file.
+8. Go to ~SetUpRepositories.org~
+   1. Run the commands to set up the necessary tools.
+   2. Install the rest of the tools manually.
