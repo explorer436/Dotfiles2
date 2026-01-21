@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Inside runGitSync.sh
+# When a computer wakes up, the Wi-Fi often takes 2–5 seconds to reconnect.
+# This script could fail if it runs too fast, because there is no internet.
+# Adding a small "wait for internet" loop at the very top of your runGitSync.sh file:
+until ping -c 1 google.com &>/dev/null; do
+  echo "Waiting for network..."
+  sleep 2
+done
+# Now run your git commands...
 
 # Prerequisite:
 # 1. Clone git-sync repo into ~/Downloads/GitRepositories (from https://github.com/simonthum/git-sync)
