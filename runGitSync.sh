@@ -4,10 +4,11 @@
 # When a computer wakes up, the Wi-Fi often takes 2–5 seconds to reconnect.
 # This script could fail if it runs too fast, because there is no internet.
 # Adding a small "wait for internet" loop at the very top of your runGitSync.sh file:
-until ping -c 1 google.com &>/dev/null; do
-  echo "Waiting for network..."
+until ip route show default | grep -q default; do
+  echo "Waiting for network interface..."
   sleep 2
 done
+echo "Network interface is up."
 # Now run your git commands...
 
 # Prerequisite:
