@@ -111,6 +111,7 @@
 ;; https://orgmode.org/manual/Languages.html
 (org-babel-do-load-languages
   'org-babel-load-languages '(
+    (shell . t)
     (java . t)
     (haskell . t)
     (python . t)
