@@ -75,6 +75,7 @@
 .config/fontconfig
 .config/galculator
 .config/gconf
+.config/geany/*
 .config/ghc/
 .config/gsimplecal/config
 .config/gthumb/
@@ -106,6 +107,7 @@
 .config/nomacs
 .config/pamac
 .config/paru
+.config/pcloud/*
 .config/pcmanfm-qt
 .config/pdfarranger/
 .config/polybar
@@ -137,7 +139,6 @@
 .emacs.d/.org-id-locations
 .emacs.d/auto-save-list
 .emacs.d/auto-save-list
-.emacs.d/bookmarks
 .emacs.d/eln-cache/
 .emacs.d/elpa
 .emacs.d/history
@@ -176,7 +177,9 @@
 .mp3directcut/
 .netbeans/
 .npm/
+.nvm/
 .p2/
+.pcloud/*
 .pki/
 .profile
 .python_history
@@ -237,5 +240,7 @@ config/gsimplecal
 eclipse-workspace/
 eclipse/
 go/
+pCloudDrive/*
 paru/
 snap/
+~.bashrc

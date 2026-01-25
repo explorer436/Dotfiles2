@@ -1,0 +1,11 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Inbox.org"
+ (filename . "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org")
+ (front-context-string . "\n* Areas to get ")
+ (rear-context-string . " pick up first.\n")
+ (position . 825)
+ (last-modified 26992 61017 684923 309000))
+)

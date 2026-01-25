@@ -7,7 +7,7 @@
    2. Set up the password manager
    3. Change the default search engine in brave
 3. Set-up ssh keys in the computer
-4. Add the ssh key in github.com and gitlab.com
+4. Add the ssh key in github.com and gitlab.com (sudo pacman -S geany)
 5. Install emacs
 6. Install git
 7. Clone this and the rest of the repositories
@@ -22,5 +22,15 @@
       git branch -m main
       git branch main -u remotes/origin/main
       #+END_SRC
-8. Go to ~SetUpRepositories.org~ and run the commands to set up the necessary tools.
-   1. Install the rest of the tools listed in this file.
+8. Go to ~SetUpRepositories.org~
+   1. Run the commands to set up the necessary tools.
+   2. Install the rest of the tools manually.
+9. Update custom configurations
+   1. Use ~meld~ to compare configurations with backups and update them.
+      #+begin_src
+      meld /home/explorer436/.config/i3/config /home/explorer436/.config/i3/endeavouros_config-working-copy
+      #+end_src
+   2. Copy custom configurations
+      #+begin_src
+      cp /home/explorer436/.config/variety/backup_variety.conf /home/explorer436/.config/variety/variety.conf
+      #+end_src
