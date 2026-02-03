@@ -11,6 +11,17 @@ else
   pagefind --site "public"
 fi
 
+cd ~/Downloads/GitRepositories/programming-notes
+echo "${PWD##*/}"
+if [ -z "$(git status --porcelain)" ]; then
+  echo "Working directory clean"
+else
+  echo "Uncommitted changes"
+  ./convertOrgToMd.py
+  hugo
+  pagefind --site "public"
+fi
+
 cd ~/Downloads/GitRepositories/health-notes
 echo "${PWD##*/}"
 if [ -z "$(git status --porcelain)" ]; then
