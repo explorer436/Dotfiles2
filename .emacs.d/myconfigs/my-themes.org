@@ -119,3 +119,11 @@ Use the preview feature of consult.
      ;;    (load-theme 'soft-morning t)
      ;;    :ensure t)
     #+end_src
+
+* tsdh-light
+
+  This comes with emacs. There is no need to install it.
+
+    #+begin_src elisp
+      (load-theme 'tsdh-light t)
+    #+end_src
