@@ -434,20 +434,24 @@
       )
     #+end_src
 
-    #+RESULTS:
-
 *** which-key
 
+  https://github.com/justbur/emacs-which-key
+
+  If you want to see the next page of which-key suggestions in the mini buffer, Ctrl X Ctrl h n. See https://github.com/justbur/emacs-which-key?tab=readme-ov-file#paging-options
+
     #+begin_src elisp
-      (use-package which-key
-	:config
+    (use-package which-key
+      :ensure t
+      :config
 	  (setq which-key-idle-delay 0.3)
 	  (setq which-key-popup-type 'frame)
 	  (which-key-mode)
 	  (which-key-setup-minibuffer)
 	  (set-face-attribute 'which-key-local-map-description-face nil
 	     :weight 'bold)
-	  :ensure t)
+	  (which-key-setup-side-window-right)
+    )
     #+end_src
 
 *** yasnippet
