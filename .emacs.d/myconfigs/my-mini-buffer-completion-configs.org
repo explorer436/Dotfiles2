@@ -2,7 +2,7 @@
 
 The beauty of the whole Vertico/Marginalia/Orderless/Consult suite is that, it feels like plain Emacs but gives an overall better experience .
 
-* vertigo
+* vertico
 
   https://github.com/minad/vertico
 
@@ -80,7 +80,11 @@ The beauty of the whole Vertico/Marginalia/Orderless/Consult suite is that, it f
 
 * marginalia
 
-  ;; Enable rich annotations using the Marginalia package
+  https://github.com/minad/marginalia
+
+  Enable rich annotations using the Marginalia package.
+
+  When you do M-x, the description for the functions on the right side are coming because of marginalia.
 
   #+begin_src elisp
      (use-package marginalia

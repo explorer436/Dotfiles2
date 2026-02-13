@@ -1,3 +1,29 @@
+*** isearch
+
+    This is built-in to emacs. Don't have to install anything.
+
+     https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/
+
+     Display a counter showing the number of the current and the other matches.  Place it before the prompt, though it can be after it.
+
+     #+begin_src elisp
+     (setq isearch-lazy-count t)
+     (setq lazy-count-prefix-format "(%s/%s) ")
+     (setq lazy-count-suffix-format nil)
+     #+end_src
+
+     Make regular Isearch interpret the empty space as a regular expression that matches any character between the words you give it.
+
+     #+begin_src elisp
+     (setq search-whitespace-regexp ".*?")
+     #+end_src
+
+     Install the ~wgrep~ package.  It makes the grep buffers editable.
+
+     Install the ~consult~ package.  It provides lots of useful commands that enhance the minibuffer experience of Emacs (e.g. for searching lines/heading).
+
+     Install the ~embark~ package.  It allows you to perform context-sensitive actions, using a prompt and then a key/action selection interface.
+
 * rg
 
     Use rg in emacs
@@ -49,3 +75,21 @@ M-x consult-ripgrep <search-term> -- -g *.org
 #+end_src
 
 If you don't have ~consult~ installed, just use plain ~rg~. Matter of fact, if we use ~rg~, we don't even have to remember the command above, because, ~rg~ will prompt us about the file types that it needs to search in and the parent directory to search in.
+
+* If I have consult, do I still need swiper?
+
+You do not necessarily need Swiper if you have Consult, as Consult provides  as a direct alternative to Swiper.
+Many users successfully replace Swiper entirely with the Consult stack (often including Vertico and Orderless).
+However, some users may find Swiper offers specific features that  does not, which might justify using both or sticking with Swiper:
+
+** Key Differences
+
+| Feature              | Swiper                                                                                                                                                | Consult-line                                                                                                                                                                                  |
+|----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Search Functionality | A "replacement" for  that displays search results as a vertical list and highlights them in the buffer, allowing for easy navigation between matches. | A line-based filter command that shows matching lines in the minibuffer but does not inherently provide functionality to move between matches in the main buffer in the same way Swiper does. |
+| Navigation           | Allows moving between matches using  (next) and  (previous) keybindings (with default Ivy/Swiper settings or evil-mode bindings).                     | Requires additional configuration or complementary packages (like; Emacs' built-in; or Avy) for quick jumping to specific lines or navigating matches in the buffer.                          |
+| Integration          | Tightly integrated with the; Ivy completion framework; and the; Counsel package; , forming a complete, opinionated suite.                             | Designed to use Emacs' built-in  interface, making it compatible with various completion engines like; Vertico; , Icomplete, and Selectrum.                                                   |
+| Philosophy           | An organically grown package with many features and options.                                                                                          | A simpler, lighter-weight package that adheres to the standard Emacs API, often relying on other small, focused packages (Marginalia, Embark) to add functionality.                           |
+
+1. If you prefer a lightweight setup that uses standard Emacs APIs and enjoy the Consult way of interacting with search results,  is likely all you need and you can drop Swiper.
+1. If you rely heavily on -like navigation (jumping directly to the next/previous match within the buffer using simple keybindings) as provided by Swiper's default behavior, you might miss that specific functionality in , and could keep Swiper or configure a custom solution. [3, 10, 11, 13, 14]
