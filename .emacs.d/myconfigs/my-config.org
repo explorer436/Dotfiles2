@@ -151,6 +151,18 @@
 	:ensure t)
     #+end_src
 
+*** csv mode
+
+  1. https://www.emacswiki.org/emacs/CsvMode
+
+  2. https://www.reddit.com/r/emacs/comments/26c71k/comment/chq2r8m/
+
+     #+begin_src elisp
+     (use-package csv-mode
+	:ensure t
+     )
+     #+end_src
+
 *** dired-sidebar
 
     #+begin_src elisp
@@ -331,6 +343,18 @@
       )
     #+end_src
 
+*** move-text
+
+  https://github.com/emacsfodder/move-text
+
+  #+begin_src elisp
+  (use-package move-text
+	  :ensure t
+	  :config
+	  (move-text-default-bindings)
+  )
+  #+end_src
+
 *** multiple cursors
 
     Install multiple-cursors and (the dependent package cl-lib) first.
@@ -427,6 +451,8 @@
     #+end_src
 
 *** try packages without installing them
+
+  https://github.com/larstvei/Try
 
     #+begin_src elisp
       (use-package try
@@ -620,9 +646,16 @@
 *** Move around in a buffer quickly
 
      Are Ctrl-n and Ctrl-p too slow for you?
-     Move in a buffer more quickly.
+     If so, move in a buffer more quickly with these commands.
 
-     These are not very helpful if you are using evil-mode.
+     #+begin_src
+     Ctrl Shift n
+     Ctrl Shift p
+     Ctrl Shift f
+     Ctrl Shift b
+     #+end_src
+
+     These commands are an alternative to using ~avy-goto-line~
 
      #+begin_src elisp
        (global-set-key (kbd "C-S-n")
@@ -645,30 +678,6 @@
 			 (interactive)
 			 (ignore-errors (backward-char 5))))
      #+end_src
-
-*** Move around in a buffer quickly
-
-     https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/
-
-     Display a counter showing the number of the current and the other matches.  Place it before the prompt, though it can be after it.
-
-     #+begin_src elisp
-     (setq isearch-lazy-count t)
-     (setq lazy-count-prefix-format "(%s/%s) ")
-     (setq lazy-count-suffix-format nil)
-     #+end_src
-
-     Make regular Isearch interpret the empty space as a regular expression that matches any character between the words you give it.
-
-     #+begin_src elisp
-     (setq search-whitespace-regexp ".*?")
-     #+end_src
-
-     Install the `wgrep' package.  It makes the grep buffers editable.
-
-     Install the `consult' package.  It provides lots of useful commands that enhance the minibuffer experience of Emacs (e.g. for searching lines/heading).
-
-     Install the `embark' package.  It allows you to perform context-sensitive actions, using a prompt and then a key/action selection interface.
 
 *** Disable arrow keys
 
