@@ -28,29 +28,22 @@ echo "Network interface is up."
 
 sh ./buildHugoSites.sh
 
-cd ~/Downloads/GitRepositories/my-personal-things
-~/Downloads/GitRepositories/git-sync/git-sync
+# The list of repositories
+REPOS=(
+    "my-personal-things"
+    "programming-notes"
+    "programming-playground"
+    "career-notes"
+    "finance-notes"
+    "health-notes"
+    "mindset-notes"
+    "my-kitchen-sink"
+    "soft-skills"
+)
 
-cd ~/Downloads/GitRepositories/programming-notes
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/programming-playground
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/career-notes
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/finance-notes
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/health-notes
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/mindset-notes
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/my-kitchen-sink
-~/Downloads/GitRepositories/git-sync/git-sync
-
-cd ~/Downloads/GitRepositories/soft-skills
-~/Downloads/GitRepositories/git-sync/git-sync
+# Loop through the list and sync
+for repo in "${REPOS[@]}"; do
+    echo "Syncing: $repo"
+    cd ~/Downloads/GitRepositories/"$repo" || continue
+    ~/Downloads/GitRepositories/git-sync/git-sync
+done
