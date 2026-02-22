@@ -40,7 +40,7 @@
 
     Make the search results editable by enabling ~wgrep~ mode.  When done press ~C-c C-c~ to commit your changes to the underlying files or ~C-c C-k~ to drop the changes.
 
-    See http://localhost:1414/posts/20250617120709-emacs_rename_something_in_an_entire_project/
+    See https://programming-notes.explorer436.com/posts/20250617120709-emacs_rename_something_in_an_entire_project/
 
     You can save the results of a particular search by using the letter ~s~
 
