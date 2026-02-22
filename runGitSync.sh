@@ -46,4 +46,5 @@ for repo in "${REPOS[@]}"; do
     echo "Syncing: $repo"
     cd ~/Downloads/GitRepositories/"$repo" || continue
     ~/Downloads/GitRepositories/git-sync/git-sync
+    cd
 done
