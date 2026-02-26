@@ -1,4 +1,4 @@
-*** isearch
+* isearch
 
     This is built-in to emacs. Don't have to install anything.
 
@@ -84,7 +84,7 @@ You do not necessarily need Swiper if you have Consult, as Consult provides  as 
 Many users successfully replace Swiper entirely with the Consult stack (often including Vertico and Orderless).
 However, some users may find Swiper offers specific features that  does not, which might justify using both or sticking with Swiper:
 
-** Key Differences
+** Key Differences between consult-line and swiper
 
 | Feature              | Swiper                                                                                                                                                | Consult-line                                                                                                                                                                                  |
 |----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
