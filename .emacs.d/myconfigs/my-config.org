@@ -116,23 +116,6 @@
 
 ** Packages
 
-*** avy
-
-    https://github.com/abo-abo/avy
-
-    #+begin_src elisp
-      (use-package avy
-	:config
-	  (global-set-key (kbd "C-c jc1") 'avy-goto-char)
-	  (global-set-key (kbd "C-c jc2") 'avy-goto-char-2)
-	  (global-set-key (kbd "C-c jl") 'avy-goto-line)
-	  ;; (global-set-key (kbd "C-c jl") 'avy-goto-line-above)
-	  (global-set-key (kbd "C-c jw") 'avy-goto-word-1)
-	  (global-set-key (kbd "C-c ja") 'avy-goto-word-0)
-	  ;;(global-set-key (kbd "C-c at") 'avy-goto-char-timer)
-	  :ensure t)
-    #+end_src
-
 *** beacon
 
     This applies a beacon effect to the highlighted line
