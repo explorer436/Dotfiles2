@@ -12,6 +12,9 @@ echo "Network interface is up."
 # Now run your git commands...
 
 # Prerequisite:
+
+# This is baked into /home/explorer436/Downloads/GitRepositories/my-personal-things/programming/Set up computer/02SetupCustomRepositories.sh. So, we don't have to do it manually.
+
 # 1. Clone git-sync repo into ~/Downloads/GitRepositories (from https://github.com/simonthum/git-sync)
 # 2. Run these two commands in all of the repositories.
 
@@ -31,8 +34,8 @@ sh ./buildHugoSites.sh
 # The list of repositories
 REPOS=(
     "my-personal-things"
-    "programming-notes"
     "programming-playground"
+    "programming-notes"
     "career-notes"
     "finance-notes"
     "health-notes"
@@ -48,3 +51,12 @@ for repo in "${REPOS[@]}"; do
     ~/Downloads/GitRepositories/git-sync/git-sync
     cd
 done
+
+
+cd ~/Downloads/GitRepositories/programming-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+cd ~/Downloads/GitRepositories/career-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+cd ~/Downloads/GitRepositories/finance-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+cd ~/Downloads/GitRepositories/health-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+cd ~/Downloads/GitRepositories/mindset-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+cd ~/Downloads/GitRepositories/my-kitchen-sink/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+cd ~/Downloads/GitRepositories/soft-skills/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
