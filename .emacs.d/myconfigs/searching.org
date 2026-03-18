@@ -1,4 +1,4 @@
-*** isearch
+* isearch
 
     This is built-in to emacs. Don't have to install anything.
 
@@ -23,6 +23,23 @@
      Install the ~consult~ package.  It provides lots of useful commands that enhance the minibuffer experience of Emacs (e.g. for searching lines/heading).
 
      Install the ~embark~ package.  It allows you to perform context-sensitive actions, using a prompt and then a key/action selection interface.
+
+* avy
+
+    https://github.com/abo-abo/avy
+
+    #+begin_src elisp
+      (use-package avy
+	:config
+	  (global-set-key (kbd "C-c jc1") 'avy-goto-char)
+	  (global-set-key (kbd "C-c jc2") 'avy-goto-char-2)
+	  (global-set-key (kbd "C-c jl") 'avy-goto-line)
+	  ;; (global-set-key (kbd "C-c jl") 'avy-goto-line-above)
+	  (global-set-key (kbd "C-c jw") 'avy-goto-word-1)
+	  (global-set-key (kbd "C-c ja") 'avy-goto-word-0)
+	  ;;(global-set-key (kbd "C-c at") 'avy-goto-char-timer)
+	  :ensure t)
+    #+end_src
 
 * rg
 
@@ -84,7 +101,7 @@ You do not necessarily need Swiper if you have Consult, as Consult provides  as 
 Many users successfully replace Swiper entirely with the Consult stack (often including Vertico and Orderless).
 However, some users may find Swiper offers specific features that  does not, which might justify using both or sticking with Swiper:
 
-** Key Differences
+** Key Differences between consult-line and swiper
 
 | Feature              | Swiper                                                                                                                                                | Consult-line                                                                                                                                                                                  |
 |----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -116,23 +116,6 @@
 
 ** Packages
 
-*** avy
-
-    https://github.com/abo-abo/avy
-
-    #+begin_src elisp
-      (use-package avy
-	:config
-	  (global-set-key (kbd "C-c jc1") 'avy-goto-char)
-	  (global-set-key (kbd "C-c jc2") 'avy-goto-char-2)
-	  (global-set-key (kbd "C-c jl") 'avy-goto-line)
-	  ;; (global-set-key (kbd "C-c jl") 'avy-goto-line-above)
-	  (global-set-key (kbd "C-c jw") 'avy-goto-word-1)
-	  (global-set-key (kbd "C-c ja") 'avy-goto-word-0)
-	  ;;(global-set-key (kbd "C-c at") 'avy-goto-char-timer)
-	  :ensure t)
-    #+end_src
-
 *** beacon
 
     This applies a beacon effect to the highlighted line
@@ -686,40 +669,40 @@
       You can install the ~use-package~ package available from Melpa and make use of ~bind-key*~ or ~bind-keys*~ macro that's part of the ~bind-key~ package that ships with ~use-package~.
 
       #+begin_src elisp
-      (define-minor-mode my-override-mode
-	"Overrides all major and minor mode keys" t)
+;; (define-minor-mode my-override-mode
+;;	"Overrides all major and minor mode keys" t)
 
-      (defvar my-override-map (make-sparse-keymap "my-override-map")
-	"Override all major and minor mode keys")
+;; (defvar my-override-map (make-sparse-keymap "my-override-map")
+;;	"Override all major and minor mode keys")
 
-      (add-to-list 'emulation-mode-map-alists
-	`((my-override-mode . ,my-override-map)))
+;; (add-to-list 'emulation-mode-map-alists
+;;	`((my-override-mode . ,my-override-map)))
 
-      (define-key my-override-map (kbd "<left>")
-	(lambda ()
-	  (interactive)
-	  (message "Use Vim keys: h for Left")))
-
-      (define-key my-override-map (kbd "<right>")
-	(lambda ()
-	  (interactive)
-	  (message "Use Vim keys: l for Right")))
-
-      (define-key my-override-map (kbd "<up>")
-	(lambda ()
-	  (interactive)
-	  (message "Use Vim keys: k for Up")))
-
-      (define-key my-override-map (kbd "<down>")
-	(lambda ()
-	  (interactive)
-	  (message "Use Vim keys: j for Down")))
+;;      (define-key my-override-map (kbd "<left>")
+;;	(lambda ()
+;;	  (interactive)
+;;	  (message "Use Vim keys: h for Left")))
+;;
+;;      (define-key my-override-map (kbd "<right>")
+;;	(lambda ()
+;;	  (interactive)
+;;	  (message "Use Vim keys: l for Right")))
+;;
+;;      (define-key my-override-map (kbd "<up>")
+;;	(lambda ()
+;;	  (interactive)
+;;	  (message "Use Vim keys: k for Up")))
+;;
+;;      (define-key my-override-map (kbd "<down>")
+;;	(lambda ()
+;;	  (interactive)
+;;	  (message "Use Vim keys: j for Down")))
       #+end_src
 
 Evil mode provides it's own emulation map. So you need to add this line
 
      #+begin_src elisp
-     (evil-make-intercept-map my-override-map)
+;;     (evil-make-intercept-map my-override-map)
      #+end_src
 
 *** Toggle Window Split
@@ -774,3 +757,34 @@ Evil mode provides it's own emulation map. So you need to add this line
 	(file . find-file-other-frame) ;; Opens files in the current window
 	(wl . wl-other-frame)))
    #+end_src
+
+*** Fix Paragraphs
+
+  Make characters after a period capital case
+
+  #+begin_src elisp
+    (defun my-fix-paragraph-and-caps ()
+    "Fill the paragraph and capitalize the start of every sentence."
+    (interactive)
+    (save-excursion
+      ;; 1. Fill the paragraph (M-q)
+      ;; (fill-paragraph)
+
+      ;; 2. Move to the start of the paragraph
+      (backward-paragraph)
+      ;; 3. Find periods followed by a space and lowercase letter, then capitalize
+      (while (re-search-forward "\\. +\\([a-z]\\)" (save-excursion (forward-paragraph) (point)) t)
+		(replace-match (upcase (match-string 1)) t t nil 1))
+
+      (backward-paragraph)
+
+      (while (re-search-forward "\\? +\\([a-z]\\)" (save-excursion (forward-paragraph) (point)) t)
+		  (replace-match (upcase (match-string 1)) t t nil 1))
+      ))
+  #+end_src
+
+  How to use it?
+
+  1. Evaluate the code above (or restart Emacs).
+  2. Put your cursor in a messy paragraph.
+  3. Run `M-x fix-paragraph-and-caps`.
