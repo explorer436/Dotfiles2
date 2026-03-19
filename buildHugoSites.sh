@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # 1. Define your repositories
 REPOS=(
   "$HOME/Downloads/GitRepositories/mindset-notes"
@@ -10,7 +8,6 @@ REPOS=(
   "$HOME/Downloads/GitRepositories/career-notes"
   "$HOME/Downloads/GitRepositories/finance-notes"
   "$HOME/Downloads/GitRepositories/my-kitchen-sink"
-
 )
 
 # 2. Loop through each repository
