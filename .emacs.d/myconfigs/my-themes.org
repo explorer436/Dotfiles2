@@ -149,11 +149,11 @@ You want the structural logic of leuven-dark (especially for Org-mode) but with 
 To do this effectively, we’ll use the dracula hex codes to override leuven-dark's default blue/grey tones.
 
 #+begin_src emacs-lisp
-  ;; 1. Load the base Leuven structure
-  (load-theme 'leuven-dark t)
+   ;; 1. Load the base Leuven structure
+   (load-theme 'leuven-dark t)
 
-  ;; 2. Inject Dracula colors into Leuven's faces
-  (custom-set-faces
+   ;; 2. Inject Dracula colors into Leuven's faces
+   (custom-set-faces
 
 	  ;; Core Editor Colors
 	  '(default ((t (:background "#282a36" :foreground "#f8f8f2"))))
@@ -220,7 +220,7 @@ To do this effectively, we’ll use the dracula hex codes to override leuven-dar
 	 '(org-habit-overdue-face ((t (:background "#ff5555")))) ; Red
 	 '(org-habit-clear-face ((t (:background "#6272a4")))) ; Muted Blue
 
-       ;; Priorities
+	;; Priorities
 	 ;; Dracula themes look best when "High Priority" items pop with that classic Dracula Red
 	'(org-priority ((t (:foreground "#ff5555" :weight bold))))
 
@@ -232,31 +232,48 @@ To do this effectively, we’ll use the dracula hex codes to override leuven-dar
 
 	;; 1. Planning Keywords (SCHEDULED:, DEADLINE:, CLOSED:)
 	;; Visual Hierarchy: By making SCHEDULED pink (#ff79c6), it grabs your attention immediately.
-      '(org-special-keyword ((t (:foreground "#ff79c6" :weight bold)))) ; Dracula Pink
+       '(org-special-keyword ((t (:foreground "#ff79c6" :weight bold)))) ; Dracula Pink
 
-      ;; 2. Property Drawers (:PROPERTIES:, :END:, :ID:)
-      ;; De-cluttering: By making the :PROPERTIES: and :END: tags a muted blue (#6272a4), they "recede" into the background, allowing your actual task text to be the hero of the document.
-      '(org-drawer ((t (:foreground "#6272a4" :slant italic))))        ; Muted Blue/Grey
-      '(org-property-value ((t (:foreground "#bd93f9"))))             ; Purple for the values
+       ;; 2. Property Drawers (:PROPERTIES:, :END:, :ID:)
+       ;; De-cluttering: By making the :PROPERTIES: and :END: tags a muted blue (#6272a4), they "recede" into the background, allowing your actual task text to be the hero of the document.
+       '(org-drawer ((t (:foreground "#6272a4" :slant italic))))        ; Muted Blue/Grey
+       '(org-property-value ((t (:foreground "#bd93f9"))))             ; Purple for the values
 
-      ;; 3. Clocking and Time Stamps
-      ;; Consistency: This uses the same cyan (#8be9fd) for dates here as we used in the Agenda view, keeping your brain in "Dracula mode" across different buffers.
-      '(org-date ((t (:foreground "#8be9fd" :underline t))))           ; Cyan
-      '(org-time-grid ((t (:foreground "#44475a"))))
-      '(org-clock-overlay ((t (:background "#44475a" :foreground "#f8f8f2"))))
+       ;; 3. Clocking and Time Stamps
+       ;; Consistency: This uses the same cyan (#8be9fd) for dates here as we used in the Agenda view, keeping your brain in "Dracula mode" across different buffers.
+       '(org-date ((t (:foreground "#8be9fd" :underline t))))           ; Cyan
+       '(org-time-grid ((t (:foreground "#44475a"))))
+       '(org-clock-overlay ((t (:background "#44475a" :foreground "#f8f8f2"))))
 
-      ;; 4. Document Metadata (#+TITLE, #+AUTHOR, etc.)
-      '(org-document-info ((t (:foreground "#bd93f9"))))
-      '(org-document-info-keyword ((t (:foreground "#6272a4"))))
-      '(org-document-title ((t (:foreground "#ff79c6" :weight bold :height 1.2))))
+       ;; 4. Document Metadata (#+TITLE, #+AUTHOR, etc.)
+       '(org-document-info ((t (:foreground "#bd93f9"))))
+       '(org-document-info-keyword ((t (:foreground "#6272a4"))))
+       '(org-document-title ((t (:foreground "#ff79c6" :weight bold :height 1.2))))
 
-      ;; 5. List Bullets and Checkboxes
-      '(org-list-dt ((t (:foreground "#50fa7b" :weight bold))))       ; Green for definition terms
-      '(org-checkbox ((t (:foreground "#8be9fd" :box (:line-width 1 :color "#44475a")))))
+       ;; 5. List Bullets and Checkboxes
+       '(org-list-dt ((t (:foreground "#50fa7b" :weight bold))))       ; Green for definition terms
+       '(org-checkbox ((t (:foreground "#8be9fd" :box (:line-width 1 :color "#44475a")))))
 
-      ;; Optional: Make the property drawers slightly smaller to de-emphasize them
-      '(org-drawer ((t (:foreground "#6272a4" :height 0.9 :slant italic))))
-    )
+       ;; Optional: Make the property drawers slightly smaller to de-emphasize them
+       '(org-drawer ((t (:foreground "#6272a4" :height 0.9 :slant italic))))
+
+       ;; 1. Source Block Tags (Bright Green)
+       ;; This colors the "#+begin_src" and "#+end_src" lines
+       ;; In the Dracula theme, green represents "Function" and "Action." It makes your code blocks look like active, executable areas.
+  '(org-block-begin-line ((t (:background "#282a36" :foreground "#50fa7b" :weight bold :underline t :extend t))))
+  '(org-block-end-line   ((t (:background "#282a36" :foreground "#50fa7b" :weight bold :overline t :extend t))))
+
+  ;; 2. Quote Block Tags (Bright Pink/Orange)
+  ;; This colors the "#+begin_quote" and "#+end_quote" lines
+  ;; This provides a warm, distinct contrast to the purple/green/pink vibe of the rest of the document, making quoted text feel like a separate "voice."
+  '(org-quote ((t (:foreground "#ffb86c" :slant italic)))) ; The text inside the quote (Orange)
+  ;; Using the "Keyword" pink for the #+ tags ensures they aren't ignored by your eyes when scrolling quickly.
+  '(org-meta-line ((t (:foreground "#ff79c6" :weight bold)))) ; The #+tags themselves (Pink)
+
+  ;; 3. Source Language Tag (e.g., the "python" in #+begin_src python)
+  ;; We use Cyan here to make the language name "pop"
+  '(org-document-info-keyword ((t (:foreground "#8be9fd" :weight bold))))
+     )
 #+end_src
 
 ** Why this works
