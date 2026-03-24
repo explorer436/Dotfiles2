@@ -141,3 +141,133 @@ Use the preview feature of consult.
     #+begin_src elisp
      (load-theme 'leuven t)
     #+end_src
+
+* Customizing leuven-dark
+
+You want the structural logic of leuven-dark (especially for Org-mode) but with the vibrant, neon-on-purple palette from the official Dracula theme.
+
+To do this effectively, we’ll use the dracula hex codes to override leuven-dark's default blue/grey tones.
+
+#+begin_src emacs-lisp
+  ;; 1. Load the base Leuven structure
+  (load-theme 'leuven-dark t)
+
+  ;; 2. Inject Dracula colors into Leuven's faces
+  (custom-set-faces
+
+	  ;; Core Editor Colors
+	  '(default ((t (:background "#282a36" :foreground "#f8f8f2"))))
+	  '(cursor ((t (:background "#f8f8f2"))))
+	  '(region ((t (:background "#44475a"))))
+	  '(mode-line ((t (:background "#44475a" :foreground "#f8f8f2" :box nil))))
+	  '(mode-line-inactive ((t (:background "#282a36" :foreground "#6272a4" :box nil))))
+
+	  ;; Syntax Highlighting (Dracula Palette)
+	  '(font-lock-keyword-face ((t (:foreground "#ff79c6" :weight bold)))) ; Pink
+	  '(font-lock-function-name-face ((t (:foreground "#50fa7b"))))       ; Green
+	  '(font-lock-variable-name-face ((t (:foreground "#bd93f9"))))       ; Purple
+	  '(font-lock-string-face ((t (:foreground "#f1fa8c"))))              ; Yellow
+	  '(font-lock-comment-face ((t (:foreground "#6272a4" :slant italic)))) ; Comment Blue
+	  '(font-lock-type-face ((t (:foreground "#8be9fd" :slant italic))))    ; Cyan
+	  '(font-lock-constant-face ((t (:foreground "#bd93f9"))))            ; Purple
+	  '(font-lock-warning-face ((t (:foreground "#ff5555" :weight bold)))) ; Red
+
+	  ;; Org-Mode structural colors (Keeping Leuven's scaling/boxes)
+	  ;; This creates a "nested" look that makes the code easier to read at a glance.
+	  '(org-level-1 ((t (:background "#343746" :foreground "#bd93f9" :weight bold :extend t))))
+	  '(org-level-2 ((t (:background "#282a36" :foreground "#8be9fd" :weight bold))))
+	  '(org-level-3 ((t (:foreground "#ff79c6" :weight bold))))
+	  '(org-link ((t (:foreground "#8be9fd" :underline t))))
+	  '(org-todo ((t (:foreground "#ff5555" :weight bold))))
+	  '(org-done ((t (:foreground "#50fa7b" :weight bold))))
+
+	  ;; The background and default text color inside the code block
+	'(org-block ((t (:background "#282a36" :foreground "#f8f8f2" :extend t))))
+
+	;; The "Begin_Src" and "End_Src" tags (make them subtle Dracula purple)
+	'(org-block-begin-line ((t (:background "#44475a" :foreground "#6272a4" :slant italic :extend t))))
+	'(org-block-end-line   ((t (:background "#44475a" :foreground "#6272a4" :slant italic :extend t))))
+
+	;; Ensure code block headers (like "python" or "elisp") stand out
+	'(org-meta-line ((t (:foreground "#bd93f9"))))
+
+	;; Fix for "Verbatim" and "Code" snippets (~text~ or =text=)
+	'(org-verbatim ((t (:background "#44475a" :foreground "#f1fa8c"))))
+	'(org-code     ((t (:background "#44475a" :foreground "#50fa7b"))))
+
+	;; Dates and Headers
+	 '(org-agenda-structure ((t (:foreground "#bd93f9" :weight bold :height 1.1)))) ; Purple Headers
+	 '(org-agenda-date ((t (:foreground "#8be9fd" :weight bold))))                 ; Cyan Dates
+	 '(org-agenda-date-today ((t (:foreground "#50fa7b" :weight bold :underline t)))) ; Green Today
+	 '(org-agenda-date-weekend ((t (:foreground "#6272a4" :weight bold))))         ; Muted Blue Weekends
+
+	 ;; Categories (the text on the left)
+	 '(org-agenda-column-dateline ((t (:background "#44475a"))))
+
+	 ;; Deadlines and Scheduling
+	 '(org-upcoming-deadline ((t (:foreground "#ffb86c")))) ; Orange
+	 '(org-warning-face ((t (:foreground "#ff5555" :weight bold)))) ; Red for overdue
+	 '(org-scheduled ((t (:foreground "#50fa7b")))) ; Green for scheduled
+	 '(org-scheduled-today ((t (:foreground "#f1fa8c")))) ; Yellow for today
+
+	 ;; Time Grid (the vertical lines/hours)
+	 '(org-agenda-current-time ((t (:foreground "#f1fa8c"))))
+	 '(org-time-grid ((t (:foreground "#6272a4"))))
+
+	 ;; Habits (if you use them)
+	 '(org-habit-ready-face ((t (:background "#50fa7b")))) ; Green
+	 '(org-habit-alert-face ((t (:background "#f1fa8c")))) ; Yellow
+	 '(org-habit-overdue-face ((t (:background "#ff5555")))) ; Red
+	 '(org-habit-clear-face ((t (:background "#6272a4")))) ; Muted Blue
+
+       ;; Priorities
+	 ;; Dracula themes look best when "High Priority" items pop with that classic Dracula Red
+	'(org-priority ((t (:foreground "#ff5555" :weight bold))))
+
+	;; Tags
+	'(org-tag ((t (:foreground "#6272a4" :weight normal :slant italic))))
+
+	;; Selected item in Agenda (the cursor line)
+	'(hl-line ((t (:background "#44475a" :extend t))))
+
+	;; 1. Planning Keywords (SCHEDULED:, DEADLINE:, CLOSED:)
+	;; Visual Hierarchy: By making SCHEDULED pink (#ff79c6), it grabs your attention immediately.
+      '(org-special-keyword ((t (:foreground "#ff79c6" :weight bold)))) ; Dracula Pink
+
+      ;; 2. Property Drawers (:PROPERTIES:, :END:, :ID:)
+      ;; De-cluttering: By making the :PROPERTIES: and :END: tags a muted blue (#6272a4), they "recede" into the background, allowing your actual task text to be the hero of the document.
+      '(org-drawer ((t (:foreground "#6272a4" :slant italic))))        ; Muted Blue/Grey
+      '(org-property-value ((t (:foreground "#bd93f9"))))             ; Purple for the values
+
+      ;; 3. Clocking and Time Stamps
+      ;; Consistency: This uses the same cyan (#8be9fd) for dates here as we used in the Agenda view, keeping your brain in "Dracula mode" across different buffers.
+      '(org-date ((t (:foreground "#8be9fd" :underline t))))           ; Cyan
+      '(org-time-grid ((t (:foreground "#44475a"))))
+      '(org-clock-overlay ((t (:background "#44475a" :foreground "#f8f8f2"))))
+
+      ;; 4. Document Metadata (#+TITLE, #+AUTHOR, etc.)
+      '(org-document-info ((t (:foreground "#bd93f9"))))
+      '(org-document-info-keyword ((t (:foreground "#6272a4"))))
+      '(org-document-title ((t (:foreground "#ff79c6" :weight bold :height 1.2))))
+
+      ;; 5. List Bullets and Checkboxes
+      '(org-list-dt ((t (:foreground "#50fa7b" :weight bold))))       ; Green for definition terms
+      '(org-checkbox ((t (:foreground "#8be9fd" :box (:line-width 1 :color "#44475a")))))
+
+      ;; Optional: Make the property drawers slightly smaller to de-emphasize them
+      '(org-drawer ((t (:foreground "#6272a4" :height 0.9 :slant italic))))
+    )
+#+end_src
+
+** Why this works
+
+~leuven-dark~ defines specific "boxes" and "background-extends" for Org-mode headers that the standard Dracula theme doesn't always prioritize. By doing this:
+1. Leuven provides the layout (large headers, distinct block backgrounds).
+1. Dracula provides the mood (the classic purple-tinted dark mode).
+
+** Troubleshooting Tip
+
+If some faces still look "Leuven-blue," it’s likely because leuven-dark has very specific overrides for certain packages (like Magit or Gnus). You can find the name of any face you want to change by putting your cursor on the text and typing:
+#+begin_src
+C-u C-x =
+#+end_src
