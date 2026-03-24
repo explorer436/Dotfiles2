@@ -149,12 +149,8 @@ You want the structural logic of leuven-dark (especially for Org-mode) but with 
 To do this effectively, we’ll use the dracula hex codes to override leuven-dark's default blue/grey tones.
 
 #+begin_src emacs-lisp
-    ;; 1. Load the base Leuven structure
-    ;; (load-theme 'leuven-dark t)
 
-  (defun my-apply-dracula-to-leuven (theme &optional no-confirm no-enable)
-    "Apply Dracula palette overrides only if THEME is leuven-dark."
-    (when (eq theme 'leuven-dark)
+    (load-theme 'leuven-dark t)
 
       ;; 2. Inject Dracula colors into Leuven's faces
       (custom-set-faces
@@ -298,8 +294,10 @@ To do this effectively, we’ll use the dracula hex codes to override leuven-dar
      ;; --- Org Specific code highlights ---
      '(org-code ((t (:background "#44475a" :foreground "#50fa7b")))) ; Inline code
      '(org-link ((t (:foreground "#8be9fd" :underline t))))          ; Cyan links
-    )))
+    )
 #+end_src
+
+#+RESULTS:
 
 ** Why this works
 
