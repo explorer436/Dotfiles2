@@ -69,9 +69,9 @@
     :ensure t
     :config
     (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+	  org-roam-ui-follow t
+	  org-roam-ui-update-on-save t
+	  org-roam-ui-open-on-start t))
 
 ;; Just use "Meta-X org-roam-ui-open" and it will launch a tab in the browser with this url: http://localhost:35901/
 

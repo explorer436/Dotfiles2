@@ -4,3 +4,5 @@
   :hook (org-mode . org-modern-mode)
   :config
   (setq org-modern-block-fringe nil))
+
+;; https://github.com/minad/org-modern
