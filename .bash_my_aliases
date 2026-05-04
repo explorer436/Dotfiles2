@@ -4,7 +4,8 @@
 ### ALIASES ###
 
 # home server commands
-alias serveremacs="ssh -t explorer436@100.96.19.85 'zellij attach -c home-base'"
+alias homeserver="ssh explorer436@100.96.19.85"
+alias homeserveremacs="ssh -t explorer436@100.96.19.85 'bash -ic \"zellij attach -c emacs-workspace\"'"
 
 # grep commands
 alias grep='grep --color=auto'
