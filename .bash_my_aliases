@@ -5,7 +5,11 @@
 
 # home server commands
 alias homeserver="ssh explorer436@100.96.19.85"
-alias homeserveremacs="ssh -t explorer436@100.96.19.85 'bash -ic \"zellij attach -c emacs-workspace\"'"
+# alias homeserveremacs="ssh -t explorer436@100.96.19.85 'bash -ic \"zellij attach -c emacs-workspace\"'"
+alias homeserveremacs="ssh -t explorer436@100.96.19.85 'bash -ic \"stty cols $(tput cols) rows $(tput lines) && zellij attach -c emacs-workspace\"'"
+# tput cols and tput lines grab your local monitor's dimensions.
+# stty pushes those dimensions to the remote terminal driver before Zellij starts.
+
 
 # grep commands
 alias grep='grep --color=auto'
