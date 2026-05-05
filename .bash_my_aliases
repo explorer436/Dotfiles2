@@ -11,10 +11,10 @@ alias homeserveremacs="ssh -t explorer436@100.96.19.85 'bash -ic \"zellij attach
 alias grep='grep --color=auto'
 
 # list commands
-# alias l='ls'
-# alias ls='ls -ltaX --color=auto'
-# alias la='ls -a'
-# alias ll='ls -alFh'
+alias l='ls'
+alias ls='ls -ltaX --color=auto'
+alias la='ls -a'
+alias ll='ls -alFh'
 
 # Replace ls with eza
 # if [[ -x /usr/bin/eza ]]; then
