@@ -29,7 +29,7 @@ echo "Network interface is up."
 #	sync = true
 #	syncNewFiles = true
 
-sh ./buildHugoSites.sh
+bash ./buildHugoSites.sh
 
 # The list of repositories
 REPOS=(
