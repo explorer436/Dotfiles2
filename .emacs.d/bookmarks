@@ -2,10 +2,16 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Inbox.org"
- (filename . "~/Downloads/GitRepositories/my-personal-things/Things to do/Inbox.org")
+(("org-capture-last-stored"
+ (filename . "~/Downloads/GitRepositories/programming-notes/org/20260715084400-vim_text_manipulation_string_case_conversion_and_style_conversion.org")
+ (front-context-string)
+ (rear-context-string . "tyle conversion\n")
+ (position . 147)
+ (last-modified 27223 32913 747102 958000))
+("Inbox.org"
+ (filename . "~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Inbox.org")
  (front-context-string . "\n* Areas to get ")
  (rear-context-string . " pick up first.\n")
  (position . 825)
- (last-modified 26992 61017 684923 309000))
+ (last-modified 27223 33811 255686 168000))
 )
