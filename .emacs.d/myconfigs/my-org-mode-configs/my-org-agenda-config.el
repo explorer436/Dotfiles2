@@ -32,25 +32,47 @@
 ;; Log into LOGBOOK drawer
 (setq org-log-into-drawer t)
 
+;; Commenting out the Windows configuration
+;; (setq org-agenda-files
+;;       (if (eq system-type 'windows-nt)
+;;	  '("~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/FieldManualForTheDay.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/EverySaturday.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/FinanceTasks.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/FixedVolumeTasksToMoveTheNeedleOnLongTermGoals.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentAndImportant.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentButNotImportant.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Health.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Inbox.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesInMindmap.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesFromYoutube.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Books.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/ProgrammingTasks.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/RecurringPersonalTasks.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/WellBeing.org"
+;;	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Work.org")
+;;       '("~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FieldManualForTheDay.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/EverySaturday.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FinanceTasks.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FixedVolumeTasksToMoveTheNeedleOnLongTermGoals.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentAndImportant.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentButNotImportant.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Health.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Inbox.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesInMindmap.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesFromYoutube.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Books.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/ProgrammingTasks.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/RecurringPersonalTasks.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/WellBeing.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Work.org")
+;;       )
+;; )
+
 (setq org-agenda-files
-      (if (eq system-type 'windows-nt)
-	  '("~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/FieldManualForTheDay.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/EverySaturday.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/FinanceTasks.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/FixedVolumeTasksToMoveTheNeedleOnLongTermGoals.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentAndImportant.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentButNotImportant.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Health.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Inbox.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesInMindmap.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesFromYoutube.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Books.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/ProgrammingTasks.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/RecurringPersonalTasks.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/WellBeing.org"
-	    "~/../../Downloads/GitRepositories/my-personal-things/ThingsToDo/Work.org")
       '("~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
 	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
 	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FieldManualForTheDay.org"
@@ -68,18 +90,24 @@
 	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/RecurringPersonalTasks.org"
 	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/WellBeing.org"
 	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Work.org")
-      )
 )
 
+;; Commenting out the Windows configuration
+;; (setq my-org-refile-targets
+;;       (if (eq system-type 'windows-nt)
+;;	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
+;;		  "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
+;;       '("~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
+;;	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
+;;       )
+;; )
 (setq my-org-refile-targets
-      (if (eq system-type 'windows-nt)
-	  '("~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
-		  "~/../../Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org")
       '("~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
 	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
 	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
 	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
-      )
 )
 ;; Why is refiling to specific files (e.g. one for programming) important?
 ;; Because, if we refile everything to one file,
