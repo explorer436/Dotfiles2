@@ -61,3 +61,10 @@
 			       (file-name-nondirectory file)
 			       (line-number-at-pos)
 			       raw-ts))))))))))))
+
+
+;; If you do everything and org-timeblock still says "No Data",
+;; put a TODO keyword on one of the agenda items like this.
+;; This seems to be triggering org-timeblock and it seems to be pulling data from the agenda files after this change
+;; * TODO Send message to seller about books
+;; SCHEDULED: <2026-07-17 Fri 10:00-10:30>
