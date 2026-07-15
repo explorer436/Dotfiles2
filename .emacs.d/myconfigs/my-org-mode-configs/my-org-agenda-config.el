@@ -78,6 +78,11 @@
 ;; While standard org-agenda handles spaces in file paths perfectly fine, org-timeblock relies heavily on internal Emacs commands and regex parsing to scrub file names.
 ;; Spaces in paths frequently break its ability to locate or read the files, causing it to return a silent nil (No Data) when scanning them.
 ;; On top of the spaces, org-timeblock requires absolute, fully expanded paths. The tilde (~) can sometimes fail to expand inside its custom search loops.
+;; IMPORTANT
+;; Any time I make any changes to any of the org files, I should check that all three of these are woking ok before I commit the changes
+;; 1. my-agenda-view
+;; 2. my-calfw-view
+;; 3. org-timeblock
 (setq org-agenda-files
       '("/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
 	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
