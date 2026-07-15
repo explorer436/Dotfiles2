@@ -10,6 +10,9 @@
 ;; How can I show the Org-mode agenda on Emacs start-up?
 (add-hook 'after-init-hook 'my-agenda-view)
 
+
+(setq org-export-with-broken-links t)
+
 ;; Location of the combined exported agenda file that will be exported by org-mode
 (setq org-icalendar-combined-agenda-file "~/Downloads/GitRepositories/my-personal-things/ThingsToDo/CalendarEvents/fromEmacs.ics")
 ;; Alt-x org-icalendar-combine-agenda-files
