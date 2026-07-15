@@ -72,29 +72,30 @@
 ;;       )
 ;; )
 
-;; There should not be spaces in the paths for agenda files
+;; 1. There should not be spaces in the paths for agenda files
+;; 2. There should not be ~ (tilda) in the paths for agenda files
 ;; e.g. It is not a good naming convention - if there are spaces in your directory path: .../Things to do/....
 ;; While standard org-agenda handles spaces in file paths perfectly fine, org-timeblock relies heavily on internal Emacs commands and regex parsing to scrub file names.
 ;; Spaces in paths frequently break its ability to locate or read the files, causing it to return a silent nil (No Data) when scanning them.
 ;; On top of the spaces, org-timeblock requires absolute, fully expanded paths. The tilde (~) can sometimes fail to expand inside its custom search loops.
 (setq org-agenda-files
-      '("~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FieldManualForTheDay.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/EverySaturday.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FinanceTasks.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/FixedVolumeTasksToMoveTheNeedleOnLongTermGoals.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentAndImportant.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentButNotImportant.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Health.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Inbox.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesInMindmap.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesFromYoutube.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Books.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/ProgrammingTasks.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/RecurringPersonalTasks.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/WellBeing.org"
-	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/Work.org")
+      '("/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/FieldManualForTheDay.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/EverySaturday.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/FinanceTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/FixedVolumeTasksToMoveTheNeedleOnLongTermGoals.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentAndImportant.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/UrgentButNotImportant.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/Health.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/Inbox.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesInMindmap.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/NotesFromYoutube.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/Books.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/ProgrammingTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/RecurringPersonalTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/WellBeing.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/Work.org")
 )
 
 ;; Commenting out the Windows configuration
@@ -109,10 +110,10 @@
 ;;       )
 ;; )
 (setq my-org-refile-targets
-      '("~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
-	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
-	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
-	"~/Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
+      '("/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
 )
 ;; Why is refiling to specific files (e.g. one for programming) important?
 ;; Because, if we refile everything to one file,
