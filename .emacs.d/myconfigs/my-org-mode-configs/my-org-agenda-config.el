@@ -11,7 +11,7 @@
 (add-hook 'after-init-hook 'my-agenda-view)
 
 ;; Location of the combined exported agenda file that will be exported by org-mode
-(setq org-icalendar-combined-agenda-file "~/Downloads/GitRepositories/my-personal-things/Things to do/CalendarEvents/fromEmacs.ics")
+(setq org-icalendar-combined-agenda-file "~/Downloads/GitRepositories/my-personal-things/ThingsToDo/CalendarEvents/fromEmacs.ics")
 ;; Alt-x org-icalendar-combine-agenda-files
 
 ;; Set a UUID on each entry in the org files.
@@ -110,10 +110,10 @@
 ;;       )
 ;; )
 (setq my-org-refile-targets
-      '("/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedPersonalTasks.org"
-	"/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedFinanceTasks.org"
-	"/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CompletedProgrammingTasks.org"
-	"/home/explorer436//Downloads/GitRepositories/my-personal-things/Things to do/refile-targets/CancelledItems.org")
+      '("/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/refile-targets/CompletedPersonalTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/refile-targets/CompletedFinanceTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/refile-targets/CompletedProgrammingTasks.org"
+	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/refile-targets/CancelledItems.org")
 )
 ;; Why is refiling to specific files (e.g. one for programming) important?
 ;; Because, if we refile everything to one file,
