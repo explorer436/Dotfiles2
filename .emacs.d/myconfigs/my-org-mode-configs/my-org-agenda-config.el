@@ -72,6 +72,11 @@
 ;;       )
 ;; )
 
+;; There should not be spaces in the paths for agenda files
+;; e.g. It is not a good naming convention - if there are spaces in your directory path: .../Things to do/....
+;; While standard org-agenda handles spaces in file paths perfectly fine, org-timeblock relies heavily on internal Emacs commands and regex parsing to scrub file names.
+;; Spaces in paths frequently break its ability to locate or read the files, causing it to return a silent nil (No Data) when scanning them.
+;; On top of the spaces, org-timeblock requires absolute, fully expanded paths. The tilde (~) can sometimes fail to expand inside its custom search loops.
 (setq org-agenda-files
       '("~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
 	"~/Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
