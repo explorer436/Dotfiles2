@@ -36,3 +36,46 @@
 ;; Remember:
 ;; When you want to use this function:
 ;; In agenda view, jump to the date that you want to use for marking the task as complete. Do not use today's agenda view.
+
+(defun my-check-agenda-broken-links ()
+  "Scan all `org-agenda-files` for broken file and ID links."
+  (interactive)
+  (let ((report-buf (get-buffer-create "*Broken Agenda Links*"))
+	(count 0))
+    (with-current-buffer report-buf
+      (read-only-mode -1)
+      (erase-buffer)
+      (insert "=== Broken Org Links Report ===\n\n"))
+
+    (dolist (file (org-agenda-files))
+      (when (and (stringp file) (file-exists-p file))
+	(with-current-buffer (find-file-noselect file)
+	  (save-excursion
+	    (goto-char (point-min))
+	    (let ((ast (org-element-parse-buffer)))
+	      (org-element-map ast 'link
+		(lambda (link)
+		  (let ((type (org-element-property :type link))
+			(path (org-element-property :path link))
+			(line (line-number-at-pos (org-element-property :begin link))))
+		    (cond
+		     ;; Check file links
+		     ((string= type "file")
+		      (let ((resolved-path (expand-file-name path (file-name-directory file))))
+			(unless (file-exists-p resolved-path)
+			  (setq count (1+ count))
+			  (with-current-buffer report-buf
+			    (insert (format "%s:%d: Broken file link -> %s\n" file line path))))))
+		     ;; Check Org ID links
+		     ((string= type "id")
+		      (unless (and (fboundp 'org-id-find) (org-id-find path))
+			(setq count (1+ count))
+			(with-current-buffer report-buf
+			  (insert (format "%s:%d: Broken ID link -> %s\n" file line path)))))))))))))))
+
+    (with-current-buffer report-buf
+      (if (= count 0)
+	  (insert "No broken links found across your agenda files!\n")
+	(insert (format "\nTotal broken links found: %d\n" count)))
+      (compilation-mode))
+    (pop-to-buffer report-buf))

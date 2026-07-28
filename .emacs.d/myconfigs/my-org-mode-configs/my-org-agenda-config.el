@@ -86,6 +86,7 @@
 ;; 1. my-agenda-view
 ;; 2. my-calfw-view
 ;; 3. org-timeblock
+;; 4. my-check-agenda-broken-links - and look at the buffer "*Broken Agenda Links*". Make sure there are no broken agenda links.
 (setq org-agenda-files
       '("/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/BadHabitsThatINeedToQuit.org"
 	"/home/explorer436//Downloads/GitRepositories/my-personal-things/ThingsToDo/BirthdaysAndImportantEvents.org"
