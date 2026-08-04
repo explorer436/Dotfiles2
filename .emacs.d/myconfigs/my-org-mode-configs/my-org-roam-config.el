@@ -93,7 +93,7 @@
 ;; to export data:
 ;;
 ;; "org-export-data: Unable to resolve link: FILE-ID"
-(defun my-force-org-rebuild-cache ()
+(defun my-force-org-roam-rebuild-cache ()
   "Rebuild the `org-mode' and `org-roam' cache."
   (interactive)
   (org-id-update-id-locations)
