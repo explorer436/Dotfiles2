@@ -101,3 +101,11 @@
   ;; followed by `org-roam-db-sync'
   (org-roam-db-sync)
   (org-roam-update-org-id-locations))
+
+;; How do i open org-roam ui in a specific browser that is not the system default browser?
+;; If you only want a specific browser when manually invoking org-roam-ui-open, wrap the function in a local let binding to override browse-url-browser-function dynamically:
+(defun my-org-roam-ui-open-custom-browser ()
+  "Open org-roam-ui in Firefox regardless of system defaults."
+  (interactive)
+  (let ((browse-url-browser-function 'browse-url-firefox))
+    (org-roam-ui-open)))
