@@ -29,34 +29,70 @@ echo "Network interface is up."
 #	sync = true
 #	syncNewFiles = true
 
-bash ./buildHugoSites.sh
+# Path to git-sync executable
+GIT_SYNC="$HOME/Downloads/GitRepositories/git-sync/git-sync"
 
 # The list of repositories
 REPOS=(
-    "my-personal-things"
-    "programming-playground"
-    "programming-notes"
     "career-notes"
     "finance-notes"
     "health-notes"
     "mindset-notes"
     "my-kitchen-sink"
+    "my-personal-things"
+    "programming-notes"
+    "programming-playground"
+    "site-builder"
     "soft-skills"
 )
 
-# Loop through the list and sync
+# Loop through the list and do git-sync on all of them. Pull the latest changes down.
 for repo in "${REPOS[@]}"; do
+    REPO_DIR="$HOME/Downloads/GitRepositories/$repo"
+
+    # 1. Sync the main repository
     echo "Syncing: $repo"
-    cd ~/Downloads/GitRepositories/"$repo" || continue
-    ~/Downloads/GitRepositories/git-sync/git-sync
+    if cd "$REPO_DIR"; then
+	"$GIT_SYNC"
+    else
+	echo "Directory $REPO_DIR not found. Skipping..."
+	continue
+    fi
+
+    # 2. Sync the Mainroad theme directory if it exists
+    THEME_DIR="$REPO_DIR/themes/Mainroad"
+    if [ -d "$THEME_DIR" ]; then
+	echo "Syncing Mainroad theme for: $repo"
+	cd "$THEME_DIR" && "$GIT_SYNC"
+    fi
+
     cd
 done
 
+# Build all the static sites
+bash ./buildHugoSites.sh
 
-cd ~/Downloads/GitRepositories/programming-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
-cd ~/Downloads/GitRepositories/career-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
-cd ~/Downloads/GitRepositories/finance-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
-cd ~/Downloads/GitRepositories/health-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
-cd ~/Downloads/GitRepositories/mindset-notes/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
-cd ~/Downloads/GitRepositories/my-kitchen-sink/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
-cd ~/Downloads/GitRepositories/soft-skills/themes/Mainroad && ~/Downloads/GitRepositories/git-sync/git-sync
+# Post-build check for uncommitted changes
+echo "Checking repositories for uncommitted changes post-build..."
+for repo in "${REPOS[@]}"; do
+    REPO_DIR="$HOME/Downloads/GitRepositories/$repo"
+
+    # Check main repository
+    if cd "$REPO_DIR" 2>/dev/null; then
+	if [ -n "$(git status --porcelain)" ]; then
+	    echo "Uncommitted changes found in $repo after build. Running git-sync..."
+	    "$GIT_SYNC"
+	fi
+
+	# Check theme directory if it exists
+	THEME_DIR="$REPO_DIR/themes/Mainroad"
+	if [ -d "$THEME_DIR" ] && cd "$THEME_DIR" 2>/dev/null; then
+	    if [ -n "$(git status --porcelain)" ]; then
+		echo "Uncommitted changes found in Mainroad theme ($repo) after build. Running git-sync..."
+		"$GIT_SYNC"
+	    fi
+	fi
+    fi
+
+    cd
+done

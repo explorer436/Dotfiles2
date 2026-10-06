@@ -2,12 +2,13 @@
 
 # 1. Define your repositories
 REPOS=(
-  "$HOME/Downloads/GitRepositories/mindset-notes"
-  "$HOME/Downloads/GitRepositories/programming-notes"
-  "$HOME/Downloads/GitRepositories/health-notes"
   "$HOME/Downloads/GitRepositories/career-notes"
   "$HOME/Downloads/GitRepositories/finance-notes"
+  "$HOME/Downloads/GitRepositories/health-notes"
+  "$HOME/Downloads/GitRepositories/mindset-notes"
   "$HOME/Downloads/GitRepositories/my-kitchen-sink"
+  "$HOME/Downloads/GitRepositories/programming-notes"
+  "$HOME/Downloads/GitRepositories/soft-skills"
 )
 
 # 2. Loop through each repository
@@ -22,9 +23,9 @@ for REPO in "${REPOS[@]}"; do
   echo "--- Checking: $REPO_NAME ---"
 
   # 3. Check for uncommitted changes
-  if [ -z "$(git status --porcelain)" ]; then
-    echo "Working directory clean."
-  else
+  # if [ -z "$(git status --porcelain)" ]; then
+  #   echo "Working directory clean."
+  # else
     echo "Uncommitted changes detected. Starting Hugo process..."
 
     # --- INLINED startAndStopHugoServer logic ---
@@ -46,7 +47,7 @@ for REPO in "${REPOS[@]}"; do
     make stop
 
     # --- END INLINED logic ---
-  fi
+  # fi
 
   echo "" # Spacer for the next repo
 done
