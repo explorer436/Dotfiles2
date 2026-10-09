@@ -22,9 +22,9 @@
 ;; not creating duplicates in Google calendar when importing calendar from Org Agenda
 (setq org-icalendar-store-UID 'non-nil)
 
-;; Each state with ! is recorded as state change. In this case, we are logging TODO, DONE, NOT DONE and CANC states
+;; Each state with ! is recorded as state change. In this case, we are logging TODO, DONE, NOT DONE and CANCELLED states
 (setq org-todo-keywords
-;;      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "NEXT(n)" "CANCELED(c)")))
+;;      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(d)" "NEXT(n)" "CANCELLED(c)")))
       '((sequence "TODO(t!)" "NEXT(n)" "STARTED(s)" "SOMEDAY(l)" "WAITING(w)" "|" "DONE(d!)" "NOT DONE(N!)" "CANCELLED(c!)")))
 ;; How do we refresh the list of todo-keywords in a file after making changes in that specific file?
 ;; M-x org-mode-restart
