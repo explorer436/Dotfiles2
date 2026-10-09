@@ -66,6 +66,13 @@ for repo in "${REPOS[@]}"; do
 	cd "$THEME_DIR" && "$GIT_SYNC"
     fi
 
+    # 3. Sync the blowfish theme directory if it exists
+    THEME_DIR="$REPO_DIR/themes/blowfish"
+    if [ -d "$THEME_DIR" ]; then
+	echo "Syncing blowfish theme for: $repo"
+	cd "$THEME_DIR" && "$GIT_SYNC"
+    fi
+
     cd
 done
 
