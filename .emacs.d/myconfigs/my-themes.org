@@ -144,22 +144,16 @@ Use the preview feature of consult.
   This comes with emacs. There is no need to install it.
 
     #+begin_src elisp
-    (load-theme 'leuven t)
+    ;; (load-theme 'leuven t)
     #+end_src
-
-    #+RESULTS:
-    : t
 
 * leuven-dark
 
   This comes with emacs. There is no need to install it.
 
     #+begin_src elisp
-    ;; (load-theme 'leuven-dark t)
+    (load-theme 'leuven-dark t)
     #+end_src
-
-    #+RESULTS:
-    : t
 
 * Customizing leuven-dark
 
