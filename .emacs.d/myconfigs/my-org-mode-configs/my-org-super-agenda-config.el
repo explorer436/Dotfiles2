@@ -1,3 +1,5 @@
+;; https://github.com/alphapapa/org-super-agenda
+
 (use-package org-super-agenda
   :ensure t
   :config
