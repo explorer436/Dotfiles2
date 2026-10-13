@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# 1. Define your repositories
 REPOS=(
   "$HOME/Downloads/GitRepositories/career-notes"
   "$HOME/Downloads/GitRepositories/finance-notes"
@@ -11,9 +10,7 @@ REPOS=(
   "$HOME/Downloads/GitRepositories/soft-skills"
 )
 
-# 2. Loop through each repository
 for REPO in "${REPOS[@]}"; do
-  # Move into the directory or skip if it doesn't exist
   if ! cd "$REPO"; then
     echo "Directory $REPO not found. Skipping..."
     continue
@@ -22,34 +19,43 @@ for REPO in "${REPOS[@]}"; do
   REPO_NAME="${PWD##*/}"
   echo "--- Checking: $REPO_NAME ---"
 
-  # 3. Check for uncommitted changes
-  # if [ -z "$(git status --porcelain)" ]; then
-  #   echo "Working directory clean."
-  # else
-    echo "Uncommitted changes detected. Starting Hugo process..."
+  echo "Cleaning up any stale processes on port 1414..."
+  # Kill anything currently holding port 1414
+  fuser -k 1414/tcp 2>/dev/null || true
+  sleep 1
 
-    # --- INLINED startAndStopHugoServer logic ---
+  echo "Starting Hugo server in: $(pwd)"
+  # Ensure your Makefile/Hugo command explicitly binds to port 1414
+  make make_detatched
 
-    echo "Running 'make all' in: $(pwd)"
-    make make_detatched
+  echo "Waiting for $REPO_NAME to go live..."
 
-    echo "Waiting for $REPO_NAME to go live..."
-    # Loop until localhost:1414 returns a 200 OK or similar
-    until curl -s http://localhost:1414 > /dev/null; do
-      sleep 1
-    done
+  # Add a timeout counter (e.g., max 30 seconds) to prevent infinite hangs
+  TIMEOUT=30
+  COUNTER=0
 
+  until curl -s http://localhost:1414 > /dev/null; do
+    sleep 1
+    COUNTER=$((COUNTER + 1))
+    if [ $COUNTER -ge $TIMEOUT ]; then
+      echo "Error: Server failed to start within $TIMEOUT seconds."
+      make stop
+      break
+    fi
+  done
+
+  if [ $COUNTER -lt $TIMEOUT ]; then
     echo "Site is up. Running tasks for $REPO_NAME..."
+    # Add your specific tasks here
+  fi
 
-    # Add any specific tasks you want to run while the server is up here
+  echo "Stopping server..."
+  make stop
 
-    echo "Stopping server..."
-    make stop
+  # Extra safety: ensure port is free before next loop iteration
+  fuser -k 1414/tcp 2>/dev/null || true
 
-    # --- END INLINED logic ---
-  # fi
-
-  echo "" # Spacer for the next repo
+  echo "" # Spacer
 done
 
 echo "All repositories processed."
