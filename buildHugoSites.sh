@@ -31,7 +31,7 @@ for REPO in "${REPOS[@]}"; do
   echo "Waiting for $REPO_NAME to go live..."
 
   # Add a timeout counter (e.g., max 30 seconds) to prevent infinite hangs
-  TIMEOUT=30
+  TIMEOUT=60
   COUNTER=0
 
   until curl -s http://localhost:1414 > /dev/null; do
