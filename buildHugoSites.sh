@@ -44,6 +44,8 @@ for REPO in "${REPOS[@]}"; do
     fi
   done
 
+  # if this doesn't start in 60 seconds, check this: `journalctl -k | grep -i apparmor`. In Ubuntu servers, apparmor kills processes for security.
+
   if [ $COUNTER -lt $TIMEOUT ]; then
     echo "Site is up. Running tasks for $REPO_NAME..."
     # Add your specific tasks here
