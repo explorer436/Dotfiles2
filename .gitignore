@@ -119,7 +119,6 @@
 .config/ristretto/accels.scm
 .config/rofi
 .config/screengrab/
-.config/systemd/
 .config/termite
 .config/torbrowser/
 .config/user-dirs.dirs
@@ -197,6 +196,7 @@
 .viminfo
 .vscode-oss/argv.json
 .vscode-oss/extensions/
+.vscodium-server/
 .wine/
 .xinitrc
 .xmonad/build-x86_64-linux/Main.hi
