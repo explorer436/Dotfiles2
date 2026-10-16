@@ -1,0 +1,13 @@
+[Unit]
+Description=Static Server for Hugo Site (%I)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/explorer436/.cargo/bin/miniserve /home/explorer436/Downloads/GitRepositories/%i/public --port 1414 --index index.html
+Restart=no
+# explicity disable memory limits if the system enforces them
+MemoryMax=infinity
+
+[Install]
+WantedBy=default.target

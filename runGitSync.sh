@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# It is choking when invoked from a cron schedule because the cron scheduler uses bare bones path.
+# Ensure cron has access to user binaries (Rust/Cargo, Node, etc.)
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"
+
 # Inside runGitSync.sh
 # When a computer wakes up, the Wi-Fi often takes 2–5 seconds to reconnect.
 # This script could fail if it runs too fast, because there is no internet.
