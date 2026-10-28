@@ -25,7 +25,11 @@ M-x disable-theme
       4. dracula (doesn't come with emacs - see the cons listed below)
 2. I used dracula theme for a long time and I was happy with it.
    1. However, it comes with it's own customizations to fonts and other things.
-   2. I had to disable it when customizing to use specific fonts.
+   2. Turns out that it is not very light-weight.
+   3. I had to disable it when customizing to use specific fonts.
+3. Regarding the home server, this theme looks great: doom-bluloco-dark
+   1. Comes with doom themes.
+   2. Not part of native emacs install.
 
 * How to preview themes?
 
