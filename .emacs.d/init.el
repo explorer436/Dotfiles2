@@ -98,6 +98,12 @@
   (org-babel-load-file (expand-file-name "~/.emacs.d/myconfigs/my-mini-buffer-completion-configs.org"))
 )
 
+(setq org-babel-default-header-args '((:results . "value")))
+(nconc org-babel-default-header-args:java '(
+     (:dir . nil)
+     (:results . "value")
+))
+
 (setq org-plantuml-jar-path
       (if (eq system-type 'windows-nt)
 	  (setq org-plantuml-jar-path (expland-file-name "C:/Users/vardh/Downloads/GitRepositories/my-personal-things/.emacs.d/plantuml-mit-1.2025.0.jar"))
@@ -118,11 +124,6 @@
     (plantuml . t)
   )
 )
-
-(nconc org-babel-default-header-args:java '(
-     (:dir . nil)
-     (:results . value)
-))
 
 (setq custom-file "~/.emacs.d/my-custom-variables-and-faces.el")
 (load custom-file)
